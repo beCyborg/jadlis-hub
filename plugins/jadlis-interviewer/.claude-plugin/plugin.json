@@ -1,6 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "jadlis-interviewer",
+  "version": "1.0.0",
   "displayName": "Jadlis — интервьюер",
   "description": "Батч 3: интервью, из которого рождаются смысл жизни, потребности с метриками и цели квартала.",
   "author": { "name": "Be Cyborg" },

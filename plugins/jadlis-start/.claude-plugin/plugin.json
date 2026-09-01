@@ -1,6 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "jadlis-start",
+  "version": "1.0.0",
   "displayName": "Jadlis — драйвер батчей",
   "description": "Ведёт установку Jadlis по батчам: определяет текущий шаг пробами машины, ставит следующий плагин, не выдаёт батч авансом.",
   "author": { "name": "Be Cyborg" },
