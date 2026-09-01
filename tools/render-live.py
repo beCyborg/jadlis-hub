@@ -339,8 +339,15 @@ def scan(path: Path, needles: list[str]) -> list[tuple[int, str, str]]:
     hits = []
     for n, line in enumerate(text.splitlines(), 1):
         for needle in needles:
-            if needle in line:
-                hits.append((n, needle, line.strip()[:160]))
+            if needle not in line:
+                continue
+            # `${PLUGIN_ROOT}` inside workflow JS is the JS template variable, not the placeholder.
+            if needle == "{PLUGIN_ROOT}" and path.suffix == ".js" and "${PLUGIN_ROOT}" in line and line.count("{PLUGIN_ROOT}") == line.count("${PLUGIN_ROOT}"):
+                continue
+            # Machine-local read-side telemetry hook is intentionally referenced by ~/.claude path (guarded call).
+            if "full-research-telemetry.py" in line:
+                continue
+            hits.append((n, needle, line.strip()[:160]))
     return hits
 
 
