@@ -7,9 +7,9 @@
 
 | Команда | Что делает |
 |---|---|
-| `/jadlis-research:search` | веб-поиск с маршрутизацией Brave / Firecrawl по интенту |
-| `/jadlis-research:full-research` | до 10 каналов: web×3 (Brave + Codex web + Grok web) + Reddit + X + HackerNews + Substack, opt-in `yandex` / `youtube` / `telegram` по роутинг-дереву → per-claim верификация (schema v2) → отчёт в vault |
-| `/jadlis-research:search-paper` | научный обзор: 9 источников, snowballing, retraction-check, GRADE-синтез |
+| `/jadlis-research:search` | веб-поиск Brave + Exa через `scripts/websearch.py` с роутингом по интенту (A/B закрыт 09.2026 ничьёй), Firecrawl/`pdf-fetch.sh` для страниц |
+| `/jadlis-research:full-research` | до 10 каналов: web×3 (Brave + Codex web + Grok web) + Reddit + X + HackerNews + Substack, opt-in `yandex` / `youtube` / `telegram` по роутинг-дереву → curator с evidence-префиксами → `urlhealth` → per-claim верификация двумя линзами + третий голос Codex при расхождении (ledger schema v3: CONFIRMED / DISPUTED / CHALLENGED / OUTDATED / UNCHECKED) → отчёт в vault |
+| `/jadlis-research:search-paper` | научный обзор: 9 источников, snowballing (OpenAlex 429 → S2), retraction-check (3 сигнала), синтез Fable 5.1 через мост, GRADE, `capStats` телеметрия капов |
 | `/jadlis-research:verif` | тройная adversarial-верификация (Codex + Fable/Opus + Grok) с арбитром |
 | `/jadlis-research:keys` | ключи рельсы B, homes верификаторов, smoke-таблица PASS/FAIL |
 
@@ -42,8 +42,8 @@
 
 **Рельса B — блок `env` в `~/.claude/settings.json`:** `PUBMED_API_KEY`, `PUBMED_EMAIL`,
 `SEMANTIC_SCHOLAR_API_KEY`, `OPENALEX_API_KEY`, `OPENALEX_MAILTO`, `CROSSREF_MAILTO`,
-`UNPAYWALL_EMAIL` (+ опц. `CORE_API_KEY`, `SCITE_API_KEY`, `CONSENSUS_API_KEY`,
-`YC_SEARCH_API_KEY` — opt-in канал `yandex`; `GOOGLE_PLACES_API_KEY` — place-слой
+`UNPAYWALL_EMAIL`, `EXA_API_KEY` (семантический слой `/search` и web-канала; нет ключа → слой
+пропускается) (+ опц. `CORE_API_KEY`, `YC_SEARCH_API_KEY` — opt-in канал `yandex`; `GOOGLE_PLACES_API_KEY` — place-слой
 канала `web`). Пишет `/jadlis-research:keys`.
 
 Разделение вынужденное: **сенситивный `userConfig` не долетает до обычных Bash-вызовов** —
@@ -65,6 +65,15 @@
 | `YC_SEARCH_API_KEY` (рельса B, опц.) | opt-in канал `yandex` — слой Рунета, которого нет у Brave | канал не предлагается; если выбран принудительно — `exit 2`, `sourceQuality=LOW`, workflow не падает |
 | `GOOGLE_PLACES_API_KEY` (рельса B, опц.) | place-слой канала `web` для локальных тем | `exit 3 PLACES_KEY_MISSING` → слой сам уходит в `brave_place_search`. **Бюджет-кап в Google Cloud обязателен ДО первого вызова** — hard cap у API нет |
 | `YOUTUBE_API_KEY` (рельса A, опц.) | MCP `youtube` — точный добор видео и метаданные (квота 10k units/день, поиск = 100 units) | сервер отдаёт ошибку и горит красным в `/mcp` — это ожидаемо; канал `youtube` идёт через Brave + локальные транскрипты |
+
+## Служебные скрипты
+
+| Скрипт | Роль |
+|---|---|
+| `scripts/websearch.py` | Brave + Exa: `brave` / `exa` / `both` / `contents` / `context` / `report`; лог вызовов и стоимости |
+| `scripts/urlhealth.py` | шаг `urlhealth` full-research: тристейт `ok/blocked/dead` по evidence-URL, сверка цитат со снапшотами, Wayback-проверка мёртвых (`fabricationSuspect`); всегда `exit 0`, дедлайн 90 с |
+| `scripts/workdir-gc.py` | ретенция `.full-research/` и `.search-paper/` в vault: 30 дней с ссылкой из заметки, 7 — без; без `--yes` только печатает |
+| `scripts/pdf-fetch.sh` | PDF за 0 кредитов (curl + pdftotext, кэш) |
 
 ## Устройство путей
 
