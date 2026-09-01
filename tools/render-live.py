@@ -114,9 +114,9 @@ PLUGIN_EXCEPTION_PREFIXES = (
 
 def substitute(text: str) -> str:
     """Apply the plugin -> live substitutions. Order matters."""
-    # 1. ${CLAUDE_PLUGIN_ROOT} -> absolute live root.
-        text = text.replace("${CLAUDE_PLUGIN_ROOT}/shared/obsidian-write-contract.md", "/Users/cyborg/.claude/skills/_shared/obsidian-write-contract.md")
-text = text.replace("${CLAUDE_PLUGIN_ROOT}", LIVE_ROOT)
+    # 1. ${CLAUDE_PLUGIN_ROOT} -> absolute live root (shared write contract lives in skills/_shared locally).
+    text = text.replace("${CLAUDE_PLUGIN_ROOT}/shared/obsidian-write-contract.md", LIVE_ROOT + "/skills/_shared/obsidian-write-contract.md")
+    text = text.replace("${CLAUDE_PLUGIN_ROOT}", LIVE_ROOT)
 
     # 2. {PLUGIN_ROOT} placeholder (protocols/references). A leading `$` means it
     #    is a JS template interpolation of the local `PLUGIN_ROOT` const, not the
