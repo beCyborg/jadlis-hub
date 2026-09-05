@@ -144,6 +144,18 @@ def substitute(text: str) -> str:
     text = text.replace("A.pluginRoot || '.'", f"A.pluginRoot || '{LIVE_ROOT}'")
     text = text.replace("A.vaultPath || ''", f"A.vaultPath || '{VAULT_PATH}'")
 
+    # 8. Recipient-side model window suffix. `[1m]` selects the 1M-context
+    #    window of Opus 5 in Claude Code; it is a harness detail of THIS
+    #    machine, not a plugin fact, so the plugin stays suffix-free and the
+    #    live contour gets it back on render. Without this rule the first
+    #    render silently reverts the 2026-09-04 hand edit of the 5 files that
+    #    pin Opus 5 (2 skills, 2 agents, verif fallback).
+    text = re.sub(r"^(model: claude-opus-5)$", r"\1[1m]", text, flags=re.M)
+    text = text.replace(
+        'FABLE_MODEL_FALLBACK="claude-opus-5"',
+        'FABLE_MODEL_FALLBACK="claude-opus-5[1m]"',
+    )
+
     return text
 
 

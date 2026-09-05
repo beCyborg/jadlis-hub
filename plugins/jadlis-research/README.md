@@ -101,5 +101,5 @@
 по `aiModelActual`, чтобы заметка не врала. Отключить мост целиком:
 `fableBridge: false` + `aiModel: "claude-opus-5"`.
 
-Верификаторы `/jadlis-research:verif`: Codex (`gpt-5.6-sol`), Claude Fable 5,
+Верификаторы `/jadlis-research:verif`: Codex (`gpt-6-astra`), Claude Fable 5,
 Grok (`grok-4.6`), арбитр — Fable 5.
