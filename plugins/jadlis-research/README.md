@@ -26,6 +26,7 @@
 | `substack` | **свой фетчер** `scripts/substack-fetch.py` (анонимный `/api/v1`, отдаёт вовлечённость 👍/💬) | нужен `uv`; сломался → Brave `site:substack.com`, дальше `sourceQuality=LOW`. **MCP для Substack в плагине нет** |
 | `yandex` | `scripts/yandex-search.sh` (Yandex Search API v2, async) | `YC_SEARCH_API_KEY`; нет → канал не предлагается, принудительный выбор даёт `exit 2` + `LOW` |
 | `youtube` | Brave `site:youtube.com` (основной discovery) + MCP `youtube` для точного добора + `scripts/yt-transcript.py` для транскриптов | `YOUTUBE_API_KEY` только для MCP-добора; без ключа канал живёт на Brave + транскриптах |
+| `ja` / `zh` / `ko` / `eu` (языковые слои, trigger-scoped) | `scripts/feed-fetch.py` (Qiita API, Hatena/Zenn/note/V2EX/Velog/tistory/DOU/Golem/heise/Xataka/Menéame фиды, Stack Exchange API, Mastodon) + Brave на языке площадки; протоколы `ja-/zh-/ko-/eu-protocol.md` | ключей не нужно; фид мёртв → канал деградирует; в дефолтный набор не входят (гейт always-on — leave-one-out) |
 | `telegram` | `scripts/tg-preview.sh` (публичные `t.me/s/` превью) + Brave `site:t.me`-дорки | ключей не нужно; сиды каналов — `skills/full-research/references/telegram-seed-handles.md` |
 
 Каналы `hackernews` и `substack` раньше ходили через MCP-серверы `hn` и `substack`
@@ -73,7 +74,9 @@
 | `scripts/websearch.py` | Brave + Exa: `brave` / `exa` / `both` / `contents` / `context` / `report`; лог вызовов и стоимости |
 | `scripts/urlhealth.py` | шаг `urlhealth` full-research: тристейт `ok/blocked/dead` по evidence-URL, сверка цитат со снапшотами, Wayback-проверка мёртвых (`fabricationSuspect`); всегда `exit 0`, дедлайн 90 с |
 | `scripts/workdir-gc.py` | ретенция `.full-research/` и `.search-paper/` в vault: 30 дней с ссылкой из заметки, 7 — без; без `--yes` только печатает |
-| `scripts/pdf-fetch.sh` | PDF за 0 кредитов (curl + pdftotext, кэш) |
+| `scripts/pdf-fetch.sh` | PDF за 0 кредитов (curl + pdftotext, кэш с TTL, гард Chrome-заглушек) |
+| `scripts/feed-fetch.py` | языковые слои: RSS/Atom/JSON/API → JSON + md-снапшоты `Extractor: feed-fetch`; `source <name> <arg>`, `--filter`, `--snapshot-dir` |
+| `scripts/reddit-archive.py` | no-auth Reddit: `search` (search.rss, вместо PullPush с 05.09.2026), `sub`/`comments` (Arctic Shift) |
 
 ## Устройство путей
 
