@@ -20,7 +20,7 @@
 | `web` | Brave MCP (`llm_context` / `web_search`), Firecrawl для одной страницы, place-слой через `scripts/places-fetch.sh` | `BRAVE_API_KEY` обязателен; place-слой без `GOOGLE_PLACES_API_KEY` → Brave Place |
 | `codexweb` | `codex exec` с web search (`gpt-6-astra`, effort high, service_tier default) | нет CLI или квота исчерпана → канал выключается квотным probe |
 | `grokweb` | Grok CLI headless, `web_search` + `web_fetch` | нет CLI → канал выпадает |
-| `reddit` | MCP `reddit` (`execute_operation`) + `reddit-alt`, no-auth-лестница Arctic Shift / PullPush через `scripts/reddit-archive.py` | всё опционально: лестница работает без ключей |
+| `reddit` | MCP `reddit` (`execute_operation`) + `reddit-alt`, no-auth-лестница Arctic Shift / Reddit search RSS через `scripts/reddit-archive.py` | всё опционально: лестница работает без ключей |
 | `twitter` | Grok CLI (`x_search` живёт в подписке, не в API) | нет CLI → канал выпадает |
 | `hackernews` | **свой фетчер** `scripts/hn-fetch.sh` (Algolia + Firebase, 0 кредитов, полный текст комментариев) | нужен `jq`; сломался → Brave `site:news.ycombinator.com`, дальше `sourceQuality=LOW`. **MCP для HN в плагине нет** |
 | `substack` | **свой фетчер** `scripts/substack-fetch.py` (анонимный `/api/v1`, отдаёт вовлечённость 👍/💬) | нужен `uv`; сломался → Brave `site:substack.com`, дальше `sourceQuality=LOW`. **MCP для Substack в плагине нет** |
