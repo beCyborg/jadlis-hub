@@ -46,7 +46,7 @@ const curator = { claims: [
   { id: 'c5', statement: 'epsilon', channels: ['codexweb'], strength: 'MODERATE', loadBearing: false, claimType: 'factual', evidencePrefixes: ['cx1', 'w4'] },
 ] }
 const urlhealth = { status: 'ok', elapsedSec: 1, note: 'mock', items: [
-  { prefix: 'w1', url: 'https://docs.example.com/a', urlStatus: 'ok', quoteStatus: 'matched', fabricationSuspect: false, snapshotChars: 5000 },
+  { prefix: 'w1', url: 'https://docs.example.com/a', urlStatus: 'ok', quoteStatus: 'matched', fabricationSuspect: false, snapshotChars: 5000, snapshotExtractor: 'defuddle' },
   { prefix: 'cx1', url: 'https://docs.example.com/e', urlStatus: 'ok', quoteStatus: 'matched', fabricationSuspect: false, snapshotChars: 4000 },
   { prefix: 'w2', url: 'https://blog.example.com/b', urlStatus: 'ok', quoteStatus: 'notChecked', fabricationSuspect: false, snapshotChars: 0 },
   { prefix: 'r1', url: 'https://reddit.com/r/x/comments/1', urlStatus: 'blocked', quoteStatus: 'notFound', fabricationSuspect: false, snapshotChars: 3000 },
@@ -57,9 +57,10 @@ const urlhealth = { status: 'ok', elapsedSec: 1, note: 'mock', items: [
 
 async function run(args) {
   const calls = []
+  const prompts = {}
   const agent = async (prompt, opts) => {
     const label = (opts && opts.label) || '?'
-    calls.push(label)
+    calls.push(label); prompts[label] = String(prompt)
     // fixtures are mutated by the core (relevance demotion) → fresh copy per run
     if (channels[label]) return structuredClone(channels[label])
     if (label.startsWith('curator')) return structuredClone(curator)
@@ -73,7 +74,7 @@ async function run(args) {
   const logs = []
   const fn = new AsyncFunction('args', 'agent', 'parallel', 'phase', 'log', src)
   const result = await fn(args, agent, parallel, () => {}, m => logs.push(String(m)))
-  return { result, calls, logs }
+  return { result, calls, logs, prompts }
 }
 
 let failures = 0
@@ -81,7 +82,7 @@ const check = (cond, msg) => { if (!cond) { failures++; console.log('FAIL', msg)
 const base = { refinedQuery: 'smoke', channels: Object.keys(channels), workDir: '/tmp/smoke', pluginRoot: '/tmp/plugin', date: '2026-09-06', aiModel: 'x', fableBridge: false }
 
 {
-  const { result: r, logs } = await run(base)
+  const { result: r, logs, prompts } = await run(base)
   const led = Object.fromEntries(r.claimLedger.map(c => [c.id, c]))
   const ev = (id, p) => led[id].evidence.find(e => e.prefix === p)
   check(r.ledgerSchemaVersion === 4, 'ledgerSchemaVersion = 4')
@@ -110,6 +111,11 @@ const base = { refinedQuery: 'smoke', channels: Object.keys(channels), workDir: 
   check(r.snapshotGate.byChannel.web && r.snapshotGate.ceilingCapped === 3, `snapshotGate.ceilingCapped = 3 (c2, c3, c4) (got ${r.snapshotGate.ceilingCapped})`)
   check(!JSON.stringify(r.claimLedger).includes('"citationRefs"'), 'ledger has no back-references')
   check(logs.some(l => l.includes('Снапшот-гейт')), 'gate logged')
+  const vp = prompts['verify:c1#1'] || ''
+  check(vp.includes('5000B, extractor:defuddle') && vp.includes('[ceiling:MEDIUM — llm-mediated]'), 'verify prompt shows snapshot size/extractor and ceiling reason')
+  check((prompts['analyst'] || '').includes('ledger_schema: 4') && (prompts['analyst'] || '').includes('"ceilingCapped": true'), 'analyst prompt: ledger_schema 4 + ceilingCapped in ledger JSON')
+  check((prompts['web'] || '').includes('Extractor:') && (prompts['web'] || '').includes('schema v4'), 'channel prompt rule 5 (v4) mentions Extractor header')
+  check(r.synthMeta.ledgerSummary.ceilingCapped === 3, 'ledgerSummary.ceilingCapped = 3')
 }
 {
   const { result: r } = await run({ ...base, channelCeiling: { codexweb: 'HIGH' } })
