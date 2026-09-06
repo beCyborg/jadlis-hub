@@ -84,6 +84,7 @@ VERDICT: NEEDS-REVISION  (Codex: needs-revision · Fable: needs-revision · Grok
 | Firecrawl | скрап страниц и динамики | да |
 | Подписка ChatGPT (Codex CLI) | канал `codexweb`, верификатор Codex | нет |
 | Подписка Grok (Grok CLI) | каналы `grokweb` / `twitter`, верификатор Grok | нет |
+| `TWITTERAPI_IO_KEY` | реплаи, био и тренды в канале `twitter`; keyword-фолбэк при мёртвом Grok (~$0.003 за страницу) | нет |
 | `EXA_API_KEY`, `YC_SEARCH_API_KEY`, научные ключи | семантический слой, Рунет, `search-paper` | нет |
 
 Чего плагин не делает: не ревьюит код (для этого `/code-review`), не заменяет обычный поиск на однофразовых вопросах, не принимает решений за человека. Каналы без ключа не падают, а деградируют — прогон продолжается на остальных.
@@ -99,7 +100,7 @@ VERDICT: NEEDS-REVISION  (Codex: needs-revision · Fable: needs-revision · Grok
 | Канал | Чем берёт | Деградация без ключа или CLI |
 |---|---|---|
 | `web` | Brave MCP + Firecrawl, place-слой `scripts/places-fetch.sh` | place-слой уходит в `brave_place_search` |
-| `codexweb` / `grokweb` / `twitter` | Codex CLI, Grok CLI | канал выпадает, прогон продолжается |
+| `codexweb` / `grokweb` / `twitter` | Codex CLI, Grok CLI (+ `scripts/twitterapi.sh` для реплаев/био/трендов) | `codexweb`/`grokweb` выпадают; `twitter` без Grok живёт keyword-only на TwitterAPI.io, без ключа выпадает |
 | `reddit` / `hackernews` / `substack` / `telegram` | MCP `reddit` + `scripts/{reddit-archive.py,hn-fetch.sh,substack-fetch.py,tg-preview.sh}` | лестница без ключей; сломался фетчер → Brave, `sourceQuality=LOW` |
 | `yandex` / `youtube` | `scripts/yandex-search.sh`, Brave + MCP `youtube` | `yandex` не предлагается; `youtube` живёт на Brave и локальных транскриптах |
 | `ja` / `zh` / `ko` / `eu` | `scripts/feed-fetch.py` (фиды и keyless-API площадок) | ключей не нужно; мёртвый фид → канал деградирует |

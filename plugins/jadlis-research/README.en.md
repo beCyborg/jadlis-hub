@@ -84,6 +84,7 @@ What you have to pay for and set up:
 | Firecrawl | page scraping, dynamic sites | yes |
 | ChatGPT subscription (Codex CLI) | the `codexweb` channel, the Codex verifier | no |
 | Grok subscription (Grok CLI) | the `grokweb` / `twitter` channels, the Grok verifier | no |
+| `TWITTERAPI_IO_KEY` | replies, author profiles and trends in the `twitter` channel; keyword-only fallback when Grok is down (~$0.003 per page) | no |
 | `EXA_API_KEY`, `YC_SEARCH_API_KEY`, science keys | semantic layer, Russian-language web, `search-paper` | no |
 
 What the plugin does not do: it does not review code (that is `/code-review`), does not replace ordinary search on one-phrase questions, and does not decide for you. A channel without its key degrades rather than failing — the run continues on the rest.
@@ -99,7 +100,7 @@ What the plugin does not do: it does not review code (that is `/code-review`), d
 | Channel | How it fetches | Degradation without a key or CLI |
 |---|---|---|
 | `web` | Brave MCP + Firecrawl, place layer via `scripts/places-fetch.sh` | the place layer falls back to `brave_place_search` |
-| `codexweb` / `grokweb` / `twitter` | Codex CLI, Grok CLI | the channel drops out, the run continues |
+| `codexweb` / `grokweb` / `twitter` | Codex CLI, Grok CLI (+ `scripts/twitterapi.sh` for replies/profiles/trends) | `codexweb`/`grokweb` drop out; `twitter` without Grok runs keyword-only on TwitterAPI.io, and drops out without the key |
 | `reddit` / `hackernews` / `substack` / `telegram` | MCP `reddit` + `scripts/{reddit-archive.py,hn-fetch.sh,substack-fetch.py,tg-preview.sh}` | keyless ladder; a broken fetcher falls back to Brave with `sourceQuality=LOW` |
 | `yandex` / `youtube` | `scripts/yandex-search.sh`, Brave + MCP `youtube` | `yandex` is not offered at all; `youtube` lives on Brave plus local transcripts |
 | `ja` / `zh` / `ko` / `eu` | `scripts/feed-fetch.py` (platform feeds and keyless APIs) | no keys needed; a dead feed degrades the channel |
