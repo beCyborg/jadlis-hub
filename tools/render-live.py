@@ -61,8 +61,8 @@ ASSET_TREES = [
 # Single files: (source rel, dest rel)
 SINGLE_FILES = [
     ("shared/obsidian-write-contract.md", "skills/_shared/obsidian-write-contract.md"),
-    ("agents/researcher-opus-xhigh.md", "agents/researcher-opus-xhigh.md"),
-    ("agents/orchestrator-fable-xhigh.md", "agents/orchestrator-fable-xhigh.md"),
+    ("agents/researcher-opus.md", "agents/researcher-opus.md"),
+    ("agents/orchestrator-opus.md", "agents/orchestrator-opus.md"),
 ]
 
 # Flat globs: (source dir, glob, dest dir)
