@@ -63,6 +63,8 @@ SINGLE_FILES = [
     ("shared/obsidian-write-contract.md", "skills/_shared/obsidian-write-contract.md"),
     ("agents/researcher-opus.md", "agents/researcher-opus.md"),
     ("agents/orchestrator-opus.md", "agents/orchestrator-opus.md"),
+    ("agents/synth-fable.md", "agents/synth-fable.md"),
+    ("agents/synth-opus.md", "agents/synth-opus.md"),
 ]
 
 # Flat globs: (source dir, glob, dest dir)
