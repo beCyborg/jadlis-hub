@@ -5,8 +5,76 @@
     "name": "Be Cyborg",
     "url": "https://github.com/beCyborg"
   },
-  "description": "Jadlis — персональная система управления жизнью в Obsidian: батч-драйвер, скелет vault, интервьюер, ресерч-стек.",
+  "description": "Jadlis — передача стека: рабочее место, голос, ключи и verif, ресерч, свои сотрудники, советы директоров, методология. Драйвер маршрута 0–6, внутренние и внешние плагины с пином по тегу.",
   "plugins": [
+    {
+      "name": "adv-psy",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/beCyborg/adv-psy-plugin.git",
+        "path": "plugins/adv-psy",
+        "ref": "adv-psy--v1.0.0",
+        "sha": "5abad11e67ad83b4d3d56f13d7c45f348fa67fd9"
+      },
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "psychology",
+        "council"
+      ],
+      "description": "Экстра: совет линз-методологий по психологической помощи (не терапия). Триаж-гейт, 11 линз, скептики, safety-ревью."
+    },
+    {
+      "name": "annas-archive",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/beCyborg/annas-archive-plugin.git",
+        "path": "plugins/annas-archive",
+        "ref": "annas-archive--v1.0.0",
+        "sha": "9adae797cd3de2929e472ec0ea3968968cebd261"
+      },
+      "category": "research",
+      "tags": [
+        "jadlis",
+        "books",
+        "papers"
+      ],
+      "description": "Экстра: поиск и скачивание книг и статей через Архив Анны по членскому API."
+    },
+    {
+      "name": "browser",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/beCyborg/claude-desktop-plugins.git",
+        "path": "plugins/browser",
+        "ref": "browser--v1.0.0",
+        "sha": "f85bceb7d089988228c98776c57780fc1c659b1a"
+      },
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "browser",
+        "playwright"
+      ],
+      "description": "Экстра: залогиненный Chrome через Playwright MCP (Extension Mode) — куки, логины, 2FA."
+    },
+    {
+      "name": "computer-use",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/beCyborg/claude-desktop-plugins.git",
+        "path": "plugins/computer-use",
+        "ref": "computer-use--v1.1.0",
+        "sha": "fa7842ef5f356b59c67bea725e4b70db0676e2a8"
+      },
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "desktop",
+        "macos"
+      ],
+      "description": "Экстра: нативные macOS-приложения через встроенный computer-use MCP — скриншоты, клики, ввод."
+    },
     {
       "name": "jadlis-interviewer",
       "source": "./plugins/jadlis-interviewer",
@@ -16,7 +84,7 @@
         "obsidian",
         "goals"
       ],
-      "description": "Батч 3: интервьюер — доводит vault до смысла жизни, потребностей с метриками и целей квартала."
+      "description": "Тир 6.2: интервьюер — доводит vault до смысла жизни, потребностей с метриками и целей квартала."
     },
     {
       "name": "jadlis-research",
@@ -28,7 +96,7 @@
         "search",
         "verification"
       ],
-      "description": "Батч 4: ресерч-стек — search, full-research (десять каналов), search-paper, verif плюс пять MCP-серверов и скилл настройки ключей."
+      "description": "Тиры 2–3: ресерч-стек — verif, search, full-research (четырнадцать каналов), search-paper плюс пять MCP-серверов и скилл ключей."
     },
     {
       "name": "jadlis-start",
@@ -39,7 +107,7 @@
         "onboarding",
         "obsidian"
       ],
-      "description": "Батч-драйвер передачи Jadlis: определяет текущий шаг пробами машины, ставит следующий плагин, не выдаёт батч авансом."
+      "description": "Драйвер маршрута передачи 0–6: определяет текущий тир пробами машины, ставит следующий плагин, не выдаёт тир авансом."
     },
     {
       "name": "jadlis-vault",
@@ -50,7 +118,72 @@
         "obsidian",
         "vault"
       ],
-      "description": "Батч 2: раскладывает скелет vault, CLAUDE.md и сниппет hide-files.css, ведёт первый перезапуск дня."
+      "description": "Тир 6.1: раскладывает скелет vault, CLAUDE.md и сниппет hide-files.css, ведёт первый перезапуск дня."
+    },
+    {
+      "name": "plugin-creator",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/beCyborg/skill-creator-plugin.git",
+        "path": "plugins/plugin-creator",
+        "ref": "plugin-creator--v1.0.1",
+        "sha": "750092335c8d7dccf6c9f6354ff2d33c3755161c"
+      },
+      "category": "development",
+      "tags": [
+        "jadlis",
+        "plugins",
+        "marketplace"
+      ],
+      "description": "Тир 4: сборка, валидация, релиз и миграция плагинов и маркетплейсов Claude Code по домашнему стандарту."
+    },
+    {
+      "name": "skill-creator",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/beCyborg/skill-creator-plugin.git",
+        "ref": "skill-creator--v1.8.0",
+        "sha": "a1434cee9b233f9b9c28170f0f84bff050fc8dc3"
+      },
+      "category": "development",
+      "tags": [
+        "jadlis",
+        "skills",
+        "evals"
+      ],
+      "description": "Тир 4: создание и улучшение скиллов — интервью, архитектура оркестрации, evals и бенчмарки."
+    },
+    {
+      "name": "swot-news",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/beCyborg/swot-news-plugin.git",
+        "ref": "swot-news--v1.0.0",
+        "sha": "dfe6a2a0316ca8be375cd47de5e364dcdd6c2501"
+      },
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "news",
+        "swot"
+      ],
+      "description": "Тир 6.3: ежедневный персональный SWOT новостей Kagi News — 4 аналитика + обогатитель, дельта-заметка в vault."
+    },
+    {
+      "name": "tldr",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/beCyborg/youtube-tldr-plugin.git",
+        "ref": "tldr--v1.0.0",
+        "sha": "cd1bfe7606f562cfc423f2b460f8b99a49c959a3"
+      },
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "youtube",
+        "summary"
+      ],
+      "description": "Экстра: выжимка YouTube-видео или текстового файла с практическими выводами."
     }
   ],
   "renames": {}

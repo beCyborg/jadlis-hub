@@ -1,80 +1,107 @@
-# Jadlis
+Русский · [English](README.en.md)
 
-Маркетплейс плагинов для передачи **Jadlis** — персональной системы управления жизнью, живущей в Obsidian-vault и управляемой из Claude Code.
+# Jadlis — передача стека
 
-Система ставится **батчами**: один батч = один вечер. Следующий батч не выдаётся, пока предыдущим реально не пользуются, — это не формальность, а единственный способ не утонуть.
+Маркетплейс `jadlis`: один вход, семь тиров, драйвер, который выдаёт ровно следующий шаг. Стек Claude Code + Obsidian, собранный за год, передаётся по одному инструменту за раз — инструменты сначала, методология в конце.
+
+## Маршрут 0–6
+
+| Тир | Что получаешь | Плагин | Доки |
+|---|---|---|---|
+| 0 | Рабочее место: Claude Code, CLI-зависимости, папка Obsidian, базовый `CLAUDE.md`, память, стиль ответов | `setup` | [docs/0-workplace](docs/0-workplace/README.md) |
+| 1 | Голос: Spokenly, промпт-корректор, словарь замен | — | [docs/1-voice](docs/1-voice/README.md) |
+| 2 | Ключи в Связке ключей + verif: три модели читают твой план порознь | `jadlis-research` | [docs/2-verif](docs/2-verif/README.md) |
+| 3 | Ресерч: `search`, `full-research` (четырнадцать каналов), `search-paper` | `jadlis-research` | [docs/3-research](docs/3-research/README.md) |
+| 4 | Свои сотрудники: скилл = должностная инструкция | `skill-creator`, `plugin-creator` | [skill-creator-plugin](https://github.com/beCyborg/skill-creator-plugin) |
+| 5 | Советы директоров: восемь советов, книжные линзы, скептики, вердикт | `advisors` | [advisors](https://github.com/beCyborg/advisors) |
+| 6 | Методология: 6.1 vault → 6.2 интервьюер → 6.3 SWOT новостей | `jadlis-vault`, `jadlis-interviewer`, `swot-news` | [docs/6-methodology](docs/6-methodology/README.md) |
+| E | Экстра по запросу: браузер, десктоп, выжимки видео, книги, adv-psy | `browser`, `computer-use`, `tldr`, `annas-archive`, `adv-psy` | README каждого репо |
+
+Следующий тир не выдаётся, пока пробы машины не подтвердят предыдущий. Критерии — в [драйвере](plugins/jadlis-start/README.md).
+
+## Как устроено
+
+```mermaid
+flowchart LR
+  H[jadlis-plugins<br/>маркетплейс jadlis] --> S[jadlis-start<br/>драйвер: пробы → следующий шаг]
+  S -->|тир 0| T0[setup]
+  S -->|тир 1| T1[docs/1-voice]
+  S -->|тиры 2–3| T2[jadlis-research]
+  S -->|тир 4| T4[skill-creator · plugin-creator]
+  S -->|тир 5| T5[advisors]
+  S -->|тир 6| T6[jadlis-vault · jadlis-interviewer · swot-news]
+  T4 -.пин ref+sha.-> R4[(skill-creator-plugin)]
+  T5 -.пин ref+sha.-> R5[(advisors)]
+  T6 -.пин ref+sha.-> R6[(swot-news-plugin)]
+```
+
+Внутренние плагины живут в `plugins/<name>`, внешние подключены к тому же `marketplace.json` записями `url` / `git-subdir` с пином `ref` (тег релиза) + `sha`. Получатель видит один маркетплейс; владелец релизит каждый репо отдельно и поднимает пин в хабе.
 
 ## Установка
 
-Открой Claude Code в папке будущего vault и вставь:
+Открой Claude Code (десктоп или терминал) и вставь:
 
 ```
-Ты — установщик системы Jadlis. Выполни ровно эти три шага и ничего сверх них.
-
-1. Bash: CLAUDE_CODE_PLUGIN_PREFER_HTTPS=1 claude plugin marketplace add https://github.com/beCyborg/jadlis-plugins.git
+Ты — установщик. Выполни ровно эти шаги и ничего сверх них:
+1. Bash: claude plugin marketplace add https://github.com/beCyborg/jadlis-plugins.git
 2. Bash: claude plugin install jadlis-start@jadlis
-3. Скажи мне одной строкой: «Отправь /reload-plugins, потом напиши: JADLIS-BATCH 2»
-
-Ничего не читай, не создавай и не ставь помимо этого.
+3. Скажи мне: «Отправь /reload-plugins, потом напиши: JADLIS-BATCH»
 ```
 
-Если Bash в приложении недоступен — те же две команды в Терминале:
+Те же две команды руками:
 
 ```bash
-CLAUDE_CODE_PLUGIN_PREFER_HTTPS=1 claude plugin marketplace add https://github.com/beCyborg/jadlis-plugins.git
+claude plugin marketplace add https://github.com/beCyborg/jadlis-plugins.git
 claude plugin install jadlis-start@jadlis
 ```
 
-Полный HTTPS-URL и `CLAUDE_CODE_PLUGIN_PREFER_HTTPS=1` — обе защиты сразу: shorthand `owner/repo` клонируется по SSH, а SSH-ключа у нового пользователя обычно нет.
-
-Дальше всё ведёт драйвер: `JADLIS-BATCH 2`, `JADLIS-BATCH 3`, `JADLIS-BATCH 4`.
+Репозитории публичные — git-креды и SSH-ключи не нужны; полный HTTPS-URL обязателен (shorthand `owner/repo` тянется по SSH). Дальше всё ведёт драйвер: `JADLIS-BATCH`, `JADLIS-BATCH 0`, … `JADLIS-BATCH 6.3`.
 
 ## Плагины
 
-| Плагин | Батч | Что даёт |
-|---|---|---|
-| `jadlis-start` | — | драйвер: определяет текущий шаг пробами машины, ставит следующий плагин, держит гейты |
-| `jadlis-vault` | 2 | скелет папок, `CLAUDE.md`, сниппет `hide-files.css`, первый перезапуск дня |
-| `jadlis-interviewer` | 3 | интервью: смысл жизни, потребности с метриками, цели квартала |
-| `jadlis-research` | 4 | `search`, `full-research`, `search-paper`, `verif` + шесть MCP-серверов + скилл ключей |
+| Плагин | Тир | Откуда | Ставится |
+|---|---|---|---|
+| `jadlis-start` | — | `plugins/jadlis-start` | `claude plugin install jadlis-start@jadlis` |
+| `setup` | 0 | `plugins/setup` | `setup@jadlis` |
+| `jadlis-research` | 2–3 | `plugins/jadlis-research` | `jadlis-research@jadlis` (ставится выключенным; включение спрашивает ключи) |
+| `skill-creator`, `plugin-creator` | 4 | [skill-creator-plugin](https://github.com/beCyborg/skill-creator-plugin) | `skill-creator@jadlis`, `plugin-creator@jadlis` |
+| `advisors` | 5 | [advisors](https://github.com/beCyborg/advisors) | `advisors@jadlis --config ADVISORS_MEMORY_DIR=~/advisors-memory` |
+| `jadlis-vault`, `jadlis-interviewer` | 6.1, 6.2 | `plugins/…` | `jadlis-vault@jadlis`, `jadlis-interviewer@jadlis` |
+| `swot-news` | 6.3 | [swot-news-plugin](https://github.com/beCyborg/swot-news-plugin) | `swot-news@jadlis` |
+| `browser`, `computer-use` | E | [claude-desktop-plugins](https://github.com/beCyborg/claude-desktop-plugins) | `browser@jadlis`, `computer-use@jadlis` |
+| `tldr` | E | [youtube-tldr-plugin](https://github.com/beCyborg/youtube-tldr-plugin) | `tldr@jadlis` |
+| `annas-archive` | E | [annas-archive-plugin](https://github.com/beCyborg/annas-archive-plugin) | `annas-archive@jadlis` |
+| `adv-psy` | E | [adv-psy-plugin](https://github.com/beCyborg/adv-psy-plugin) | `adv-psy@jadlis --config PSY_MEMORY_DIR=~/adv-psy` |
 
-`jadlis-research` ставится **выключенным** (`defaultEnabled: false`): он тянет шесть MCP-серверов и четыре платных сервиса (плюс два опциональных ключа — `REDDITAPIS_KEY` и `YC_SEARCH_API_KEY`; без них резервный Reddit-MCP и канал `yandex` просто выключены). Включается явно на батче 4.
+Плагины намеренно **не зависят** друг от друга — иначе установка тира 5 подтянула бы всё сразу и гейт исчез бы. Текущие пины внешних записей: `python3 tools/bump-pin.py --list`.
 
-Плагины намеренно **не зависят** друг от друга. Иначе установка батча 4 подтянула бы всё сразу и гейт «не перепрыгивать» исчез бы.
+## Обновление
 
-## Версии и обновление
-
-У каждого плагина в `plugin.json` задан явный semver (`version`), релиз помечается тегом `<plugin>--v<version>`. Версия — ключ кеша обновлений: без бампа получатель ничего не получит.
-
-У сторонних маркетплейсов (то есть у этого) **auto-update у получателей выключен по умолчанию**. Чтобы получить новую версию:
+У каждого плагина в `plugin.json` задан semver, релиз помечен тегом `<plugin>--v<version>`. У сторонних маркетплейсов **auto-update у получателей выключен по умолчанию**:
 
 ```bash
 claude plugin update <plugin>@jadlis
 ```
 
-Либо один раз включить auto-update: `/plugin` → **Marketplaces** → `jadlis`.
-
-## Совместимость
-
-- macOS + десктопный Claude Code (Bash обязателен для первого шага).
-- `jadlis-research` требует Claude Code ≥ 2.1.154 (`defaultEnabled`) и ≥ 2.1.193 (`renames`).
-
-> [!WARNING]
-> Имена плагинов и маркетплейса зафиксированы с первого релиза. Переименование ломает установки у тех, кто уже поставил; удаление маркетплейса удаляет и плагины. Если переименование всё же понадобится — только через `renames` в `marketplace.json`, дописывая новую запись, а не правя старую.
+Либо один раз включить auto-update: `/plugin` → **Marketplaces** → `jadlis`. Внешние плагины обновляются, когда владелец поднимает пин в хабе — `claude plugin update` увидит новую версию после этого.
 
 ## Ключи
 
-Ни один API-ключ в репозитории не лежит. Все регистрации получатель заводит свои.
+Ни один ключ в репозиториях не лежит; все регистрации получатель заводит свои. Стандарт один: **ключ вводится один раз и живёт в Связке ключей macOS**, не в файлах. Ключи MCP-серверов Claude Code спрашивает сам при включении плагина (`/plugin configure <plugin>@jadlis` — поменять), ключи скриптов пишет `/jadlis-research:keys`; читают их скрипты через `secret.sh`. Подробно — [docs/2-verif](docs/2-verif/README.md).
 
-Ключи разложены по двум рельсам:
+## Совместимость
 
-- **Рельса A** — `userConfig` плагина: `VAULT_PATH`, `BRAVE_API_KEY`, `FIRECRAWL_API_KEY`. Claude Code спрашивает их при включении, сенситивные уезжают в Связку ключей macOS.
-- **Рельса B** — блок `env` в `~/.claude/settings.json`: научные ключи, которые подставляются в `curl` (`PUBMED_API_KEY`, `SEMANTIC_SCHOLAR_API_KEY`, `OPENALEX_API_KEY`, …). Пишет их скилл `/jadlis-research:keys`.
+- macOS; Claude Code десктоп или CLI (Bash нужен для установки). Десктоп **не ставит** CLI `claude` — тир 0 закрывает это.
+- Claude Code ≥ 2.1.239 (`git-subdir` с `sha`, `userConfig`, `/plugin configure`).
+- Правки — форк + PR ([CONTRIBUTING.md](CONTRIBUTING.md)); конвенции коммитов и релизов — [CLAUDE.md](CLAUDE.md).
 
-Разделение вынужденное: сенситивные значения `userConfig` не долетают до обычных Bash-вызовов — они уезжают только в MCP/LSP-конфиги и хук-процессы.
+## Миграция со старой установки
 
-`auth.json` верификаторов (Codex, Grok) — симлинки на `~/.codex/auth.json` и `~/.grok/auth.json`, создаются локально и в git не попадают.
+Старым установкам ничего делать не нужно: имя маркетплейса `jadlis` и URL сохранены. Команда та же — `JADLIS-BATCH`, но номера теперь тиры 0–6 (старый батч 2 = 6.1, батч 3 = 6.2, батч 4 = тиры 2–3). После `claude plugin update jadlis-start@jadlis` драйвер сам перепишет журнал состояния по пробам.
+
+> [!WARNING]
+> Имена плагинов и маркетплейса зафиксированы с первого релиза. Переименование ломает установки; если оно понадобится — только через `renames` в `marketplace.json`, дописывая новую запись.
 
 ## Лицензия
 
-MIT — см. [LICENSE](LICENSE).
+MIT — см. [LICENSE](LICENSE). У `advisors` и `adv-psy` лицензии нет намеренно — см. их `NOTICE.md`.
