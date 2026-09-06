@@ -34,13 +34,13 @@ DEFAULT_PLUGIN = REPO_ROOT / "plugins" / "jadlis-research"
 DEFAULT_DEST = Path.home() / ".claude"
 
 # Value the placeholders resolve to in the live contour.
-LIVE_ROOT = "/Users/cyborg/.claude"
+LIVE_ROOT = str(Path.home() / ".claude")
 LIVE_ROOT_TILDE = "~/.claude"
 # ${CLAUDE_PLUGIN_DATA} holds the verifier homes. In the live contour those
 # live at $HOME/.claude/verif-homes (see ~/.claude/skills/verif/SKILL.md:62),
 # so the plugin-data root maps onto $HOME/.claude itself -- NOT a verif-data dir.
-PLUGIN_DATA_ROOT = "/Users/cyborg/.claude"
-VAULT_PATH = "/Users/cyborg/Jadlis"
+PLUGIN_DATA_ROOT = LIVE_ROOT
+VAULT_PATH = str(Path.home() / "Jadlis")
 
 TEXT_SUFFIXES = {".md", ".js", ".py", ".sh", ".json", ".toml"}
 
