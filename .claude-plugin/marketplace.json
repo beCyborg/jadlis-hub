@@ -30,8 +30,8 @@
         "source": "git-subdir",
         "url": "https://github.com/beCyborg/advisors.git",
         "path": "plugins/advisors",
-        "ref": "advisors--v1.0.1",
-        "sha": "a8c66ffa1643fee88901021b83fd45f06e3dbe0c"
+        "ref": "advisors--v1.0.2",
+        "sha": "5584ef04fd990b5596433276962ec985a50018a0"
       },
       "category": "productivity",
       "tags": [
