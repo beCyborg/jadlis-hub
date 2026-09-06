@@ -138,6 +138,17 @@
       "description": "Тир 4: сборка, валидация, релиз и миграция плагинов и маркетплейсов Claude Code по домашнему стандарту."
     },
     {
+      "name": "setup",
+      "source": "./plugins/setup",
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "onboarding",
+        "workplace"
+      ],
+      "description": "Тир 0: рабочее место — зависимости, настройки ~/.claude, память, папка Obsidian, по желанию терминал."
+    },
+    {
       "name": "skill-creator",
       "source": {
         "source": "url",
