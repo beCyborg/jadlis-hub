@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "jadlis-vault",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "Jadlis — рабочее место",
   "description": "Батч 2: раскладывает скелет vault, CLAUDE.md и сниппет hide-files.css, ведёт первый перезапуск дня.",
   "author": { "name": "Be Cyborg" },
