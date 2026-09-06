@@ -1,0 +1,9 @@
+[
+  { "from": "Cloud Code", "to": "Claude Code" },
+  { "from": "Filecrow", "to": "Firecrawl" },
+  { "from": "Judless", "to": "Jadlis" },
+  { "from": "Jutlist", "to": "Jadlis" },
+  { "from": "Judlist", "to": "Jadlis" },
+  { "from": "Timing Up", "to": "Timing App" },
+  { "from": "Groq", "to": "Grok" }
+]

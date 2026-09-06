@@ -1,0 +1,12 @@
+# type(scope): subject  — English, Conventional Commits, ≤72 chars
+# types: feat fix docs chore refactor ci build
+# scope: plugin name (jadlis-start, setup, jadlis-research…) or hub / docs / tools
+
+# Что изменилось: <1–3 предложения по-русски простым языком — для человека>
+
+# Details (for agents):
+# - Added:
+# - Changed:
+# - Removed:
+# - Migration: none
+# - Refs:
