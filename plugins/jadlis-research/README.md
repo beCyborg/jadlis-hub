@@ -1,108 +1,111 @@
-# jadlis-research — ресерч-стек (батч 4)
+Русский · [English](README.en.md)
 
-Пять скиллов, два workflow, пять MCP-серверов. Ставится выключенным
-(`defaultEnabled: false`) — включается явно на батче 4, потому что тянет платные сервисы.
+# jadlis-research — ресерч-стек
 
-## Скиллы
+Пять скиллов и пять MCP-серверов: обычный поиск, полный ресерч по сообществам, научный обзор и тройная проверка своего файла. Ставится выключенным (`defaultEnabled: false`) — тянет платные сервисы.
 
-| Команда | Что делает |
-|---|---|
-| `/jadlis-research:search` | веб-поиск Brave + Exa через `scripts/websearch.py` с роутингом по интенту (A/B закрыт 09.2026 ничьёй), Firecrawl/`pdf-fetch.sh` для страниц |
-| `/jadlis-research:full-research` | до 10 каналов: web×3 (Brave + Codex web + Grok web) + Reddit + X + HackerNews + Substack, opt-in `yandex` / `youtube` / `telegram` по роутинг-дереву → curator с evidence-префиксами → `urlhealth` → per-claim верификация двумя линзами + третий голос Codex при расхождении (ledger schema v3: CONFIRMED / DISPUTED / CHALLENGED / OUTDATED / UNCHECKED) → отчёт в vault |
-| `/jadlis-research:search-paper` | научный обзор: 9 источников, snowballing (OpenAlex 429 → S2), retraction-check (3 сигнала), синтез Fable 5.1 через мост, GRADE, `capStats` телеметрия капов |
-| `/jadlis-research:verif` | тройная adversarial-верификация (Codex + Fable/Opus + Grok) с арбитром |
-| `/jadlis-research:keys` | ключи рельсы B, homes верификаторов, smoke-таблица PASS/FAIL |
+## Зачем
 
-## Каналы `full-research`
+Один плагин закрывает три разные задачи, которые иначе разъезжаются по десятку инструментов.
 
-| Канал | Чем берёт | Гейт / деградация |
+- **Проверить свой файл** — `verif` читает его тремя ИИ разных компаний порознь и сводит итог по худшему.
+- **Разобраться в теме** — `full-research` идёт по четырнадцати каналам сразу и проверяет каждое утверждение по нескольким источникам.
+- **Опереться на науку** — `search-paper` собирает обзор по девяти научным источникам с проверкой отзывов статей.
+
+Отчёты и вердикты ложатся в vault, а не остаются в чате.
+
+## Как выглядит
+
+<details>
+<summary>Синтетический пример: команды и что они возвращают (данные вымышленные)</summary>
+
+```
+/jadlis-research:search кто платит за ключи конкурента
+── BRAVE web · 1256 ms · $0.0050 · 3 res
+ 1 example.com/pricing · Pricing — Example
+ 2 docs.example.org/api · API reference
+
+/jadlis-research:verif --file План.md
+Коротко: нужны правки — 9 сырых находок от 3 проверяющих, из них 3 серьёзных.
+VERDICT: NEEDS-REVISION  (Codex: needs-revision · Fable: needs-revision · Grok: approve)
+Артефакты: AI/verif/2026-09-06--plan--{codex,fable,grok,merged,arbiter}.json
+
+/jadlis-research:keys --list
+  BRAVE_API_KEY              31     pluginSecrets (Claude Code-credentials)
+  PUBMED_API_KEY             36     keychain generic (jadlis-research/PUBMED_API_KEY)
+  YC_SEARCH_API_KEY          -      НЕТ
+```
+
+</details>
+
+## Как поставить
+
+Скопируй блок ниже в Claude Code — он всё сделает сам.
+
+```text
+Ты — установщик. Выполни ровно эти шаги и ничего сверх них:
+1. Bash: claude plugin marketplace add https://github.com/beCyborg/jadlis-plugins.git
+2. Bash: claude plugin install jadlis-research@jadlis
+3. Bash: claude plugin enable jadlis-research
+4. Скажи мне: «Плагин включён. Дальше руками: /plugin configure jadlis-research@jadlis —
+   введи BRAVE_API_KEY и FIRECRAWL_API_KEY. Потом перезапусти Claude Code и вызови
+   /jadlis-research:keys».
+```
+
+Тот же путь руками, теми же командами:
+
+1. Заведи два обязательных ключа: Brave (тариф Search) и Firecrawl.
+2. `claude plugin marketplace add https://github.com/beCyborg/jadlis-plugins.git`
+3. `claude plugin install jadlis-research@jadlis`
+4. `claude plugin enable jadlis-research` — Claude Code спросит ключи класса A и положит их в Связку ключей macOS.
+5. Перезапусти Claude Code, затем `/jadlis-research:keys` — остальные ключи и smoke-проверка.
+
+Подробный разбор установки и стандарта ключей — [docs/2-verif](../../docs/2-verif/README.md); ресерч-часть — [docs/3-research](../../docs/3-research/README.md).
+
+## Как пользоваться
+
+Пять скиллов, три типовых сценария:
+
+```text
+/jadlis-research:search <вопрос>                  # веб-поиск Brave + Exa с роутингом по интенту
+/jadlis-research:full-research <тема>             # 14 каналов → верификация утверждений → отчёт в vault
+/jadlis-research:verif --file <свой план>         # три верификатора → арбитр → вопросы к тебе
+```
+
+Остальные два: `/jadlis-research:search-paper <вопрос>` — научный обзор по девяти источникам с GRADE-синтезом; `/jadlis-research:keys` — ключи, homes верификаторов и smoke-таблица PASS/FAIL.
+
+## Границы и стоимость
+
+Что нужно оплатить и завести:
+
+| Что | Роль | Обязательно |
 |---|---|---|
-| `web` | Brave MCP (`llm_context` / `web_search`), Firecrawl для одной страницы, place-слой через `scripts/places-fetch.sh` | `BRAVE_API_KEY` обязателен; place-слой без `GOOGLE_PLACES_API_KEY` → Brave Place |
-| `codexweb` | `codex exec` с web search (`gpt-6-astra`, effort high, service_tier default) | нет CLI или квота исчерпана → канал выключается квотным probe |
-| `grokweb` | Grok CLI headless, `web_search` + `web_fetch` | нет CLI → канал выпадает |
-| `reddit` | MCP `reddit` (`execute_operation`) + `reddit-alt`, no-auth-лестница Arctic Shift / Reddit search RSS через `scripts/reddit-archive.py` | всё опционально: лестница работает без ключей |
-| `twitter` | Grok CLI (`x_search` живёт в подписке, не в API) | нет CLI → канал выпадает |
-| `hackernews` | **свой фетчер** `scripts/hn-fetch.sh` (Algolia + Firebase, 0 кредитов, полный текст комментариев) | нужен `jq`; сломался → Brave `site:news.ycombinator.com`, дальше `sourceQuality=LOW`. **MCP для HN в плагине нет** |
-| `substack` | **свой фетчер** `scripts/substack-fetch.py` (анонимный `/api/v1`, отдаёт вовлечённость 👍/💬) | нужен `uv`; сломался → Brave `site:substack.com`, дальше `sourceQuality=LOW`. **MCP для Substack в плагине нет** |
-| `yandex` | `scripts/yandex-search.sh` (Yandex Search API v2, async) | `YC_SEARCH_API_KEY`; нет → канал не предлагается, принудительный выбор даёт `exit 2` + `LOW` |
-| `youtube` | Brave `site:youtube.com` (основной discovery) + MCP `youtube` для точного добора + `scripts/yt-transcript.py` для транскриптов | `YOUTUBE_API_KEY` только для MCP-добора; без ключа канал живёт на Brave + транскриптах |
-| `ja` / `zh` / `ko` / `eu` (языковые слои, trigger-scoped) | `scripts/feed-fetch.py` (Qiita API, Hatena/Zenn/note/V2EX/Velog/tistory/DOU/Golem/heise/Xataka/Menéame фиды, Stack Exchange API, Mastodon) + Brave на языке площадки; протоколы `ja-/zh-/ko-/eu-protocol.md` | ключей не нужно; фид мёртв → канал деградирует; в дефолтный набор не входят (гейт always-on — leave-one-out) |
-| `telegram` | `scripts/tg-preview.sh` (публичные `t.me/s/` превью) + Brave `site:t.me`-дорки | ключей не нужно; сиды каналов — `skills/full-research/references/telegram-seed-handles.md` |
+| Brave Search API, тариф Search | основной поисковый движок, ≈$0.005/запрос | да |
+| Firecrawl | скрап страниц и динамики | да |
+| Подписка ChatGPT (Codex CLI) | канал `codexweb`, верификатор Codex | нет |
+| Подписка Grok (Grok CLI) | каналы `grokweb` / `twitter`, верификатор Grok | нет |
+| `EXA_API_KEY`, `YC_SEARCH_API_KEY`, научные ключи | семантический слой, Рунет, `search-paper` | нет |
 
-Каналы `hackernews` и `substack` раньше ходили через MCP-серверы `hn` и `substack`
-(последний — вендоренный, с venv на 100+ МБ). Оба сняты: свои фетчеры дают полный текст,
-честный кэш и вовлечённость, а MCP-фоллбэка сознательно нет — при поломке фетчера канал
-деградирует, а не тянет мёртвый вес.
+Чего плагин не делает: не ревьюит код (для этого `/code-review`), не заменяет обычный поиск на однофразовых вопросах, не принимает решений за человека. Каналы без ключа не падают, а деградируют — прогон продолжается на остальных.
 
-## Ключи
+## Устройство
 
-**Рельса A — спрашивает Claude Code при включении плагина:** `VAULT_PATH`,
-`BRAVE_API_KEY`, `FIRECRAWL_API_KEY` (+ опц. `REDDITAPIS_KEY` — резервный Reddit-MCP
-`reddit-alt`; опц. `YOUTUBE_API_KEY` — MCP `youtube`). Сенситивные уезжают в
-Связку ключей macOS.
+**Ключи** живут в Связке ключей macOS и читаются одной точкой `scripts/secret.sh` (env → Keychain `jadlis-research`/`KEY` → `pluginSecrets` записи `Claude Code-credentials` → `.credentials.json` → `settings.json → env` как legacy). Класс A (`BRAVE_API_KEY`, `FIRECRAWL_API_KEY`, `REDDITAPIS_KEY`, `YOUTUBE_API_KEY`) пишет Claude Code через `/plugin configure jadlis-research@jadlis`; класс B (научные, Exa, Yandex, Places, почты) — скилл `keys` через stdin.
 
-**Рельса B — блок `env` в `~/.claude/settings.json`:** `PUBMED_API_KEY`, `PUBMED_EMAIL`,
-`SEMANTIC_SCHOLAR_API_KEY`, `OPENALEX_API_KEY`, `OPENALEX_MAILTO`, `CROSSREF_MAILTO`,
-`UNPAYWALL_EMAIL`, `EXA_API_KEY` (семантический слой `/search` и web-канала; нет ключа → слой
-пропускается) (+ опц. `CORE_API_KEY`, `YC_SEARCH_API_KEY` — opt-in канал `yandex`; `GOOGLE_PLACES_API_KEY` — place-слой
-канала `web`). Пишет `/jadlis-research:keys`.
+**Пять MCP-серверов:** `brave-search` (`BRAVE_API_KEY`), `firecrawl` (`FIRECRAWL_API_KEY`), `reddit` (без ключа), `reddit-alt` (`REDDITAPIS_KEY`, опц.), `youtube` (`YOUTUBE_API_KEY`, опц.). HackerNews, Substack и Telegram идут своими скриптами — MCP-фоллбэка сознательно нет.
 
-Разделение вынужденное: **сенситивный `userConfig` не долетает до обычных Bash-вызовов** —
-он уезжает только в MCP/LSP-конфиги и хук-процессы. Всё, что подставляется в `curl`
-внутри протоколов, обязано жить в `settings.json` → `env`.
+**Каналы `full-research`:**
 
-## Внешние зависимости
-
-| Что | Зачем | Без него |
+| Канал | Чем берёт | Деградация без ключа или CLI |
 |---|---|---|
-| Codex CLI (подписка ChatGPT) | канал `codexweb`, верификатор Codex | канал выпадает; `verif` работает на двух провайдерах |
-| Grok CLI (подписка Grok) | каналы `grokweb`, `twitter`, верификатор Grok | те же каналы выпадают; `verif` деградирует |
-| `jq` | `scripts/hn-fetch.sh`, `scripts/places-fetch.sh` | канал `hackernews` падает на Brave; place-слой не работает |
-| `uv` | шебанг `scripts/substack-fetch.py` и `scripts/yt-transcript.py` | канал `substack` падает на Brave; транскрипты YouTube недоступны |
-| `yt-dlp` (опц.) | фоллбэк транскриптов в `scripts/yt-transcript.py` | при блокировке `youtube-transcript-api` транскрипт недоступен, канал цитирует по описаниям |
-| `pdftotext` (poppler) | `scripts/pdf-fetch.sh` — PDF за 0 кредитов | PDF пойдут через Firecrawl, а их там режет PreToolUse-хук |
-| Obsidian CLI | dedup, wikilinks, запись в дневную заметку | vault-контракт деградирует на `CLI_UNAVAILABLE`, отчёт всё равно пишется |
-| `REDDITAPIS_KEY` (рельса A, опц.) | резервный MCP `reddit-alt` — точные имена сабов, не-английские запросы, live-метрики | сервер поднимается и отдаёт 401, в `/mcp` горит красным — **это нормально**; Reddit-канал идёт на основном MCP и no-auth-лестнице (Arctic Shift / PullPush) |
-| `YC_SEARCH_API_KEY` (рельса B, опц.) | opt-in канал `yandex` — слой Рунета, которого нет у Brave | канал не предлагается; если выбран принудительно — `exit 2`, `sourceQuality=LOW`, workflow не падает |
-| `GOOGLE_PLACES_API_KEY` (рельса B, опц.) | place-слой канала `web` для локальных тем | `exit 3 PLACES_KEY_MISSING` → слой сам уходит в `brave_place_search`. **Бюджет-кап в Google Cloud обязателен ДО первого вызова** — hard cap у API нет |
-| `YOUTUBE_API_KEY` (рельса A, опц.) | MCP `youtube` — точный добор видео и метаданные (квота 10k units/день, поиск = 100 units) | сервер отдаёт ошибку и горит красным в `/mcp` — это ожидаемо; канал `youtube` идёт через Brave + локальные транскрипты |
+| `web` | Brave MCP + Firecrawl, place-слой `scripts/places-fetch.sh` | place-слой уходит в `brave_place_search` |
+| `codexweb` / `grokweb` / `twitter` | Codex CLI, Grok CLI | канал выпадает, прогон продолжается |
+| `reddit` / `hackernews` / `substack` / `telegram` | MCP `reddit` + `scripts/{reddit-archive.py,hn-fetch.sh,substack-fetch.py,tg-preview.sh}` | лестница без ключей; сломался фетчер → Brave, `sourceQuality=LOW` |
+| `yandex` / `youtube` | `scripts/yandex-search.sh`, Brave + MCP `youtube` | `yandex` не предлагается; `youtube` живёт на Brave и локальных транскриптах |
+| `ja` / `zh` / `ko` / `eu` | `scripts/feed-fetch.py` (фиды и keyless-API площадок) | ключей не нужно; мёртвый фид → канал деградирует |
 
-## Служебные скрипты
+**Внешние бинарники:** `jq` (обязателен для `secret.sh`, `hn-fetch.sh`, `places-fetch.sh`), `uv` (шебанг `substack-fetch.py` и `yt-transcript.py`), `pdftotext` из poppler (для `pdf-fetch.sh`), опц. `yt-dlp`, опц. `codex` / `grok` CLI.
 
-| Скрипт | Роль |
-|---|---|
-| `scripts/websearch.py` | Brave + Exa: `brave` / `exa` / `both` / `contents` / `context` / `report`; лог вызовов и стоимости |
-| `scripts/urlhealth.py` | шаг `urlhealth` full-research: тристейт `ok/blocked/dead` по evidence-URL, сверка цитат со снапшотами, Wayback-проверка мёртвых (`fabricationSuspect`); всегда `exit 0`, дедлайн 90 с |
-| `scripts/workdir-gc.py` | ретенция `.full-research/` и `.search-paper/` в vault: 30 дней с ссылкой из заметки, 7 — без; без `--yes` только печатает |
-| `scripts/pdf-fetch.sh` | PDF за 0 кредитов (curl + pdftotext, кэш с TTL, гард Chrome-заглушек) |
-| `scripts/feed-fetch.py` | языковые слои: RSS/Atom/JSON/API → JSON + md-снапшоты `Extractor: feed-fetch`; `source <name> <arg>`, `--filter`, `--snapshot-dir` |
-| `scripts/reddit-archive.py` | no-auth Reddit: `search` (search.rss, вместо PullPush с 05.09.2026), `sub`/`comments` (Arctic Shift) |
+**Пути:** `${CLAUDE_PLUGIN_ROOT}` подставляется только в тексте `SKILL.md` и агентов. В `protocols/` и `references/` подстановки нет — там пишется `{PLUGIN_ROOT}`, значение агенту сообщает промпт workflow. В JS-скриптах workflow корень приходит через `args.pluginRoot`. В Bash-скриптах резолвится от самого скрипта. Рабочие homes верификаторов живут в `${CLAUDE_PLUGIN_DATA}/verif-homes/`, шаблоны — в `assets/verif-homes/`; `auth.json` там — симлинки на логины Codex и Grok, в репозиторий не попадают никогда.
 
-## Устройство путей
-
-- `${CLAUDE_PLUGIN_ROOT}` подставляется **в тексте SKILL.md и агентов** — там его можно писать прямо.
-- В файлах, которые читаются как файлы (`protocols/`, `references/`), плейсхолдера нет:
-  подстановка туда не доходит. Там пишется `{PLUGIN_ROOT}`, а значение агенту сообщает
-  промпт workflow отдельной строкой.
-- В JS-скриптах workflow подстановки тоже нет — скилл передаёт `pluginRoot` через `args`.
-- В Bash-скриптах корень резолвится от самого скрипта: `$(cd "$(dirname "$0")/.." && pwd)`.
-- Рабочие homes верификаторов живут в `${CLAUDE_PLUGIN_DATA}/verif-homes/`, а не в
-  `PLUGIN_ROOT`: root меняется при каждом обновлении плагина, а homes копят сессии и кэш.
-  Шаблоны (`AGENTS.md`, `config.toml`) едут в `assets/verif-homes/` и разворачиваются при
-  первом запуске. `auth.json` — симлинки на `~/.codex/auth.json` и `~/.grok/auth.json`,
-  в репозиторий не попадают никогда.
-
-## Модели
-
-Плагин **не задаёт** алиасов моделей — работает на дефолтах подписки. Агенты просят
-`model: opus`. Каналы, верификаторы и curator идут на Opus 5.
-
-Синтез ресерча (analyst) идёт через headless-мост `claude -p --model claude-fable-5`:
-скилл передаёт заказанную модель в `args.aiModel`, а workflow возвращает
-`aiModelActual` — ту, что ответила на самом деле. При падении моста analyst
-доигрывается на Opus 5, и Phase C скилла правит `ai_model` во frontmatter отчёта
-по `aiModelActual`, чтобы заметка не врала. Отключить мост целиком:
-`fableBridge: false` + `aiModel: "claude-opus-5"`.
-
-Верификаторы `/jadlis-research:verif`: Codex (`gpt-6-astra`), Claude Fable 5,
-Grok (`grok-4.6`), арбитр — Fable 5.
+**Модели:** плагин не задаёт алиасов и работает на дефолтах подписки. Синтез ресерча идёт через headless-мост `claude -p --model claude-fable-5`, при падении доигрывается на Opus 5, а скилл правит `ai_model` во frontmatter отчёта по фактически ответившей модели. Верификаторы `verif`: Codex `gpt-6-astra`, Claude Fable 5, Grok `grok-4.6`; арбитр — Fable 5.
