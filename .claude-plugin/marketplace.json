@@ -25,6 +25,25 @@
       "description": "Экстра: совет линз-методологий по психологической помощи (не терапия). Триаж-гейт, 11 линз, скептики, safety-ревью."
     },
     {
+      "name": "advisors",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/beCyborg/advisors.git",
+        "path": "plugins/advisors",
+        "ref": "advisors--v1.0.0",
+        "sha": "b73683b140938d6ae7416dc914d6141eae96d512"
+      },
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "council",
+        "decision-making",
+        "sales",
+        "copywriting"
+      ],
+      "description": "Тир 5: восемь советов директоров на книжных линзах — решения, продукт, медийность, продажи, тексты, когнитивные искажения, стратегия, диагностика проектов. Линзы отвечают порознь, скептики проверяют, валидатор пишет один вердикт."
+    },
+    {
       "name": "annas-archive",
       "source": {
         "source": "git-subdir",
