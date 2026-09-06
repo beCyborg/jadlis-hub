@@ -13,8 +13,8 @@
         "source": "git-subdir",
         "url": "https://github.com/beCyborg/adv-psy-plugin.git",
         "path": "plugins/adv-psy",
-        "ref": "adv-psy--v1.0.1",
-        "sha": "45d9275892c13021eb2e97418357b6c89ec03d61"
+        "ref": "adv-psy--v1.1.0",
+        "sha": "379af975bcff71f3ac1f337c04928fd945a9349d"
       },
       "category": "productivity",
       "tags": [
@@ -30,8 +30,8 @@
         "source": "git-subdir",
         "url": "https://github.com/beCyborg/advisors.git",
         "path": "plugins/advisors",
-        "ref": "advisors--v1.0.0",
-        "sha": "b73683b140938d6ae7416dc914d6141eae96d512"
+        "ref": "advisors--v1.0.1",
+        "sha": "a8c66ffa1643fee88901021b83fd45f06e3dbe0c"
       },
       "category": "productivity",
       "tags": [
@@ -49,8 +49,8 @@
         "source": "git-subdir",
         "url": "https://github.com/beCyborg/annas-archive-plugin.git",
         "path": "plugins/annas-archive",
-        "ref": "annas-archive--v1.0.1",
-        "sha": "ab45ffde01c87b4178e8818bebef0ca944934f47"
+        "ref": "annas-archive--v1.0.2",
+        "sha": "5eb4a41663ad70465e904160e7d0f623a70f2b38"
       },
       "category": "research",
       "tags": [
@@ -66,8 +66,8 @@
         "source": "git-subdir",
         "url": "https://github.com/beCyborg/claude-desktop-plugins.git",
         "path": "plugins/browser",
-        "ref": "browser--v1.0.1",
-        "sha": "107b469e1d96af35df7e5f63444bf335b7908f7e"
+        "ref": "browser--v1.1.1",
+        "sha": "c53d0fd91abf14b21beba7a1addba72f288f4dec"
       },
       "category": "productivity",
       "tags": [
@@ -83,8 +83,8 @@
         "source": "git-subdir",
         "url": "https://github.com/beCyborg/claude-desktop-plugins.git",
         "path": "plugins/computer-use",
-        "ref": "computer-use--v1.1.1",
-        "sha": "107b469e1d96af35df7e5f63444bf335b7908f7e"
+        "ref": "computer-use--v1.1.2",
+        "sha": "7a193c79648c7fdd3842bfbf66e25336100c4fe3"
       },
       "category": "productivity",
       "tags": [
@@ -188,8 +188,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/swot-news-plugin.git",
-        "ref": "swot-news--v1.0.1",
-        "sha": "9fec60564c34a98db57908b14368cfaf34f4aaae"
+        "ref": "swot-news--v2.0.0",
+        "sha": "4575190fe686e32013bb7602151376e21a6e9d8e"
       },
       "category": "productivity",
       "tags": [
