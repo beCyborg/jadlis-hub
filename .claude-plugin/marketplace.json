@@ -13,8 +13,8 @@
         "source": "git-subdir",
         "url": "https://github.com/beCyborg/adv-psy-plugin.git",
         "path": "plugins/adv-psy",
-        "ref": "adv-psy--v1.0.0",
-        "sha": "5abad11e67ad83b4d3d56f13d7c45f348fa67fd9"
+        "ref": "adv-psy--v1.0.1",
+        "sha": "45d9275892c13021eb2e97418357b6c89ec03d61"
       },
       "category": "productivity",
       "tags": [
@@ -30,8 +30,8 @@
         "source": "git-subdir",
         "url": "https://github.com/beCyborg/annas-archive-plugin.git",
         "path": "plugins/annas-archive",
-        "ref": "annas-archive--v1.0.0",
-        "sha": "9adae797cd3de2929e472ec0ea3968968cebd261"
+        "ref": "annas-archive--v1.0.1",
+        "sha": "ab45ffde01c87b4178e8818bebef0ca944934f47"
       },
       "category": "research",
       "tags": [
@@ -47,8 +47,8 @@
         "source": "git-subdir",
         "url": "https://github.com/beCyborg/claude-desktop-plugins.git",
         "path": "plugins/browser",
-        "ref": "browser--v1.0.0",
-        "sha": "f85bceb7d089988228c98776c57780fc1c659b1a"
+        "ref": "browser--v1.0.1",
+        "sha": "107b469e1d96af35df7e5f63444bf335b7908f7e"
       },
       "category": "productivity",
       "tags": [
@@ -64,8 +64,8 @@
         "source": "git-subdir",
         "url": "https://github.com/beCyborg/claude-desktop-plugins.git",
         "path": "plugins/computer-use",
-        "ref": "computer-use--v1.1.0",
-        "sha": "fa7842ef5f356b59c67bea725e4b70db0676e2a8"
+        "ref": "computer-use--v1.1.1",
+        "sha": "107b469e1d96af35df7e5f63444bf335b7908f7e"
       },
       "category": "productivity",
       "tags": [
@@ -126,8 +126,8 @@
         "source": "git-subdir",
         "url": "https://github.com/beCyborg/skill-creator-plugin.git",
         "path": "plugins/plugin-creator",
-        "ref": "plugin-creator--v1.0.1",
-        "sha": "750092335c8d7dccf6c9f6354ff2d33c3755161c"
+        "ref": "plugin-creator--v1.0.2",
+        "sha": "fd9e7e59068399f79ee7b173032439ab61a80e8c"
       },
       "category": "development",
       "tags": [
@@ -153,8 +153,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/skill-creator-plugin.git",
-        "ref": "skill-creator--v1.8.0",
-        "sha": "a1434cee9b233f9b9c28170f0f84bff050fc8dc3"
+        "ref": "skill-creator--v1.8.1",
+        "sha": "fd9e7e59068399f79ee7b173032439ab61a80e8c"
       },
       "category": "development",
       "tags": [
@@ -169,8 +169,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/swot-news-plugin.git",
-        "ref": "swot-news--v1.0.0",
-        "sha": "dfe6a2a0316ca8be375cd47de5e364dcdd6c2501"
+        "ref": "swot-news--v1.0.1",
+        "sha": "9fec60564c34a98db57908b14368cfaf34f4aaae"
       },
       "category": "productivity",
       "tags": [
@@ -185,8 +185,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/youtube-tldr-plugin.git",
-        "ref": "tldr--v1.0.0",
-        "sha": "cd1bfe7606f562cfc423f2b460f8b99a49c959a3"
+        "ref": "tldr--v1.0.1",
+        "sha": "c8b581719ab62b3f4255698cdeea0662e28e4828"
       },
       "category": "productivity",
       "tags": [
