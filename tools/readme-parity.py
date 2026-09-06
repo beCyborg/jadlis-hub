@@ -25,7 +25,7 @@ import sys
 import tempfile
 from pathlib import Path
 
-SKIP_DIRS = {".git", "node_modules", "__pycache__", ".playwright-mcp"}
+SKIP_DIRS = {".git", "node_modules", "__pycache__", ".playwright-mcp", "assets"}
 H2_RE = re.compile(r"^##\s+(.+?)\s*$", re.M)
 FENCE_RE = re.compile(r"^```mermaid\s*\n(.*?)^```", re.M | re.S)
 LINK_RE = re.compile(r"!?\[[^\]]*\]\(([^)\s]+)(?:\s+\"[^\"]*\")?\)")
