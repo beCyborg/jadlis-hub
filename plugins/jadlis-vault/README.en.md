@@ -67,7 +67,7 @@ Paste this block to an agent in Claude Code opened in the vault folder:
 
 ```text
 You are an installer. Do exactly these steps and nothing beyond them:
-1. Bash: claude plugin marketplace add https://github.com/beCyborg/jadlis-plugins.git
+1. Bash: claude plugin marketplace add https://github.com/beCyborg/jadlis-start.git
 2. Bash: claude plugin install jadlis-vault@jadlis
 3. Tell me in one line: "Send /reload-plugins, then write: /jadlis-vault:vault-setup"
 Do not read, create or install anything else.
@@ -76,7 +76,7 @@ Do not read, create or install anything else.
 The manual path is the same commands:
 
 ```bash
-claude plugin marketplace add https://github.com/beCyborg/jadlis-plugins.git
+claude plugin marketplace add https://github.com/beCyborg/jadlis-start.git
 claude plugin install jadlis-vault@jadlis
 ```
 

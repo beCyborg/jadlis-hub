@@ -1,10 +1,10 @@
-# jadlis-plugins — конвенции репо
+# jadlis-start — конвенции репо
 
 Хаб передачи стека Jadlis: маркетплейс `jadlis`, внутренние плагины в `plugins/<name>`, внешние — записями `url` / `git-subdir` с пином `ref` + `sha`. Доки по тирам 0–6 в `docs/<N>-<slug>/`. Эти правила читает агент, который коммитит.
 
 ## Коммиты
 
-- Тема — Conventional Commits на английском: `type(scope): subject`, ≤72 символа. `scope` = имя плагина (`jadlis-start`, `setup`, `jadlis-research`) или `hub`, `docs`, `tools`.
+- Тема — Conventional Commits на английском: `type(scope): subject`, ≤72 символа. `scope` = имя внутреннего плагина (`jadlis-start`, `setup`, `jadlis-vault`, `jadlis-interviewer`) или `hub`, `docs`, `tools`.
 - Тело двухслойное, шаблон в `.gitmessage` (`git config commit.template .gitmessage`):
   1. `Что изменилось:` — 1–3 предложения по-русски простым языком, для человека.
   2. `Details (for agents):` — буллеты `Added / Changed / Removed / Migration / Refs` с путями.
@@ -38,6 +38,6 @@
 
 ## Разработка
 
-- Правки только в рабочем клоне `~/jadlis-plugins`, никогда в `~/.claude/plugins/marketplaces/` (фоновый рефреш стирает правки).
+- Правки только в рабочем клоне `~/jadlis-start`, никогда в `~/.claude/plugins/marketplaces/` (фоновый рефреш стирает правки).
 - Перед коммитом: `claude plugin validate .claude-plugin/marketplace.json` и `python3 tools/readme-parity.py`.
 - Язык доков — русский (RU-файл первичен), код и идентификаторы — английский.

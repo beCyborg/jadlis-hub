@@ -22,7 +22,7 @@ Five steps of the mechanism:
 
 ![A business-plan canvas on three legs, robotic arms pulling the legs out](../img/01-verif-01.webp)
 
-One run, end to end (tag `jadlis-research--v1.2.0`):
+One run, end to end (tag `verif--v1.0.0`):
 
 ```mermaid
 flowchart TD
@@ -67,26 +67,25 @@ Paste the block below into Claude Code — it does the work.
 
 ```text
 You are an installer. Do exactly these steps and nothing beyond them:
-1. Bash: claude plugin marketplace add https://github.com/beCyborg/jadlis-plugins.git
-2. Bash: claude plugin install jadlis-research@jadlis
-3. Bash: claude plugin enable jadlis-research
-4. Tell me: "Plugin enabled. Your turn: run /plugin configure jadlis-research@jadlis and
-   enter BRAVE_API_KEY and FIRECRAWL_API_KEY — they go into the macOS Keychain. Then restart
-   Claude Code and run /jadlis-research:keys."
+1. Bash: claude plugin marketplace add https://github.com/beCyborg/jadlis-start.git
+2. Bash: claude plugin install search@jadlis --config BRAVE_API_KEY=<my Brave key> --config FIRECRAWL_API_KEY=<my Firecrawl key>
+3. Bash: claude plugin install verif@jadlis
+4. Tell me: "Both plugins are in, the keys went into the macOS Keychain. Restart Claude Code
+   fully — not /reload-plugins, search ships its own MCP servers — and run /search:keys."
 ```
 
 The same path by hand, same commands:
 
 1. **Get the two required keys.** Brave — https://api-dashboard.search.brave.com, the **Search** plan is the one you need. Firecrawl — https://firecrawl.dev/app/api-keys, a key shaped like `fc-…`.
-2. **Add the marketplace and install the plugin.** `claude plugin marketplace add https://github.com/beCyborg/jadlis-plugins.git`, then `claude plugin install jadlis-research@jadlis`.
-3. **Enable it:** `claude plugin enable jadlis-research`. Claude Code asks for the class A keys and stores them in the Keychain. Already installed — run `/plugin configure jadlis-research@jadlis` right in the chat.
-4. **Restart Claude Code.** The plugin ships MCP servers, and those start with the session.
-5. **Run `/jadlis-research:keys`.** The skill shows what is already there and takes the rest. If you only want `verif`, skip the science keys — they belong to tier 3.
+2. **Add the marketplace and install `search`.** `claude plugin marketplace add https://github.com/beCyborg/jadlis-start.git`, then `claude plugin install search@jadlis --config BRAVE_API_KEY=… --config FIRECRAWL_API_KEY=…`. The keys go into the Keychain, never into files; to change them later — `/plugin configure search@jadlis`.
+3. **Install `verif`:** `claude plugin install verif@jadlis`.
+4. **Restart Claude Code fully.** `search` ships MCP servers, and those start with the session; `/reload-plugins` does not apply to such plugins.
+5. **Run `/search:keys`.** The skill shows what is already there and takes the rest. If you only want `verif`, skip the science keys — they belong to tier 3.
 
 Your first run, on a file of your own:
 
 ```text
-/jadlis-research:verif --file <path to your plan>
+/verif --file <path to your plan>
 ```
 
 No plan at hand — any draft decision will do. A synthetic snippet to try it on:
@@ -109,9 +108,9 @@ Missing both CLIs does not break the run: one Claude branch is left, but the who
 Three scenarios, three commands:
 
 ```text
-/jadlis-research:verif --file Plan.md                    # full run: three branches → arbiter → questions
-/jadlis-research:verif --file Research.md --report-only  # report only, no questions, no edits
-/jadlis-research:verif --file Doc.md --only fable        # a single branch: a quick rough pass
+/verif --file Plan.md                    # full run: three branches → arbiter → questions
+/verif --file Research.md --report-only  # report only, no questions, no edits
+/verif --file Doc.md --only fable        # a single branch: a quick rough pass
 ```
 
 Worth knowing as it runs:
@@ -126,7 +125,7 @@ Worth knowing as it runs:
 What `verif` does not do:
 
 - It does not review code or diffs — that is `/code-review`.
-- It does not research a topic from scratch — that is tier 3 (`full-research`, `search-paper`).
+- It does not research a topic from scratch — that is tier 3 (`research`, `science-research`).
 - It does not check a single phrase or date: thirty seconds of ordinary search is cheaper.
 - It does not decide anything: it brings findings, you answer the questions.
 
@@ -147,13 +146,13 @@ One principle: **a key is entered once and lives in the macOS Keychain, not in f
 
 | Class | Examples | Where it lives | Who writes it |
 |---|---|---|---|
-| A — keys of the plugin's MCP servers | `BRAVE_API_KEY`, `FIRECRAWL_API_KEY`, `REDDITAPIS_KEY`, `YOUTUBE_API_KEY` | Keychain, the Claude Code item `Claude Code-credentials` → `pluginSecrets` | Claude Code: `/plugin configure jadlis-research@jadlis`, the enable-time dialog, or `claude plugin install … --config KEY=…` |
-| B — keys of scripts and `curl` blocks | science sources, Exa, Yandex, Places, contact emails | Keychain, a plain generic item: service `jadlis-research`, account = the key name | the `/jadlis-research:keys` skill — the value arrives on stdin, never on the command line |
+| A — keys of the plugin's MCP servers | `BRAVE_API_KEY`, `FIRECRAWL_API_KEY`, `REDDITAPIS_KEY`, `YOUTUBE_API_KEY` | Keychain, the Claude Code item `Claude Code-credentials` → `pluginSecrets` | Claude Code: `/plugin configure search@jadlis` or `claude plugin install search@jadlis --config KEY=…` |
+| B — keys of scripts and `curl` blocks | science sources, Exa, Yandex, Places, contact emails | Keychain, a plain generic item: service `jadlis`, account = the key name | the `/search:keys` skill — the value arrives on stdin, never on the command line |
 
-One entry point reads them all: `scripts/secret.sh` inside the plugin. Resolution order:
+One entry point reads them all: `scripts/secret.sh` inside the `search` plugin. Resolution order:
 
 1. The environment variable `$KEY`, if set.
-2. Keychain generic item: service `jadlis-research`, account `KEY`.
+2. Keychain generic item: service `jadlis`, account `KEY` (items under the old `jadlis-research` service are still read).
 3. `pluginSecrets` from the `Claude Code-credentials` item (then `Claude Code-credentials-*` when there are several profiles).
 4. `.credentials.json` in the settings directory — for platforms without a keychain.
 5. `settings.json → env` — the legacy rail; the `keys` skill offers to retire it and delete the values from the file.

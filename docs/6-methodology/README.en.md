@@ -99,7 +99,7 @@ Paste this block to an agent in Claude Code opened in the vault folder:
 
 ```text
 You are an installer. Do exactly these steps and nothing beyond them:
-1. Bash: claude plugin marketplace add https://github.com/beCyborg/jadlis-plugins.git
+1. Bash: claude plugin marketplace add https://github.com/beCyborg/jadlis-start.git
 2. Bash: claude plugin install jadlis-start@jadlis
 3. Tell me in one line: "Send /reload-plugins, then write: JADLIS-BATCH 6"
 Do not read, create or install anything else.

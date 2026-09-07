@@ -11,8 +11,8 @@ argument-hint: "<номер тира 0–6 | продолжить | статус
 
 ```
 VAULT = ${user_config.VAULT_PATH}
-HUB   = https://github.com/beCyborg/jadlis-plugins
-DOCS  = https://github.com/beCyborg/jadlis-plugins/blob/main/docs
+HUB   = https://github.com/beCyborg/jadlis-start
+DOCS  = https://github.com/beCyborg/jadlis-start/blob/main/docs
 ```
 
 Ты ведёшь человека, который до этого Claude Code, возможно, не открывал. Читатель с СДВГ:
@@ -125,7 +125,7 @@ maxAllowed = наименьший N из 0…6, который не закрыт
 Установка упала («marketplace not found») → маркетплейс не добавлен. Одна команда:
 
 ```bash
-claude plugin marketplace add https://github.com/beCyborg/jadlis-plugins.git
+claude plugin marketplace add https://github.com/beCyborg/jadlis-start.git
 ```
 
 Полный HTTPS-URL обязателен: shorthand `owner/repo` клонируется по SSH, а SSH-ключа у

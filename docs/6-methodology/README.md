@@ -99,7 +99,7 @@ last_value:
 
 ```text
 Ты — установщик. Выполни ровно эти шаги и ничего сверх них:
-1. Bash: claude plugin marketplace add https://github.com/beCyborg/jadlis-plugins.git
+1. Bash: claude plugin marketplace add https://github.com/beCyborg/jadlis-start.git
 2. Bash: claude plugin install jadlis-start@jadlis
 3. Скажи мне одной строкой: «Отправь /reload-plugins, потом напиши: JADLIS-BATCH 6»
 Ничего не читай, не создавай и не ставь помимо этого.

@@ -1,8 +1,8 @@
 [Русский](README.md) · English
 
-# Tier 3 · Research: `search`, `full-research`, `search-paper`
+# Tier 3 · Research: `research` and `science-research`
 
-Three tools from one plugin, `jadlis-research`: quick web search, claim verification across many channels, and a scientific review that grades how strong the evidence is. Every number below is checked against the plugin code at tag `jadlis-research--v1.2.0`.
+Two plugins on top of the base `search`: `research` — claim verification across many channels, `science-research` — a scientific review that grades how strong the evidence is. Quick web search, `/search`, arrives with the base plugin back in tier 2. Every number below is checked against the plugin code at tags `research--v1.0.0` and `science-research--v1.0.0`.
 
 ## Why
 
@@ -10,13 +10,13 @@ Pick the tool by the question, not by how big the topic feels.
 
 | Question | Tool | What you get |
 |---|---|---|
-| "What is known about X?" | `/jadlis-research:search` | an answer with links in chat + a cost line in the log |
-| "Is that still true, and what do practitioners say?" | `/jadlis-research:full-research` | a vault note + a ledger: what held up, what was dropped and why |
-| "How strongly is this actually proven?" | `/jadlis-research:search-paper` | a report with a GRADE rating per outcome |
+| "What is known about X?" | `/search` | an answer with links in chat + a cost line in the log |
+| "Is that still true, and what do practitioners say?" | `/research` | a vault note + a ledger: what held up, what was dropped and why |
+| "How strongly is this actually proven?" | `/science-research` | a report with a GRADE rating per outcome |
 
-The fork between the last two is the unit of work. For `full-research` it is a **claim**: it is checked by counter-search across different types of sources. For `search-paper` it is a **paper and its outcome**: the check is bibliographic and methodological.
+The fork between the last two is the unit of work. For `research` it is a **claim**: it is checked by counter-search across different types of sources. For `science-research` it is a **paper and its outcome**: the check is bibliographic and methodological.
 
-The problem this solves: half an hour of searching gives you the same thing in seven places. It feels like confirmation, but usually it is one quote everybody copied. Three search engines are one type of source, not three. `full-research` runs a separate phase that tries to refute each claim and lets only the survivors into the conclusions. `search-paper` answers a different question — not "is this true" but "how strongly is it proven" — and that rating can go down, with a stated reason.
+The problem this solves: half an hour of searching gives you the same thing in seven places. It feels like confirmation, but usually it is one quote everybody copied. Three search engines are one type of source, not three. `research` runs a separate phase that tries to refute each claim and lets only the survivors into the conclusions. `science-research` answers a different question — not "is this true" but "how strongly is it proven" — and that rating can go down, with a stated reason.
 
 ## What it looks like
 
@@ -45,7 +45,7 @@ That is the verification phase: one lens hunts for a refutation, the other takes
 Channels roll up into source families: `web`, `codexweb`, `grokweb` and `yandex` are one family (the same open web), while Reddit, X, HackerNews, Substack, YouTube, Telegram and the language layers are separate ones. Agreement inside one family does not count as independent confirmation.
 
 <details>
-<summary><code>full-research</code> report fragment (synthetic example)</summary>
+<summary><code>research</code> report fragment (synthetic example)</summary>
 
 ```markdown
 ---
@@ -87,10 +87,10 @@ The report body itself stays in Russian — it becomes the vault note as is.
 
 ![Sheets on a conveyor pass three arches: a hook pulls one into a closed box, a stamp presses the second, the third moves on](../img/06-search-paper-03.webp)
 
-`search-paper` is built differently: 9 scientific sources in parallel → citation snowballing (up to 6 hubs per round, 2 rounds max, corpus cap of 120 papers) → link hygiene (batches of 25 DOIs: existence, title match, three retraction signals) → GRADE per outcome → an independent critic → edits with confidence 0.7 and above.
+`science-research` is built differently: 9 scientific sources in parallel → citation snowballing (up to 6 hubs per round, 2 rounds max, corpus cap of 120 papers) → link hygiene (batches of 25 DOIs: existence, title match, three retraction signals) → GRADE per outcome → an independent critic → edits with confidence 0.7 and above.
 
 <details>
-<summary><code>search-paper</code> report fragment (synthetic example)</summary>
+<summary><code>science-research</code> report fragment (synthetic example)</summary>
 
 ```markdown
 > [!abstract] TL;DR
@@ -110,33 +110,34 @@ Excluded: 1 retracted paper, 2 papers whose title did not match (unverified).
 
 ## Install
 
-Add the scientific keys and the external binaries — the plugin itself is already in place from tier 2.
+Add the scientific keys and the external binaries — the base `search` plugin is already in place from tier 2.
 
 Block to hand to an agent:
 
 ```text
 You are the installer. Do exactly these steps and nothing beyond them:
-1. Bash: claude plugin marketplace add https://github.com/beCyborg/jadlis-plugins.git
+1. Bash: claude plugin marketplace add https://github.com/beCyborg/jadlis-start.git
    (already added — ignore the message and move on)
-2. Bash: claude plugin install jadlis-research@jadlis
-   (already installed — skip this step)
+2. Bash: claude plugin install research@jadlis, then claude plugin install science-research@jadlis
+   (both pull the base search; skip whatever is already installed)
 3. Bash: for b in uv jq pdftotext yt-dlp; do command -v $b >/dev/null && echo "$b ok" || echo "$b MISSING"; done
 4. Bash: install exactly what is MISSING — brew install uv / brew install jq /
    brew install poppler (provides pdftotext) / brew install yt-dlp
-5. Run the skill /jadlis-research:keys and follow it through to the PASS/FAIL table.
+5. Run the skill /search:keys and follow it through to the PASS/FAIL table.
 6. Tell me: which keys were stored, which table rows are FAIL, and which keys still need signing up for.
 ```
 
 The manual path uses the same commands:
 
 ```bash
-claude plugin marketplace add https://github.com/beCyborg/jadlis-plugins.git
-claude plugin install jadlis-research@jadlis
+claude plugin marketplace add https://github.com/beCyborg/jadlis-start.git
+claude plugin install research@jadlis
+claude plugin install science-research@jadlis
 for b in uv jq pdftotext yt-dlp; do command -v $b >/dev/null && echo "$b ok" || echo "$b MISSING"; done
 brew install uv jq poppler yt-dlp   # install only what came back MISSING
 ```
 
-Then `/jadlis-research:keys`: the skill takes values one at a time, stores them in the macOS Keychain (class B: service `jadlis-research`, account = the key name) and prints a PASS/FAIL smoke table per source. Key values are never shown — not in the answer, not in Bash echo.
+Then `/search:keys`: the skill takes values one at a time, stores them in the macOS Keychain (class B: service `jadlis`, account = the key name) and prints a PASS/FAIL smoke table per source. Key values are never shown — not in the answer, not in Bash echo.
 
 | Key | Needed for | Without it |
 |---|---|---|
@@ -148,7 +149,7 @@ Then `/jadlis-research:keys`: the skill takes values one at a time, stores them 
 
 Sign-ups are free and hand you a key immediately: PubMed at `ncbi.nlm.nih.gov/account/settings/`, Semantic Scholar at `semanticscholar.org/product/api`, OpenAlex at `openalex.org`, CORE at `core.ac.uk/services/api`. Crossref and Unpaywall have no sign-up at all: they only need your own contact address, which is how those APIs know who is knocking.
 
-Where things land: reports go to `VAULT_PATH/Знания/Ресерчи/` (`VAULT_PATH` is set when the plugin is enabled, `~/Jadlis` by default), the working files of a run to `VAULT_PATH/.full-research/<id>_<slug>/` and `VAULT_PATH/.search-paper/<id>_<slug>/`.
+Where things land: reports go to `VAULT_PATH/Знания/Ресерчи/` (`VAULT_PATH` is set when `research` and `science-research` are installed, `~/Jadlis` by default), the working files of a run to `VAULT_PATH/.full-research/<id>_<slug>/` and `VAULT_PATH/.search-paper/<id>_<slug>/`.
 
 > [!warning] `GOOGLE_PLACES_API_KEY` — budget cap first
 > The Places API has no hard cap by design: overspending is stopped only by a budget alert that disables billing. Set the cap in the Google Cloud Console **before** the first call. Without the key the place layer falls back to Brave Place on its own — that is the normal path.
@@ -157,31 +158,31 @@ Where things land: reports go to `VAULT_PATH/Знания/Ресерчи/` (`VAU
 
 Pick the scenario that matches your question — one per tool.
 
-**1. A quick question — `/jadlis-research:search`**
+**1. A quick question — `/search`**
 
 ```text
-/jadlis-research:search what is known about static wiki generators in 2026
+/search what is known about static wiki generators in 2026
 ```
 
 You get: an answer with a source link under each fact and any disagreements between sources called out. The engine follows the intent: research/news/freshness go to Brave; "describe the target page", people/company/publication go to Exa. A full page is `contents <url> --full`, a PDF goes through `pdf-fetch.sh` at zero credits.
 
-**2. Claim verification — `/jadlis-research:full-research`**
+**2. Claim verification — `/research`**
 
 ```text
-/jadlis-research:full-research should we move the team wiki to a static generator
+/research should we move the team wiki to a static generator
 ```
 
 You get: an interview first (the opening question is always "which decision will you make from this"), then a plan with the chosen channels — approving it is the launch gate. The output is a note in `Знания/Ресерчи/` with three buckets (confirmed / disputed / dropped) plus a summary: which channels delivered, how many claims held up, what was dropped and why.
 
-**3. A scientific review — `/jadlis-research:search-paper`**
+**3. A scientific review — `/science-research`**
 
 ```text
-/jadlis-research:search-paper does background speech hurt reading comprehension
+/science-research does background speech hurt reading comprehension
 ```
 
 You get: three questions (decision, population, scope) plus a separate one — whether to personalise the conclusions against your vault profile. The output is a report with GRADE per outcome, an evidence table and the exclusion list: retracted papers and papers whose title did not match.
 
-Re-running the key smoke test without writing anything: `/jadlis-research:keys --check`.
+Re-running the key smoke test without writing anything: `/search:keys --check`.
 
 ## Limits and cost
 
@@ -195,7 +196,7 @@ Cost is counted in calls to paid services, not in how long a run takes.
 | Yandex Search API (`yandex` channel) | ≈0.1–0.15 RUB per topic | opt-in, only with `YC_SEARCH_API_KEY` |
 | Codex CLI, Grok CLI | inside the ChatGPT and Grok subscriptions | nothing is spent on top of them |
 
-Model cost. In `full-research` the number of agent calls adds up deterministically: channels + 1 curator + 1 urlhealth + 2 verifiers per claim + up to 8 Codex escalations + 1 analyst. A default run with 7 channels and the full ceiling of 16 claims comes to about 50 calls. The code carries no separate estimate in tokens or money, and this page will not invent one.
+Model cost. In `research` the number of agent calls adds up deterministically: channels + 1 curator + 1 urlhealth + 2 verifiers per claim + up to 8 Codex escalations + 1 analyst. A default run with 7 channels and the full ceiling of 16 claims comes to about 50 calls. The code carries no separate estimate in tokens or money, and this page will not invent one.
 
 What degrades without keys and binaries:
 
@@ -207,8 +208,8 @@ What degrades without keys and binaries:
 
 What these tools do not do:
 
-- `full-research` does not check the whole text: the ceiling is 16 claims per run, everything else in the report is collected but unverified.
+- `research` does not check the whole text: the ceiling is 16 claims per run, everything else in the report is collected but unverified.
 - "Confirmed" means "survived a counter-search", not "true". The report is marked `verified: false` until you read it yourself.
 - Agreement between several search engines is not confirmation — that is one source family.
-- `full-research` does not judge study methodology; "how strongly is this proven" is a question for `search-paper`.
-- `search-paper` grades mostly from abstracts: full texts are read for 6 papers, not for the whole corpus.
+- `research` does not judge study methodology; "how strongly is this proven" is a question for `science-research`.
+- `science-research` grades mostly from abstracts: full texts are read for 6 papers, not for the whole corpus.

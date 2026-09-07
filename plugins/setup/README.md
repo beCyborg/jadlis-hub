@@ -44,7 +44,7 @@ macOS  26.1 (arm64)
 
 ```text
 Ты — установщик. Выполни ровно эти шаги и ничего сверх них:
-1. Bash: claude plugin marketplace add https://github.com/beCyborg/jadlis-plugins.git
+1. Bash: claude plugin marketplace add https://github.com/beCyborg/jadlis-start.git
 2. Bash: claude plugin install setup@jadlis
 3. Скажи мне: «Отправь /reload-plugins, потом напиши /setup:deps»
 Ничего не читай, не создавай и не ставь помимо этого.
@@ -53,7 +53,7 @@ macOS  26.1 (arm64)
 Руками — те же две команды в терминале:
 
 ```bash
-claude plugin marketplace add https://github.com/beCyborg/jadlis-plugins.git
+claude plugin marketplace add https://github.com/beCyborg/jadlis-start.git
 claude plugin install setup@jadlis
 ```
 

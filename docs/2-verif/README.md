@@ -22,7 +22,7 @@
 
 ![Канвас плана на трёх опорах, механические руки выдёргивают опоры](../img/01-verif-01.webp)
 
-Конвейер одного прогона (тег `jadlis-research--v1.2.0`):
+Конвейер одного прогона (тег `verif--v1.0.0`):
 
 ```mermaid
 flowchart TD
@@ -67,26 +67,25 @@ FINDINGS (9):
 
 ```text
 Ты — установщик. Выполни ровно эти шаги и ничего сверх них:
-1. Bash: claude plugin marketplace add https://github.com/beCyborg/jadlis-plugins.git
-2. Bash: claude plugin install jadlis-research@jadlis
-3. Bash: claude plugin enable jadlis-research
-4. Скажи мне: «Плагин включён. Дальше руками: /plugin configure jadlis-research@jadlis —
-   введи BRAVE_API_KEY и FIRECRAWL_API_KEY, они уедут в Связку ключей. Потом перезапусти
-   Claude Code и вызови /jadlis-research:keys».
+1. Bash: claude plugin marketplace add https://github.com/beCyborg/jadlis-start.git
+2. Bash: claude plugin install search@jadlis --config BRAVE_API_KEY=<мой ключ Brave> --config FIRECRAWL_API_KEY=<мой ключ Firecrawl>
+3. Bash: claude plugin install verif@jadlis
+4. Скажи мне: «Плагины стоят, ключи уехали в Связку ключей. Полностью перезапусти
+   Claude Code — не /reload-plugins, у search свои MCP-серверы — и вызови /search:keys».
 ```
 
 Тот же путь руками, теми же командами:
 
 1. **Заведи два обязательных ключа.** Brave — https://api-dashboard.search.brave.com, нужен тариф **Search**. Firecrawl — https://firecrawl.dev/app/api-keys, ключ вида `fc-…`.
-2. **Подключи маркетплейс и поставь плагин.** `claude plugin marketplace add https://github.com/beCyborg/jadlis-plugins.git`, затем `claude plugin install jadlis-research@jadlis`.
-3. **Включи плагин:** `claude plugin enable jadlis-research`. Claude Code спросит ключи класса A и положит их в Связку ключей. Уже установлен — вызови `/plugin configure jadlis-research@jadlis` прямо в чате.
-4. **Перезапусти Claude Code.** Плагин тянет MCP-серверы, они поднимаются на старте сессии.
-5. **Вызови `/jadlis-research:keys`.** Скилл покажет, что уже есть, и примет остальное. Нужен только `verif` — научные ключи пропусти, вернёшься к ним перед тиром 3.
+2. **Подключи маркетплейс и поставь `search`.** `claude plugin marketplace add https://github.com/beCyborg/jadlis-start.git`, затем `claude plugin install search@jadlis --config BRAVE_API_KEY=… --config FIRECRAWL_API_KEY=…`. Ключи уезжают в Связку ключей, в файлы не попадают; поменять потом — `/plugin configure search@jadlis`.
+3. **Поставь `verif`:** `claude plugin install verif@jadlis`.
+4. **Перезапусти Claude Code полностью.** `search` тянет MCP-серверы, они поднимаются на старте сессии; `/reload-plugins` для таких плагинов не применяется.
+5. **Вызови `/search:keys`.** Скилл покажет, что уже есть, и примет остальное. Нужен только `verif` — научные ключи пропусти, вернёшься к ним перед тиром 3.
 
 Первый прогон — на своём же файле:
 
 ```text
-/jadlis-research:verif --file <путь к твоему плану>
+/verif --file <путь к твоему плану>
 ```
 
 Плана под рукой нет — сойдёт любой черновик решения. Синтетический кусок для пробы:
@@ -109,9 +108,9 @@ FINDINGS (9):
 Три сценария, три команды:
 
 ```text
-/jadlis-research:verif --file План.md                    # полный прогон: три ветки → арбитр → вопросы
-/jadlis-research:verif --file Ресерч.md --report-only    # только отчёт, без вопросов и правок
-/jadlis-research:verif --file Док.md --only fable        # одна ветка: быстрый черновой проход
+/verif --file План.md                    # полный прогон: три ветки → арбитр → вопросы
+/verif --file Ресерч.md --report-only    # только отчёт, без вопросов и правок
+/verif --file Док.md --only fable        # одна ветка: быстрый черновой проход
 ```
 
 Что важно знать по ходу:
@@ -126,7 +125,7 @@ FINDINGS (9):
 Чего `verif` не делает:
 
 - Не ревьюит код и диффы — для этого `/code-review`.
-- Не исследует тему с нуля — это тир 3 (`full-research`, `search-paper`).
+- Не исследует тему с нуля — это тир 3 (`research`, `science-research`).
 - Не проверяет одну фразу или дату: тридцать секунд обычного поиска дешевле.
 - Не принимает решений: он приносит находки, отвечаешь на вопросы ты.
 
@@ -147,13 +146,13 @@ FINDINGS (9):
 
 | Класс | Примеры | Где лежит | Кто пишет |
 |---|---|---|---|
-| A — ключи MCP-серверов плагина | `BRAVE_API_KEY`, `FIRECRAWL_API_KEY`, `REDDITAPIS_KEY`, `YOUTUBE_API_KEY` | Связка ключей, запись Claude Code `Claude Code-credentials` → `pluginSecrets` | Claude Code: `/plugin configure jadlis-research@jadlis`, диалог при включении или `claude plugin install … --config KEY=…` |
-| B — ключи скриптов и `curl`-блоков | научные источники, Exa, Yandex, Places, контактные почты | Связка ключей, обычная запись: служба `jadlis-research`, учётная запись = имя ключа | скилл `/jadlis-research:keys` — значение принимается на stdin, в командную строку не попадает |
+| A — ключи MCP-серверов плагина | `BRAVE_API_KEY`, `FIRECRAWL_API_KEY`, `REDDITAPIS_KEY`, `YOUTUBE_API_KEY` | Связка ключей, запись Claude Code `Claude Code-credentials` → `pluginSecrets` | Claude Code: `/plugin configure search@jadlis` или `claude plugin install search@jadlis --config KEY=…` |
+| B — ключи скриптов и `curl`-блоков | научные источники, Exa, Yandex, Places, контактные почты | Связка ключей, обычная запись: служба `jadlis`, учётная запись = имя ключа | скилл `/search:keys` — значение принимается на stdin, в командную строку не попадает |
 
-Читает их одна точка — `scripts/secret.sh` внутри плагина. Порядок разрешения:
+Читает их одна точка — `scripts/secret.sh` внутри плагина `search`. Порядок разрешения:
 
 1. Переменная окружения `$KEY`, если задана.
-2. Связка ключей: служба `jadlis-research`, учётная запись `KEY`.
+2. Связка ключей: служба `jadlis`, учётная запись `KEY` (записи со старой службой `jadlis-research` тоже читаются).
 3. `pluginSecrets` из записи `Claude Code-credentials` (затем `Claude Code-credentials-*`, если профилей несколько).
 4. `.credentials.json` в каталоге настроек — для платформ без Связки ключей.
 5. `settings.json → env` — старая рельса; скилл `keys` предлагает свернуть её и удалить значения из файла.

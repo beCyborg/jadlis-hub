@@ -1,5 +1,13 @@
 # Changelog — jadlis-start
 
+## [2.1.1] — 2026-09-07
+
+### Для человека
+- Драйвер и доки ссылаются на `jadlis-start.git` (старый адрес `jadlis-plugins` редиректит, но новый — канонический).
+
+### For agents
+- Fixed: `HUB`/`DOCS`/`marketplace add` URLs in `skills/batch/SKILL.md`; docs sweep to the new plugin map (22 files).
+
 ## [2.1.0] — 2026-09-07 — репо на плагин / one repo per plugin
 
 ### Для человека
