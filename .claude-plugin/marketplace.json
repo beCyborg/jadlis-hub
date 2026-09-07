@@ -12,8 +12,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-advisor-copywriting.git",
-        "ref": "advisor-copywriting--v1.0.1",
-        "sha": "43359de3adc167c6840520c455c76e109f9115f7"
+        "ref": "advisor-copywriting--v1.0.2",
+        "sha": "cbc1fcc7b6cf414afddfdbf24b7cd3c0f1366510"
       },
       "category": "productivity",
       "tags": [
@@ -28,8 +28,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-advisor-decision.git",
-        "ref": "advisor-decision--v1.0.1",
-        "sha": "fb744b970e21ad328c0ce3357c9edea49f3eb12f"
+        "ref": "advisor-decision--v1.0.2",
+        "sha": "26bd963fb6591a8291e2eb748d1fe7af491e5aa0"
       },
       "category": "productivity",
       "tags": [
@@ -44,8 +44,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-advisor-influence.git",
-        "ref": "advisor-influence--v1.0.1",
-        "sha": "f935cdd260337c725a4877b8cc83eb9b56ee3032"
+        "ref": "advisor-influence--v1.0.2",
+        "sha": "4d621aa8cda546704ff885d356dd762aa0a69215"
       },
       "category": "productivity",
       "tags": [
@@ -61,8 +61,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-advisor-product.git",
-        "ref": "advisor-product--v1.0.1",
-        "sha": "5cc5e383483e4bbc3f6450e9a8f2080889d4574a"
+        "ref": "advisor-product--v1.0.2",
+        "sha": "23bef6fe0c5a025c8a98122f00a3d0fc4a0c3944"
       },
       "category": "productivity",
       "tags": [
@@ -94,8 +94,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-advisor-sales.git",
-        "ref": "advisor-sales--v1.0.1",
-        "sha": "1b29daa2f9092711397f57383bef19858e539425"
+        "ref": "advisor-sales--v1.0.2",
+        "sha": "c0750641f9b938aab0e244d5d840719c3a2ad974"
       },
       "category": "productivity",
       "tags": [
