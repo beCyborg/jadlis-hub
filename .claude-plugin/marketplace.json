@@ -275,8 +275,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-science-research.git",
-        "ref": "science-research--v1.0.0",
-        "sha": "ca6c6e09c317351526cd2f8f8497fde4f45e826a"
+        "ref": "science-research--v1.0.1",
+        "sha": "ba8bd2aaf5656d94e0853cde383b2732e1ae3a63"
       },
       "category": "research",
       "tags": [
@@ -292,8 +292,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-search.git",
-        "ref": "search--v1.0.0",
-        "sha": "2ad3666bf41e009f0d904e612b665ce6c34eb55b"
+        "ref": "search--v1.0.1",
+        "sha": "e55e485b9d990811b36998f6c87c300b2eda5303"
       },
       "category": "research",
       "tags": [
