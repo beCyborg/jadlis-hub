@@ -7,14 +7,14 @@
 ## hero
 
 - Картинка: `docs/img/hero-jadlis-research.webp`
-- Заголовок: «Под каждым утверждением — источник»
+- Заголовок: «Видно, где источник есть, а где его нет»
 - Содержимое: страница отчёта, под каждым ключевым утверждением строка-источник; часть строк вместо источника помечена оранжевым ярлыком «UNCHECKED»
 - Акцент справа: выноска «перечитать самому» от помеченных строк
 
 ```
 Style: clean flat infographic on a light off-white background (#fdfbf7), two accent colors — deep teal (#1a7174) and warm orange (#f37d2c), thin dark-gray (#2f3333) line art, generous whitespace, geometric shapes, a modern geometric sans-serif look. Short Russian labels rendered as crisp, correctly spelled Cyrillic text. No robots, no glowing AI sparkles or glitter, no stock-photo people, no watermark. Wide 2:1 composition, 1280x640.
 
-Hero illustration for a GitHub README about deep topic research. Bold Russian headline across the top «Под каждым утверждением — источник». Under it, one large report page card with a teal outline, filling most of the frame, holding five claim rows. Each row is a bold dark-gray bar standing for a key claim, and directly under three of these bars runs a thinner teal line with a small link icon and the Russian label «источник». The other two rows carry no source line: instead each has an orange tag with the Latin word «UNCHECKED» and an orange outline around the bar. On the right edge one thick orange arrow leads from the two tagged rows to a short orange note card labeled «перечитать самому». No logos, no brand names. Text must be spelled exactly.
+Hero illustration for a GitHub README about deep topic research. Bold Russian headline across the top «Видно, где источник есть, а где его нет». Under it, one large report page card with a teal outline, filling most of the frame, holding five claim rows. Each row is a bold dark-gray bar standing for a key claim, and directly under three of these bars runs a thinner teal line with a small link icon and the Russian label «источник». The other two rows carry no source line: instead each has an orange tag with the Latin word «UNCHECKED» and an orange outline around the bar. On the right edge one thick orange arrow leads from the two tagged rows to a short orange note card labeled «перечитать самому». No logos, no brand names. Text must be spelled exactly.
 ```
 
 ## scheme
