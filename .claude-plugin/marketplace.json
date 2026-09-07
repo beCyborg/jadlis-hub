@@ -222,6 +222,22 @@
       "description": "Диагноз проекта по 6 универсальным принципам (NUPP)."
     },
     {
+      "name": "plugin-creator",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/beCyborg/jadlis-plugin-creator.git",
+        "ref": "plugin-creator--v1.1.0",
+        "sha": "0e10f26ac706d5188a665e5a756c6336ff2234a7"
+      },
+      "category": "development",
+      "tags": [
+        "jadlis",
+        "plugins",
+        "marketplace"
+      ],
+      "description": "Собрать, проверить и выпустить плагин по стандарту."
+    },
+    {
       "name": "research",
       "source": {
         "source": "url",
@@ -302,6 +318,22 @@
       "description": "Тир 0: рабочее место — зависимости, настройки ~/.claude, память, папка Obsidian, по желанию терминал."
     },
     {
+      "name": "skill-builder",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/beCyborg/jadlis-skill-builder.git",
+        "ref": "skill-builder--v1.9.0",
+        "sha": "844153521391342196eae6115deb9fcb55014382"
+      },
+      "category": "development",
+      "tags": [
+        "jadlis",
+        "skills",
+        "evals"
+      ],
+      "description": "Свой ИИ-сотрудник: скилл = должностная инструкция (расширенный форк официального skill-creator)."
+    },
+    {
       "name": "swot-news",
       "source": {
         "source": "url",
@@ -355,6 +387,7 @@
     "jadlis-research": null,
     "advisors": null,
     "adv-psy": "advisor-psychologist",
-    "annas-archive": "books"
+    "annas-archive": "books",
+    "skill-creator": "skill-builder"
   }
 }
