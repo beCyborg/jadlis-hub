@@ -1,5 +1,15 @@
 # Changelog — jadlis-start
 
+## [2.1.0] — 2026-09-07 — репо на плагин / one repo per plugin
+
+### Для человека
+- Каталог `jadlis` теперь ведёт на отдельные репо: `search`, `research`, `science-research`, `verif` вместо одного `jadlis-research`; девять советов по одному (`advisor-decision` … `cognitive-biases`) вместо `advisors`; `books` вместо `annas-archive`, `advisor-psychologist` вместо `adv-psy`, `skill-builder` вместо `skill-creator`. Команды короткие: `/research`, `/verif`, `/advisor-decision`.
+- Тир 2: ключи Brave и Firecrawl передаются `search` явно при установке — авто-установка зависимости их не спрашивает.
+
+### For agents
+- Changed: delivery table and probes (`references/детект-состояния.md`) for tiers 2–5 use the new plugin names; tier 5 counts installed councils and reads `MEMORY_DIR` from the first one found.
+- Removed from the hub: `plugins/jadlis-research` (lives on as four repos; tags `jadlis-research--v1.0.0…v1.3.0` stay). `renames`: `jadlis-research` → null, `advisors` → null, `adv-psy` → `advisor-psychologist`, `annas-archive` → `books`.
+
 ## [2.0.0] — 2026-09-06 — маршрут 0–6 вместо батчей 1–4 / route 0–6 replaces batches 1–4
 
 ### Для человека

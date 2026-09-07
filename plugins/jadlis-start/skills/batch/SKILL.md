@@ -25,10 +25,10 @@ DOCS  = https://github.com/beCyborg/jadlis-plugins/blob/main/docs
 |---|---|---|---|
 | 0 | Рабочее место: Claude Code, CLI-зависимости, папка Obsidian, базовый CLAUDE.md, память | `setup` | `DOCS/0-workplace` |
 | 1 | Голос: Spokenly, промпт-корректор, словарь замен | — | `DOCS/1-voice` |
-| 2 | Ключи Brave/Firecrawl в Связке ключей + первый прогон verif | `jadlis-research` | `DOCS/2-verif` |
-| 3 | Ресерч: search, full-research, search-paper | тот же | `DOCS/3-research` |
-| 4 | Свои сотрудники: skill-creator, plugin-creator | `skill-creator`, `plugin-creator` | README репо `skill-creator-plugin` |
-| 5 | Советы директоров | `advisors` | README репо `advisors` |
+| 2 | Ключи Brave/Firecrawl в Связке ключей + первый прогон verif | `search`, `verif` | `DOCS/2-verif` |
+| 3 | Ресерч: research, science-research | `research`, `science-research` | `DOCS/3-research` |
+| 4 | Свои сотрудники: skill-builder, plugin-creator | `skill-builder`, `plugin-creator` | README репо `jadlis-skill-builder`, `jadlis-plugin-creator` |
+| 5 | Советы директоров — девять плагинов, один на совет | `advisor-decision` … `cognitive-biases` | README репо `jadlis-advisor-*` |
 | 6 | Методология: 6.1 vault → 6.2 интервьюер → 6.3 SWOT новостей | `jadlis-vault`, `jadlis-interviewer`, `swot-news` | `DOCS/6-methodology` |
 
 ## Шаг 1 — снять состояние (всегда, без исключений)
@@ -95,10 +95,10 @@ maxAllowed = наименьший N из 0…6, который не закрыт
 |---|---|---|
 | 0 | `claude plugin install setup@jadlis` | `/setup:deps` → `/setup:workplace` → `/setup:obsidian` → (по желанию) `/setup:terminal` |
 | 1 | — | прочитать `DOCS/1-voice/README.md`, настроить Spokenly руками, вернуться: `JADLIS-BATCH 1 продолжить` |
-| 2 | `claude plugin install jadlis-research@jadlis` → **полный перезапуск** → `claude plugin enable jadlis-research` (спросит Brave/Firecrawl → Связка ключей) | `/jadlis-research:keys --check` → `/jadlis-research:verif <свой план или текст>` |
-| 3 | — (плагин уже стоит) | `/jadlis-research:keys` (научные ключи) → `/jadlis-research:search …` → `/jadlis-research:full-research …` → `/jadlis-research:search-paper …` |
-| 4 | `claude plugin install skill-creator@jadlis` и `plugin-creator@jadlis` | `/skill-creator:skill-creator` — первый свой скилл |
-| 5 | `claude plugin install advisors@jadlis --config ADVISORS_MEMORY_DIR=~/advisors-memory` | `/advisors:adv-Decision <решение>` |
+| 2 | `claude plugin install search@jadlis --config BRAVE_API_KEY=… --config FIRECRAWL_API_KEY=…` → **полный перезапуск** → `claude plugin install verif@jadlis` | `/search:keys --check` → `/verif <свой план или текст>` |
+| 3 | `claude plugin install research@jadlis` и `science-research@jadlis` (оба тянут `search`) | `/search:keys` (научные ключи) → `/search …` → `/research …` → `/science-research …` |
+| 4 | `claude plugin install skill-builder@jadlis` и `plugin-creator@jadlis` | `/skill-builder` — первый свой скилл |
+| 5 | по одному совету: `claude plugin install advisor-decision@jadlis --config MEMORY_DIR=~/advisors-memory` (так же `advisor-product`, `advisor-influence`, `advisor-sales`, `advisor-copywriting`, `advisor-psychologist`, `robert-greene`, `nupp`, `cognitive-biases` — папка памяти одна на всех) | `/advisor-decision <решение>` |
 | 6.1 | `claude plugin install jadlis-vault@jadlis` | `/jadlis-vault:vault-setup` |
 | 6.2 | `claude plugin install jadlis-interviewer@jadlis` | `/jadlis-interviewer:vault-interviewer` |
 | 6.3 | `claude plugin install swot-news@jadlis` | `/swot-news:setup`, затем `/swot-news:daily` |
@@ -114,14 +114,13 @@ maxAllowed = наименьший N из 0…6, который не закрыт
 
 - Тиры 0, 4, 5, 6: «Отправь `/reload-plugins`, потом напиши: `JADLIS-BATCH <N> продолжить`».
 - **Тир 2 — иначе:** «Полностью перезапусти Claude Code, потом напиши: `JADLIS-BATCH 2
-  продолжить`». `jadlis-research` тянет MCP-серверы; для таких плагинов `/reload-plugins`
+  продолжить`». `search` тянет MCP-серверы; для таких плагинов `/reload-plugins`
   показывает предупреждение и не применяется без `--force`. Не предлагай `--force`.
 
-`jadlis-research` ставится выключенным (`defaultEnabled: false`) — это осознанно. После
-перезапуска включи его через `claude plugin enable jadlis-research` или `/plugin`; при
-включении Claude Code спросит `VAULT_PATH`, `BRAVE_API_KEY`, `FIRECRAWL_API_KEY` — ключи
-уезжают в Связку ключей macOS, в файлы не попадают. Поменять потом:
-`/plugin configure jadlis-research@jadlis`.
+Ключи `BRAVE_API_KEY` и `FIRECRAWL_API_KEY` передаются `search` явно через `--config` при
+установке: авто-установка `search` как зависимости `research` ключи **не спрашивает**
+(проверено 07.09.2026). Ключи уезжают в Связку ключей macOS, в файлы не попадают.
+Поменять потом: `/plugin configure search@jadlis`; `VAULT_PATH` — `/plugin configure research@jadlis`.
 
 Установка упала («marketplace not found») → маркетплейс не добавлен. Одна команда:
 
@@ -173,6 +172,6 @@ claude plugin marketplace add https://github.com/beCyborg/jadlis-plugins.git
 - Не ставить плагин следующего тира «заранее, чтобы было».
 - Не выдавать содержимое будущего тира в виде объяснений — это обход гейта.
 - Не трогать `~/.claude/settings.json` руками: рабочее место настраивает `/setup:workplace`,
-  ключи — `/jadlis-research:keys` и `/plugin configure`.
+  ключи — `/search:keys` и `/plugin configure search@jadlis`.
 - Не печатать значения ключей — ни в ответе, ни в Bash-эхо.
 - Не пересказывать пробы прозой и не показывать пользователю Bash-вывод целиком.
