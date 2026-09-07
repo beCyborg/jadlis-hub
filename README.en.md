@@ -104,4 +104,4 @@ Older installs need no action: the marketplace name `jadlis` is unchanged, and G
 
 ## License
 
-MIT — see [LICENSE](LICENSE). The nine council plugins intentionally carry no license — see their `NOTICE.md`.
+No license: the code is open to read and to use personally; all rights reserved. Commercial use, redistribution and inclusion in other products — by separate agreement only. The nine council plugins carry no license for the same reason plus book rights — see their `NOTICE.md`.

@@ -4,11 +4,16 @@
   "version": "1.0.1",
   "displayName": "Jadlis — рабочее место",
   "description": "Батч 2: раскладывает скелет vault, CLAUDE.md и сниппет hide-files.css, ведёт первый перезапуск дня.",
-  "author": { "name": "Be Cyborg" },
+  "author": {
+    "name": "Be Cyborg"
+  },
   "homepage": "https://github.com/beCyborg/jadlis-plugins",
   "repository": "https://github.com/beCyborg/jadlis-plugins",
-  "license": "MIT",
-  "keywords": ["jadlis", "obsidian", "vault"],
+  "keywords": [
+    "jadlis",
+    "obsidian",
+    "vault"
+  ],
   "userConfig": {
     "VAULT_PATH": {
       "type": "directory",

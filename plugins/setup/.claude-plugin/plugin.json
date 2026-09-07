@@ -4,11 +4,17 @@
   "version": "1.0.0",
   "displayName": "Рабочее место — тир 0",
   "description": "Тир 0: проверяет и ставит зависимости, настраивает ~/.claude (settings.json, CLAUDE.md, память, уведомления, statusline), создаёт папку-vault для Obsidian и по желанию собирает терминальный путь.",
-  "author": { "name": "Be Cyborg" },
+  "author": {
+    "name": "Be Cyborg"
+  },
   "homepage": "https://github.com/beCyborg/jadlis-plugins",
   "repository": "https://github.com/beCyborg/jadlis-plugins",
-  "license": "MIT",
-  "keywords": ["setup", "onboarding", "workplace", "obsidian"],
+  "keywords": [
+    "setup",
+    "onboarding",
+    "workplace",
+    "obsidian"
+  ],
   "userConfig": {
     "VAULT_PATH": {
       "type": "directory",
