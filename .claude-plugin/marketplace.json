@@ -144,8 +144,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-cognitive-biases.git",
-        "ref": "cognitive-biases--v1.0.1",
-        "sha": "871b59598fcb948beb4a6968d534f012183b13f3"
+        "ref": "cognitive-biases--v1.0.2",
+        "sha": "b46b792ed6e32bbf7f13550ffd00360bdd660746"
       },
       "category": "productivity",
       "tags": [
