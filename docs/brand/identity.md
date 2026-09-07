@@ -33,4 +33,4 @@
 Style: clean flat infographic on a light off-white background (#fdfbf7), two accent colors — deep teal (#1a7174) and warm orange (#f37d2c), thin dark-gray (#2f3333) line art, generous whitespace, geometric shapes, a modern geometric sans-serif look. Short Russian labels rendered as crisp, correctly spelled Cyrillic text. No robots, no glowing AI sparkles or glitter, no stock-photo people, no watermark. Wide 2:1 composition, 1280x640.
 ```
 
-Правки по одной картинке — image-to-image: `codex exec -i <эталон>.png -C <dir> '$imagegen Based on the attached image, redraw ... with these changes: ...'`. Эталоны: `docs/img/hero-jadlis-start.webp`, `docs/img/scheme-context-goal-tools.webp`; промпты — `docs/img/prompts/<имя>.md`.
+Правки по одной картинке — image-to-image: `codex exec -i <эталон>.png -C <dir> '$imagegen Based on the attached image, redraw ... with these changes: ...'`. Эталоны: `docs/img/brand-reference-hero.webp`, `docs/img/scheme-context-goal-tools.webp` (первый переименован 07.09 из `hero-jadlis-start.webp`, чтобы освободить каноническое имя картинке первого экрана README); промпты — `docs/img/prompts/<имя>.md`.

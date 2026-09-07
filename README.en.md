@@ -1,107 +1,132 @@
-[Русский](README.md) · English
+English · [Русский](README.md)
 
-# Jadlis — handing over the stack
+# You paid for the assistant, and the evening goes on working out where to start instead of on the work
 
-Marketplace `jadlis`: one entry point, seven tiers, and a driver that hands you exactly the next step. A Claude Code + Obsidian stack built over a year, transferred one tool at a time — tools first, methodology last.
-
-## Route 0–6
-
-| Tier | What you get | Plugin | Docs |
-|---|---|---|---|
-| 0 | Workplace: Claude Code, CLI dependencies, an Obsidian folder, a base `CLAUDE.md`, memory, reply style | `setup` | [docs/0-workplace](docs/0-workplace/README.en.md) |
-| 1 | Voice: Spokenly, the correction prompt, the replacement dictionary | — | [docs/1-voice](docs/1-voice/README.en.md) |
-| 2 | Keys in the Keychain + verif: three models read your plan in isolation | `search`, `verif` | [docs/2-verif](docs/2-verif/README.en.md) |
-| 3 | Research: `research` (fourteen channels) and `science-research` (science, GRADE) | `research`, `science-research` | [docs/3-research](docs/3-research/README.en.md) |
-| 4 | Your own employees: a skill is a job description | `skill-builder`, `plugin-creator` | [jadlis-skill-builder](https://github.com/beCyborg/jadlis-skill-builder) |
-| 5 | Boards of advisors: nine councils, book lenses, skeptics, a verdict | `advisor-decision` … `cognitive-biases` | the `jadlis-advisor-*` repos' READMEs |
-| 6 | Methodology: 6.1 vault → 6.2 interviewer → 6.3 news SWOT | `jadlis-vault`, `jadlis-interviewer`, `swot-news` | [docs/6-methodology](docs/6-methodology/README.en.md) |
-| E | Extras on request: browser, desktop, video digests, books | `browser`, `computer-use`, `tldr`, `books` | each repo's README |
-
-The next tier is not handed out until machine probes confirm the previous one. Criteria live in the [driver](plugins/jadlis-start/README.en.md).
-
-## How it works
-
-```mermaid
-flowchart LR
-  H[hub jadlis-start<br/>marketplace jadlis] --> S[plugin jadlis-start<br/>driver: probes → next step]
-  S -->|tier 0| T0[setup]
-  S -->|tier 1| T1[docs/1-voice]
-  S -->|tiers 2–3| T2[search · verif · research · science-research]
-  S -->|tier 4| T4[skill-builder · plugin-creator]
-  S -->|tier 5| T5[nine councils]
-  S -->|tier 6| T6[jadlis-vault · jadlis-interviewer · swot-news]
-  T4 -.pin ref+sha.-> R4[(jadlis-skill-builder)]
-  T5 -.pin ref+sha.-> R5[(jadlis-advisor-...)]
-  T6 -.pin ref+sha.-> R6[(jadlis-swot-news)]
-```
-
-Internal plugins live in `plugins/<name>`; external ones are wired into the same `marketplace.json` as `url` / `git-subdir` entries pinned by `ref` (release tag) + `sha`. The recipient sees one marketplace; the owner releases each repo separately and bumps the pin in the hub.
-
-## Install
-
-Open Claude Code (desktop or terminal) and paste:
+One word in the chat shows the seven lines of the 0 → 6 route and the one you are standing on right
+now; the next step is not handed out until a probe on your own machine confirms the previous one.
 
 ```
-You are an installer. Run exactly these steps and nothing else:
-1. Bash: claude plugin marketplace add https://github.com/beCyborg/jadlis-start.git
-2. Bash: claude plugin install jadlis-start@jadlis
-3. Tell me: "Send /reload-plugins, then type: JADLIS-BATCH"
-```
-
-The same two commands by hand:
-
-```bash
 claude plugin marketplace add https://github.com/beCyborg/jadlis-start.git
 claude plugin install jadlis-start@jadlis
 ```
 
-The repositories are public — no git credentials or SSH keys needed; the full HTTPS URL is mandatory (the `owner/repo` shorthand is fetched over SSH). From here the driver leads: `JADLIS-BATCH`, `JADLIS-BATCH 0`, … `JADLIS-BATCH 6.3`.
+It installs on top of a machine that is already set up: the base config is merged into your current
+one, every edit is shown in full and waits for your "yes", and it all comes off in one command —
+`claude plugin uninstall jadlis-start@jadlis --keep-data`.
 
-## Plugins
+![Seven route lines with their statuses, with a separate line marking where you are now](docs/img/hero-jadlis-start.webp)
 
-| Plugin | Tier | Source | Install |
-|---|---|---|---|
-| `jadlis-start` | — | `plugins/jadlis-start` | `claude plugin install jadlis-start@jadlis` |
-| `setup` | 0 | `plugins/setup` | `setup@jadlis` |
-| `search`, `verif` | 2 | [jadlis-search](https://github.com/beCyborg/jadlis-search), [jadlis-verif](https://github.com/beCyborg/jadlis-verif) | `search@jadlis --config BRAVE_API_KEY=… --config FIRECRAWL_API_KEY=…`, then `verif@jadlis` |
-| `research`, `science-research` | 3 | [jadlis-research](https://github.com/beCyborg/jadlis-research), [jadlis-science-research](https://github.com/beCyborg/jadlis-science-research) | `research@jadlis`, `science-research@jadlis` — both pull `search` |
-| `skill-builder`, `plugin-creator` | 4 | [jadlis-skill-builder](https://github.com/beCyborg/jadlis-skill-builder), [jadlis-plugin-creator](https://github.com/beCyborg/jadlis-plugin-creator) | `skill-builder@jadlis`, `plugin-creator@jadlis` |
-| nine councils: `advisor-decision` … `cognitive-biases` | 5 | the `jadlis-advisor-*`, `jadlis-robert-greene`, `jadlis-nupp`, `jadlis-cognitive-biases` repos | `advisor-decision@jadlis --config MEMORY_DIR=~/advisors-memory` (the rest the same, one memory folder) |
-| `jadlis-vault`, `jadlis-interviewer` | 6.1, 6.2 | `plugins/…` | `jadlis-vault@jadlis`, `jadlis-interviewer@jadlis` |
-| `swot-news` | 6.3 | [jadlis-swot-news](https://github.com/beCyborg/jadlis-swot-news) | `swot-news@jadlis` |
-| `browser`, `computer-use` | E | [jadlis-desktop](https://github.com/beCyborg/jadlis-desktop) | `browser@jadlis`, `computer-use@jadlis` |
-| `tldr` | E | [jadlis-tldr](https://github.com/beCyborg/jadlis-tldr) | `tldr@jadlis` |
-| `books` | E | [jadlis-books](https://github.com/beCyborg/jadlis-books) | `books@jadlis` |
+In words: a list of seven steps, each with a status, one line marked "you are here" — you carry on
+from that one, and there is nothing to remember.
 
-Plugins deliberately **almost never depend** on each other — the one exception: `research` and `science-research` pull the base `search`. Otherwise installing tier 5 would pull everything at once and the gate would vanish. Current pins of external entries: `python3 tools/bump-pin.py --list`.
+This is my workbench published as it is, not a product: whatever I stopped using, I removed.
 
-## Update
+## Before → after
 
-Every plugin carries a semver in `plugin.json`; each release is tagged `<plugin>--v<version>`. For third-party marketplaces **auto-update is off by default on the recipient side**:
+| By hand | With an AI chat | With this plugin |
+|---|---|---|
+| **The order of the steps.** There are plenty of tools and no order between them: you open the list and close it again, because choosing among twenty is work in itself. | The chat hands you every step at once, and the choosing is yours again. | You type `JADLIS-BATCH` into the chat — seven lines of the 0 → 6 route with statuses and a "where you are now" line. |
+| **The state of the machine.** On step 3 it turns out step 2 never landed, and it looks like everything is broken. | The chat takes your word for it: you said "done", so on we go. | The probe runs on your own machine; the next step is not handed out until it confirms the previous one. |
+| **A week's break.** You come back, and where exactly you stopped is somewhere in the terminal history. | A new session does not remember the last one. | You type the same word — and you are back where you stopped, down to the substep. |
+| **Keys to paid services.** The values wander across config files and settle in your command history. | You dictate the key into the chat so that "it can check". | Keys are never read: only "present" or "absent" is checked, and no value is printed anywhere. |
+| **A machine that is already set up.** A new config overwrites what took months to tune. | "I will replace the whole file" — you see the difference afterwards. | The base config is merged into your current one; say "no" and the file stays as it was, while the remaining steps carry on. |
 
-```bash
-claude plugin update <plugin>@jadlis
+## How it works
+
+![A route of seven steps: a probe on the machine after each one, and only then the next](docs/img/how-jadlis-start.webp)
+
+Going in — the word `JADLIS-BATCH` in the chat.
+Inside — a probe of the current step right on your machine: is what the step needs there, and does it
+answer.
+Coming out — seven route lines with statuses and exactly one next step.
+
+In words: a word in the chat → the 0 → 6 route with statuses → a probe on the machine → the step
+opens; if it did not confirm, it does not open, and you are told exactly what failed.
+
+## Installing and the first run
+
+**a) Text to paste to an agent.** Copy the whole thing into a Claude Code chat:
+
+```
+You are the installer. Install the plugin jadlis-start from the jadlis marketplace on this Mac.
+First check that Claude Code is installed and the subscription is active; if not, stop and say so.
+Then run exactly these commands, verbatim, shortening nothing:
+1. claude plugin marketplace add https://github.com/beCyborg/jadlis-start.git
+2. claude plugin install jadlis-start@jadlis
+3. claude plugin list — show me the line about jadlis-start and its version.
+Then type the word JADLIS-BATCH into the chat and show me the route with its statuses.
+Before each command show it to me in full and wait for "yes". If I say "no", do not run it,
+leave the file as it was, tell me what you skipped, and move on.
+Do not replace my config, merge it with the current one; show every edit in full.
+Do not ask me for keys: this step does not need them. Never print key values.
+If a command returns an error, stop, show me the output, and do not move to the next one.
 ```
 
-Or enable auto-update once: `/plugin` → **Marketplaces** → `jadlis`. External plugins update when the owner bumps the pin in the hub — `claude plugin update` sees the new version after that.
+**b) Commands by hand.**
 
-## Keys
+```
+claude plugin marketplace add https://github.com/beCyborg/jadlis-start.git
+claude plugin install jadlis-start@jadlis
+claude plugin list
+```
 
-No key lives in any repository; every recipient registers their own. One standard: **a key is entered once and lives in the macOS Keychain**, never in files. MCP-server keys are handed to the plugin at install time via `--config KEY=…` (`/plugin configure <plugin>@jadlis` to change them); script keys are written by `/search:keys`; scripts read them through `secret.sh`. Details — [docs/2-verif](docs/2-verif/README.en.md).
+The first command installs nothing — it adds the marketplace.
 
-## Compatibility
+**c) The first word.** Open Claude Code in the folder you work in and type one word, no slash:
 
-- macOS; Claude Code desktop or CLI (Bash is needed for the install). The desktop app **does not install** the `claude` CLI — tier 0 closes that gap.
-- Claude Code ≥ 2.1.239 (`git-subdir` with `sha`, `userConfig`, `/plugin configure`).
-- Changes — fork + PR ([CONTRIBUTING.md](CONTRIBUTING.md)); commit and release conventions — [CLAUDE.md](CLAUDE.md).
+```
+JADLIS-BATCH
+```
 
-## Migrating from an older install
+It is a word, not a slash command. It opens the route, it brings you back into it after a break, and
+it is repeated at the end of every answer — you will never have to hunt for it in the chat history.
 
-Older installs need no action: the marketplace name `jadlis` is unchanged, and GitHub redirects the old hub URL (`jadlis-plugins`) to the new one (`jadlis-start`). The command is the same — `JADLIS-BATCH` — but numbers are now tiers 0–6 (old batch 2 = 6.1, batch 3 = 6.2, batch 4 = tiers 2–3). After `claude plugin update jadlis-start@jadlis` the driver rewrites the state journal from probes on its own.
+The first step of the route is the workplace: the route installs `setup@jadlis` itself and walks you
+through its steps — `/setup:deps`, `/setup:workplace`, `/setup:obsidian` and, if you want it,
+`/setup:terminal`. There is no need to install it separately beforehand.
 
-> [!WARNING]
-> Plugin and marketplace names are frozen from the first release. Renaming breaks installs; if it ever becomes necessary — only via `renames` in `marketplace.json`, appending a new entry.
+## Limits, cost, updating
 
-## License
+**What it does not do.** It does not read the values of your keys — it only checks whether they are
+set up or not. It does not take out subscriptions for you and does not pay for them. It does not
+decide which tool from the catalogue you need: the route shows the order, the choice is yours. And it
+does not hand out the next step on trust — not out of spite: without keys a later step will not work
+on your machine, and you will conclude that everything is broken.
 
-No license: the code is open to read and to use personally; all rights reserved. Commercial use, redistribution and inclusion in other products — by separate agreement only. The nine council plugins carry no license for the same reason plus book rights — see their `NOTICE.md`.
+**What you need.** A Mac and an active Claude Code subscription. Missing either one and nothing
+further works; better to find that out now than on the third step. The route steps where search
+switches on need the paid Brave and Firecrawl keys — said here, before installing, not halfway
+through. Brave and Firecrawl are the ones who bill you, so check their pricing with them: I name no
+figures of my own. Checked on macOS 27.0 and Claude Code 2.1.263; below those versions I have not
+tested it.
+
+**The catalogue.** The route leads through the other 17 repositories of the showcase: each is
+installed by its own command, there is no single "install everything" button and there never will be
+— you install whatever you have reached. The tier map, with docs for each one, is in [docs](docs/).
+
+**How tokens get spent.** The route itself is light: it asks, it checks, it prints a table. The heavy
+part starts where the route takes you: a heavy run is dozens of subagents out of your own quota, and
+the route names such steps in advance. What it costs in money I have not measured and will not name a
+figure.
+
+**Verified where I work:** my Mac, my subscription, my keys. I have not tested it on anyone else's
+machine — if it did not install for you, open an issue in the repository.
+
+**Terms of use.** There is no license: all rights reserved by the author. You may read it and use it
+personally. Commercial use, republishing and bundling it into your own products — by arrangement
+with me.
+
+**Updating.** With a third-party marketplace, auto-update is off on your side: until you run the
+first command you keep the version you installed.
+
+```
+claude plugin marketplace update jadlis
+claude plugin update jadlis-start@jadlis
+claude plugin list
+```
+
+Reinstall, if something ended up crooked:
+
+```
+claude plugin uninstall jadlis-start@jadlis --keep-data && claude plugin install jadlis-start@jadlis
+```
