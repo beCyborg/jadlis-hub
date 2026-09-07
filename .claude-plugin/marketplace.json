@@ -210,8 +210,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-nupp.git",
-        "ref": "nupp--v1.0.1",
-        "sha": "d1daf80909110638f7181cfe387b2ce98f71498a"
+        "ref": "nupp--v1.0.2",
+        "sha": "0542a2557d6ec861dc6eb6dd84694013131d6fe4"
       },
       "category": "productivity",
       "tags": [
@@ -259,8 +259,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-robert-greene.git",
-        "ref": "robert-greene--v1.0.1",
-        "sha": "e7b192bd5a526fce793dea9745d105c49ce03766"
+        "ref": "robert-greene--v1.0.2",
+        "sha": "5119724b91df9e49cc8b9951f6ee29f5e72d2560"
       },
       "category": "productivity",
       "tags": [
