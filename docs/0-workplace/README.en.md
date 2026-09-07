@@ -55,7 +55,7 @@ Then paste this block into Claude Code as is:
 
 ```text
 You are an installer. Run exactly these steps and nothing else:
-1. Bash: claude plugin marketplace add https://github.com/beCyborg/jadlis-plugins.git
+1. Bash: claude plugin marketplace add https://github.com/beCyborg/jadlis-start.git
 2. Bash: claude plugin install setup@jadlis
 3. Tell me: "Send /reload-plugins, then type /setup:deps"
 Read nothing, create nothing, install nothing beyond this.
@@ -64,7 +64,7 @@ Read nothing, create nothing, install nothing beyond this.
 By hand — the same two commands in a terminal:
 
 ```bash
-claude plugin marketplace add https://github.com/beCyborg/jadlis-plugins.git
+claude plugin marketplace add https://github.com/beCyborg/jadlis-start.git
 claude plugin install setup@jadlis
 ```
 

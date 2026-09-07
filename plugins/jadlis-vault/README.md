@@ -65,7 +65,7 @@ date: 2026-09-07
 
 ```text
 Ты — установщик. Выполни ровно эти шаги и ничего сверх них:
-1. Bash: claude plugin marketplace add https://github.com/beCyborg/jadlis-plugins.git
+1. Bash: claude plugin marketplace add https://github.com/beCyborg/jadlis-start.git
 2. Bash: claude plugin install jadlis-vault@jadlis
 3. Скажи мне одной строкой: «Отправь /reload-plugins, потом напиши: /jadlis-vault:vault-setup»
 Ничего не читай, не создавай и не ставь помимо этого.
@@ -74,7 +74,7 @@ date: 2026-09-07
 Ручной путь — те же команды:
 
 ```bash
-claude plugin marketplace add https://github.com/beCyborg/jadlis-plugins.git
+claude plugin marketplace add https://github.com/beCyborg/jadlis-start.git
 claude plugin install jadlis-vault@jadlis
 ```
 

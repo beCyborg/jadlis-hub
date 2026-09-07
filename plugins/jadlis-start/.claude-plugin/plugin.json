@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "jadlis-start",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "displayName": "Jadlis — драйвер маршрута 0–6",
   "description": "Ведёт передачу стека Jadlis по тирам 0–6: определяет текущий тир пробами машины, ставит следующий плагин, не выдаёт тир авансом. Инструменты сначала, методология в конце.",
   "author": {

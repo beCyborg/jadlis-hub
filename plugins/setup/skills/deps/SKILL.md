@@ -1,6 +1,6 @@
 ---
 name: deps
-description: "Тир 0: проверяет и доставляет зависимости рабочего места — Homebrew, CLI claude, jq, Node.js, git, опционально gh. Показывает таблицу PASS/FAIL и ставит только недостающее, каждый раз спрашивая.\nTRIGGER when: user says \"/setup:deps\", \"проверь зависимости\", \"поставь зависимости\", \"чего не хватает\", \"нет jq\", \"нет node\", \"поставь homebrew\", \"установи claude cli\", \"check dependencies\", \"install dependencies\".\nDO NOT TRIGGER when: настройка ~/.claude/settings.json и CLAUDE.md — это /setup:workplace; папка-vault — /setup:obsidian; iTerm2, tmux и алиасы — /setup:terminal; ключи API — тир 2 (/jadlis-research:keys)."
+description: "Тир 0: проверяет и доставляет зависимости рабочего места — Homebrew, CLI claude, jq, Node.js, git, опционально gh. Показывает таблицу PASS/FAIL и ставит только недостающее, каждый раз спрашивая.\nTRIGGER when: user says \"/setup:deps\", \"проверь зависимости\", \"поставь зависимости\", \"чего не хватает\", \"нет jq\", \"нет node\", \"поставь homebrew\", \"установи claude cli\", \"check dependencies\", \"install dependencies\".\nDO NOT TRIGGER when: настройка ~/.claude/settings.json и CLAUDE.md — это /setup:workplace; папка-vault — /setup:obsidian; iTerm2, tmux и алиасы — /setup:terminal; ключи API — тир 2 (/search:keys)."
 allowed-tools: Bash, Read, AskUserQuestion
 argument-hint: "[проверить | поставить]"
 ---
