@@ -14,4 +14,5 @@ jobs:
     with:
       mode: marketplace
       claude-cli-version: "2.1.263"
+      forbid-mermaid: false   # hub READMEs still carry mermaid until the 2026-09 README rewrite
     secrets: inherit

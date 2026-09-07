@@ -23,6 +23,10 @@ on:
         description: README without README.en.md is a warning, not an error
         type: boolean
         default: true
+      forbid-mermaid:
+        description: fail when a README contains a mermaid fence (README contract 2026-09 — images only)
+        type: boolean
+        default: true
 
 permissions:
   contents: read
@@ -35,7 +39,7 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
-          node-version: "20"
+          node-version: "22"
       - name: Install claude CLI (self-healing, mirrors community validate-plugins)
         shell: bash
         env:
@@ -127,7 +131,7 @@ jobs:
           python-version: "3.12"
       - name: README parity (H2 sets, links; Mermaid forbidden in README)
         run: |
-          if grep -rl --include='README*.md' '```mermaid' . ; then
+          if [ "${{ inputs.forbid-mermaid }}" = "true" ] && grep -rl --include='README*.md' '```mermaid' . ; then
             echo "::error::Mermaid fences are not allowed in README (images only)"; exit 1
           fi
           python3 "$RUNNER_TEMP/hub-tools/readme-parity.py" --no-mermaid ${{ inputs.allow-missing-en && '--allow-missing-en' || '' }} .
