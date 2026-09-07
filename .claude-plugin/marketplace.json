@@ -94,8 +94,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-advisor-sales.git",
-        "ref": "advisor-sales--v1.0.2",
-        "sha": "c0750641f9b938aab0e244d5d840719c3a2ad974"
+        "ref": "advisor-sales--v1.0.3",
+        "sha": "dc01d3d0161af7aca31b20345034dbba6bae6565"
       },
       "category": "productivity",
       "tags": [
