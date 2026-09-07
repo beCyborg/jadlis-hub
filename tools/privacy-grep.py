@@ -66,7 +66,7 @@ def main() -> int:
     self_path = Path(__file__).resolve()
     hits = 0
     for path in iter_files([Path(p) for p in args.paths]):
-        if path.resolve() == self_path:
+        if path.resolve() == self_path or path.name == "privacy-grep.py":
             continue
         try:
             lines = path.read_text(encoding="utf-8").splitlines()
