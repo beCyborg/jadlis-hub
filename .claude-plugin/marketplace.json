@@ -78,8 +78,8 @@
         "source": "git-subdir",
         "url": "https://github.com/beCyborg/jadlis-advisor-psychologist.git",
         "path": "plugins/advisor-psychologist",
-        "ref": "advisor-psychologist--v1.2.0",
-        "sha": "e3dadbae0c556e21062cdedfec6ddc57b0f2e51f"
+        "ref": "advisor-psychologist--v1.2.1",
+        "sha": "fd1360db4506c2ea3cadf238fd687965d5c48f7c"
       },
       "category": "productivity",
       "tags": [
