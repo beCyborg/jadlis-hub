@@ -10,10 +10,10 @@
   - Added: …
 
 Использование:
-  python3 tools/release-notes.py plugins/jadlis-start            # тело релиза для текущей версии plugin.json
-  python3 tools/release-notes.py plugins/jadlis-start --title    # заголовок: «jadlis-start 1.2.0 — … / …»
-  python3 tools/release-notes.py plugins/jadlis-start --version 1.1.0
-  python3 tools/release-notes.py plugins/jadlis-start --release  # gh release create <tag> с телом и заголовком
+  python3 tools/release-notes.py plugins/jadlis-hub            # тело релиза для текущей версии plugin.json
+  python3 tools/release-notes.py plugins/jadlis-hub --title    # заголовок: «jadlis-hub 3.0.0 — … / …»
+  python3 tools/release-notes.py plugins/jadlis-hub --version 1.1.0
+  python3 tools/release-notes.py plugins/jadlis-hub --release  # gh release create <tag> с телом и заголовком
 
 Для root-as-plugin репо укажи `.`.
 """
