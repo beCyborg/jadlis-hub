@@ -106,40 +106,6 @@
       "description": "Разбор звонка, застрявшая сделка, скрипт: 16 слоёв сделки, 4 режима."
     },
     {
-      "name": "books",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/beCyborg/jadlis-books.git",
-        "path": "plugins/books",
-        "ref": "books--v1.1.0",
-        "sha": "5126e5f12d1f0fec51bec7364aa1acda055a1e75"
-      },
-      "category": "research",
-      "tags": [
-        "jadlis",
-        "books",
-        "papers"
-      ],
-      "description": "Книга или статья за минуту: поиск и скачивание через Архив Анны."
-    },
-    {
-      "name": "browser",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/beCyborg/jadlis-desktop.git",
-        "path": "plugins/browser",
-        "ref": "browser--v1.1.2",
-        "sha": "7050b02007887fb8b46124291929f62c933196f7"
-      },
-      "category": "productivity",
-      "tags": [
-        "jadlis",
-        "browser",
-        "playwright"
-      ],
-      "description": "Залогиненный браузер: Playwright MCP в режиме расширения Chrome."
-    },
-    {
       "name": "cognitive-biases",
       "source": {
         "source": "url",
@@ -156,13 +122,45 @@
       "description": "Проверка решения на 111 искажений с протоколами дебайсинга."
     },
     {
-      "name": "computer-use",
+      "name": "jadlis-books",
       "source": {
         "source": "git-subdir",
-        "url": "https://github.com/beCyborg/jadlis-desktop.git",
-        "path": "plugins/computer-use",
-        "ref": "computer-use--v1.1.3",
-        "sha": "7050b02007887fb8b46124291929f62c933196f7"
+        "url": "https://github.com/beCyborg/jadlis-books.git",
+        "path": "plugins/books",
+        "ref": "jadlis-books--v2.0.0",
+        "sha": "525149d32972a704dd14f43459c0d123c8fccb8b"
+      },
+      "category": "research",
+      "tags": [
+        "jadlis",
+        "books",
+        "papers"
+      ],
+      "description": "Книга или статья за минуту: поиск и скачивание через Архив Анны."
+    },
+    {
+      "name": "jadlis-browser",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/beCyborg/jadlis-browser.git",
+        "ref": "jadlis-browser--v2.0.0",
+        "sha": "06560c4517748fae3876525563500a3ac431a5d5"
+      },
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "browser",
+        "playwright"
+      ],
+      "description": "Залогиненный браузер: Playwright MCP в режиме расширения Chrome."
+    },
+    {
+      "name": "jadlis-computer-use",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/beCyborg/jadlis-computer-use.git",
+        "ref": "jadlis-computer-use--v2.0.0",
+        "sha": "dfd2f313b9ce9cacfcb0f1f307fbccd29d826f87"
       },
       "category": "productivity",
       "tags": [
@@ -173,15 +171,138 @@
       "description": "Нативные приложения macOS и кросс-приложенческие сценарии."
     },
     {
-      "name": "jadlis-start",
-      "source": "./plugins/jadlis-start",
+      "name": "jadlis-plugin-creator",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/beCyborg/jadlis-plugin-creator.git",
+        "ref": "jadlis-plugin-creator--v2.0.0",
+        "sha": "11fa7b43e4af49b22dd1c8899e1d3c626711d20d"
+      },
+      "category": "development",
+      "tags": [
+        "jadlis",
+        "plugins",
+        "marketplace"
+      ],
+      "description": "Собрать, проверить и выпустить плагин по стандарту."
+    },
+    {
+      "name": "jadlis-research",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/beCyborg/jadlis-research.git",
+        "ref": "jadlis-research--v2.0.0",
+        "sha": "c93d6f0c41bfa30ec6227eb2b86e6886650e1b83"
+      },
+      "category": "research",
+      "tags": [
+        "jadlis",
+        "research",
+        "verification",
+        "communities"
+      ],
+      "description": "Решение, которому можно доверять: 14 каналов, ключевые утверждения перепроверены, непроверенные помечены."
+    },
+    {
+      "name": "jadlis-science-research",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/beCyborg/jadlis-science-research.git",
+        "ref": "jadlis-science-research--v2.0.0",
+        "sha": "5b04689eea58a682946b3ec64aea0aa19a2b3d70"
+      },
+      "category": "research",
+      "tags": [
+        "jadlis",
+        "science",
+        "pubmed",
+        "grade"
+      ],
+      "description": "Что реально доказано наукой и не отозвано ли: PubMed, Europe PMC, Semantic Scholar, OpenAlex, arXiv, Cochrane."
+    },
+    {
+      "name": "jadlis-search",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/beCyborg/jadlis-search.git",
+        "ref": "jadlis-search--v2.0.0",
+        "sha": "a0a3f1164e3952cc494fd6b07a2b5eeed106698b"
+      },
+      "category": "research",
+      "tags": [
+        "jadlis",
+        "search",
+        "brave",
+        "exa",
+        "firecrawl",
+        "mcp"
+      ],
+      "description": "Поиск и ключи для всего ресерч-стека; база для research и science-research."
+    },
+    {
+      "name": "jadlis-skill-builder",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/beCyborg/jadlis-skill-builder.git",
+        "ref": "jadlis-skill-builder--v2.0.0",
+        "sha": "2cc70276b2ce4d11a665ca35550db2133bb3b61f"
+      },
+      "category": "development",
+      "tags": [
+        "jadlis",
+        "skills",
+        "evals"
+      ],
+      "description": "Свой ИИ-сотрудник: скилл = должностная инструкция (расширенный форк официального skill-creator)."
+    },
+    {
+      "name": "jadlis-swot-news",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/beCyborg/jadlis-swot-news.git",
+        "ref": "jadlis-swot-news--v3.0.0",
+        "sha": "f1479d8a18f5783f05e5477ac33d6cb7452efcdd"
+      },
       "category": "productivity",
       "tags": [
         "jadlis",
-        "onboarding",
-        "obsidian"
+        "news",
+        "swot"
       ],
-      "description": "Драйвер маршрута передачи 0–6: определяет текущий тир пробами машины, ставит следующий плагин, не выдаёт тир авансом."
+      "description": "Новости как личный SWOT: ежедневный дельта-выпуск по Kagi News."
+    },
+    {
+      "name": "jadlis-tldr",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/beCyborg/jadlis-tldr.git",
+        "ref": "jadlis-tldr--v2.0.0",
+        "sha": "c144d767a800f076d47c38a03e872ecad99e2648"
+      },
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "youtube",
+        "summary"
+      ],
+      "description": "Видео и файлы — выжимка и действия."
+    },
+    {
+      "name": "jadlis-verif",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/beCyborg/jadlis-verif.git",
+        "ref": "jadlis-verif--v2.0.0",
+        "sha": "8fb261bffa52ae58ef01fd80ccfac05fb0f49c4d"
+      },
+      "category": "research",
+      "tags": [
+        "jadlis",
+        "verification",
+        "adversarial",
+        "plan-review"
+      ],
+      "description": "Три модели рвут твой план порознь до того, как ты в него вложился."
     },
     {
       "name": "nupp",
@@ -200,39 +321,6 @@
       "description": "Диагноз проекта по 6 универсальным принципам (NUPP)."
     },
     {
-      "name": "plugin-creator",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-plugin-creator.git",
-        "ref": "plugin-creator--v1.1.0",
-        "sha": "0e10f26ac706d5188a665e5a756c6336ff2234a7"
-      },
-      "category": "development",
-      "tags": [
-        "jadlis",
-        "plugins",
-        "marketplace"
-      ],
-      "description": "Собрать, проверить и выпустить плагин по стандарту."
-    },
-    {
-      "name": "research",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-research.git",
-        "ref": "research--v1.0.0",
-        "sha": "e4b6448e167745bcae46339a0e6a5a1e223f2384"
-      },
-      "category": "research",
-      "tags": [
-        "jadlis",
-        "research",
-        "verification",
-        "communities"
-      ],
-      "description": "Решение, которому можно доверять: 14 каналов, ключевые утверждения перепроверены, непроверенные помечены."
-    },
-    {
       "name": "robert-greene",
       "source": {
         "source": "url",
@@ -247,125 +335,7 @@
         "strategy"
       ],
       "description": "Люди, влияние, стратегия по пяти книгам Грина."
-    },
-    {
-      "name": "science-research",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-science-research.git",
-        "ref": "science-research--v1.0.1",
-        "sha": "ba8bd2aaf5656d94e0853cde383b2732e1ae3a63"
-      },
-      "category": "research",
-      "tags": [
-        "jadlis",
-        "science",
-        "pubmed",
-        "grade"
-      ],
-      "description": "Что реально доказано наукой и не отозвано ли: PubMed, Europe PMC, Semantic Scholar, OpenAlex, arXiv, Cochrane."
-    },
-    {
-      "name": "search",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-search.git",
-        "ref": "search--v1.0.1",
-        "sha": "e55e485b9d990811b36998f6c87c300b2eda5303"
-      },
-      "category": "research",
-      "tags": [
-        "jadlis",
-        "search",
-        "brave",
-        "exa",
-        "firecrawl",
-        "mcp"
-      ],
-      "description": "Поиск и ключи для всего ресерч-стека; база для research и science-research."
-    },
-    {
-      "name": "setup",
-      "source": "./plugins/setup",
-      "category": "productivity",
-      "tags": [
-        "jadlis",
-        "onboarding",
-        "workplace"
-      ],
-      "description": "Тир 0: рабочее место — зависимости, настройки ~/.claude, память, папка Obsidian, по желанию терминал."
-    },
-    {
-      "name": "skill-builder",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-skill-builder.git",
-        "ref": "skill-builder--v1.9.0",
-        "sha": "844153521391342196eae6115deb9fcb55014382"
-      },
-      "category": "development",
-      "tags": [
-        "jadlis",
-        "skills",
-        "evals"
-      ],
-      "description": "Свой ИИ-сотрудник: скилл = должностная инструкция (расширенный форк официального skill-creator)."
-    },
-    {
-      "name": "swot-news",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-swot-news.git",
-        "ref": "swot-news--v2.0.1",
-        "sha": "2634162c5675580dc4c908a1b372bb32eadbd045"
-      },
-      "category": "productivity",
-      "tags": [
-        "jadlis",
-        "news",
-        "swot"
-      ],
-      "description": "Новости как личный SWOT: ежедневный дельта-выпуск по Kagi News."
-    },
-    {
-      "name": "tldr",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-tldr.git",
-        "ref": "tldr--v1.0.2",
-        "sha": "7743a493f2e0baf203c8b4be5fce09a56c26ee9f"
-      },
-      "category": "productivity",
-      "tags": [
-        "jadlis",
-        "youtube",
-        "summary"
-      ],
-      "description": "Видео и файлы — выжимка и действия."
-    },
-    {
-      "name": "verif",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-verif.git",
-        "ref": "verif--v1.0.0",
-        "sha": "402f87dbeeed300e44d8a82eb126b16c021bc453"
-      },
-      "category": "research",
-      "tags": [
-        "jadlis",
-        "verification",
-        "adversarial",
-        "plan-review"
-      ],
-      "description": "Три модели рвут твой план порознь до того, как ты в него вложился."
     }
   ],
-  "renames": {
-    "jadlis-research": null,
-    "advisors": null,
-    "adv-psy": "advisor-psychologist",
-    "annas-archive": "books",
-    "skill-creator": "skill-builder"
-  }
+  "renames": {}
 }
