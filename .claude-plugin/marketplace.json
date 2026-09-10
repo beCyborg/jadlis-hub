@@ -5,7 +5,7 @@
     "name": "Be Cyborg",
     "url": "https://github.com/beCyborg"
   },
-  "description": "Jadlis — передача стека: рабочее место, голос, ключи и verif, ресерч, свои сотрудники, советы директоров, методология. Драйвер маршрута 0–6, внутренние и внешние плагины с пином по тегу.",
+  "description": "Jadlis — передача стека: рабочее место, Obsidian, голос, поиск и ключи, ресерч, проверка планов, свои сотрудники, советы директоров. Помощник маршрута, внутренний плагин и внешние плагины с пином по тегу.",
   "plugins": [
     {
       "name": "advisor-copywriting",
@@ -169,6 +169,17 @@
         "macos"
       ],
       "description": "Нативные приложения macOS и кросс-приложенческие сценарии."
+    },
+    {
+      "name": "jadlis-hub",
+      "source": "./plugins/jadlis-hub",
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "onboarding",
+        "route"
+      ],
+      "description": "Маршрут стека Jadlis: помощник снимает состояние машины и выдаёт ровно следующий шаг."
     },
     {
       "name": "jadlis-plugin-creator",
