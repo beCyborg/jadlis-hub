@@ -12,6 +12,23 @@
 | Линии и текст | `#2f3333` |
 | Вторичный серый | `#666969`, светлый `#b3b3b0` |
 
+## Палитра хаба (README `jadlis-hub`, выбрана 10.09.2026 по трём пробам hero)
+
+Только для README хаба; советы и репо каталога остаются на палитре выше, их картинки не перерисовываются.
+
+| Роль | Hex |
+|---|---|
+| Фон | `#f7f8fc` (очень светлый бело-голубой) |
+| Акцент 1 — электрик-синий (нечётные блоки, стрелки, ссылка) | `#1f4bff` |
+| Акцент 2 — коралл (чётные блоки, подсветка) | `#ff5a4e` |
+| Текст | почти чёрный `#111318` |
+
+Стиль: светлый минимализм, крупные плоские формы, тонкие контуры, мягкая тень; предметы и схемы без людей; короткий русский тезис внутри картинки. Префикс промпта (English):
+
+```
+Style: clean minimalist infographic on a very light background (#f7f8fc), generous whitespace, large flat geometric shapes, crisp thin outlines, two saturated accent colors — electric blue (#1f4bff) and coral (#ff5a4e) — plus near-black text, subtle soft shadows only, premium and precise, no gradients, no glow, no robots, no people, no stock photos, no watermark, no brand names or logos. Short Russian labels rendered as crisp, correctly spelled Cyrillic text in a modern geometric sans-serif. Wide 2:1 composition, 1280x640.
+```
+
 ## Шрифтовой характер
 
 Геометрический гротеск, жирные заголовки, подписи в одну-две строки. Кириллица в картинках держится (проверено на 7 картинках 07.09) — подписи ставятся внутрь картинки; текстовая альтернатива под картинкой всё равно обязательна (доступность).
