@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "jadlis-hub",
+  "version": "3.0.0",
+  "displayName": "Jadlis — помощник маршрута",
+  "description": "Помощник маршрута Jadlis: снимает состояние машины, ведёт от обязательной настройки к необязательным инструментам, объясняет простым языком.",
+  "author": {
+    "name": "Be Cyborg"
+  },
+  "homepage": "https://github.com/beCyborg/jadlis-hub",
+  "repository": "https://github.com/beCyborg/jadlis-hub",
+  "keywords": [
+    "jadlis",
+    "onboarding",
+    "route",
+    "claude-code",
+    "obsidian"
+  ]
+}
