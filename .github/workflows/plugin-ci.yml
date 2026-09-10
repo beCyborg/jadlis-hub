@@ -1,5 +1,5 @@
 # Reusable CI for every jadlis-* repo. Called as
-#   uses: beCyborg/jadlis-start/.github/workflows/plugin-ci.yml@main
+#   uses: beCyborg/jadlis-hub/.github/workflows/plugin-ci.yml@main
 # NEVER rename this repository: GitHub does not redirect reusable-workflow calls.
 #
 # mode: plugin      — root-as-plugin repo: claude plugin validate --strict, gitleaks,
@@ -124,7 +124,7 @@ jobs:
       - name: Fetch hub tools (readme-parity, privacy-grep)
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
-          repository: beCyborg/jadlis-start
+          repository: beCyborg/jadlis-hub
           ref: main
           path: .hub-tools
           sparse-checkout: tools
