@@ -43,9 +43,59 @@ Coming out — seven route lines with statuses and exactly one next step.
 In words: a command in the chat → the route with statuses → a probe on the machine → the step
 opens; if it did not confirm, it does not open, and you are told exactly what failed.
 
+**The mandatory chain — behind a gate.** Until a step is confirmed by a probe, the next one is not
+handed out.
+
+| № | Plugin | Command | What it gives |
+|---|---|---|---|
+| 1 | `jadlis-claudecode` | `/claudecode` | Claude Code, the terminal and the `~/Jadlis` folder — the same as the owner's. |
+| 2 | `jadlis-obsidian` | `/obsidian` | The Obsidian vault: theme, plugins, hotkeys, CLI. |
+| 3 | `jadlis-voice` | `/jadlis-voice` | The voice loop: dictation and speech. |
+| 4 | `jadlis-search` | `/search` | Search and keys — the base for both research steps. |
+| 5 | `jadlis-research`, `jadlis-science-research` | `/research`, `/science-research` | Full research across channels, and separately what science actually proves. |
+| 6 | `jadlis-verif` | `/verif` | Three models tear your plan apart independently. End of the gate. |
+
+**Optional ones — in the recommended order.** You install whatever you have reached.
+
+| Plugin | Command | What it gives |
+|---|---|---|
+| `jadlis-swot-news` | `/swot-news` | The news as a personal SWOT, a delta issue every day. |
+| `jadlis-tldr` | `/tldr` | Videos and files — the gist and the actions. |
+| `jadlis-books` | `/books` | A book or a paper in a minute. |
+| `jadlis-browser` | `/browser` | The logged-in browser: whatever sits behind a password. |
+| `jadlis-computer-use` | `/computer-use` | Native macOS applications. |
+| `jadlis-skill-builder` | `/skill-builder` | Your own AI employee: a skill as a job description. |
+| `jadlis-plugin-creator` | `/plugin-creator` | Build, check and release your own plugin. |
+
+The names follow one rule: the repository and the plugin are `jadlis-<name>`, the command is short —
+`/<name>`; the full form `/jadlis-<name>:<name>` works too.
+
+**Later.** The nine advisor councils built from books already sit in this same marketplace under
+their current names: `advisor-decision`, `advisor-product`, `advisor-influence`, `advisor-sales`,
+`advisor-copywriting`, `advisor-psychologist`, `robert-greene`, `nupp`, `cognitive-biases`. Their
+rework — names, structure, texts — is the next plan, and the route helper does not install them yet.
+After the councils comes `jadlis-os`: the vault methodology (needs, metrics, goals, the day and week
+relaunches) plus the interviewer; those repositories are still private.
+
 ## Installing and the first run
 
-**a) Text to paste to an agent.** Copy the whole thing into a Claude Code chat:
+**a) The first screen is one plugin.** Three lines, nothing else is needed to get in:
+
+```
+claude plugin marketplace add https://github.com/beCyborg/jadlis-hub
+claude plugin install jadlis-hub@jadlis
+/jadlis-hub
+```
+
+The first line installs nothing — it adds the marketplace. The second installs one plugin, the route
+helper. The third is a slash command in the Claude Code chat: it opens the route, brings you back
+into it after a break, and is repeated at the end of every answer, so you never hunt for it in the
+history.
+
+From there the helper leads you step by step. Each step is its own plugin with its own short
+command, installed as the route reaches it; there is nothing to install in advance.
+
+**b) Text to paste to an agent.** Copy the whole thing into a Claude Code chat:
 
 ```
 You are the installer. Install the plugin jadlis-hub from the jadlis marketplace on this Mac.
@@ -62,27 +112,11 @@ Do not ask me for keys: this step does not need them. Never print key values.
 If a command returns an error, stop, show me the output, and do not move to the next one.
 ```
 
-**b) Commands by hand.**
-
-```
-claude plugin marketplace add https://github.com/beCyborg/jadlis-hub
-claude plugin install jadlis-hub@jadlis
-claude plugin list
-```
-
-The first command installs nothing — it adds the marketplace.
-
-**c) The first command.** Open Claude Code in the folder you work in and send the command:
-
-```
-/jadlis-hub
-```
-
-It is a slash command. It opens the route, it brings you back into it after a break, and it is
-repeated at the end of every answer — you will never have to hunt for it in the chat history.
+**c) The check.** `claude plugin list` — the list should hold a line about `jadlis-hub` with its
+version. Open Claude Code in the folder you actually work in.
 
 The first step of the route is the workplace: the route installs `jadlis-claudecode@jadlis` itself and
-hands over to its command `/claudecode`. There is no need to install it separately beforehand.
+hands over to its command `/claudecode`.
 
 ## Limits, cost, updating
 
@@ -93,11 +127,20 @@ does not hand out the next step on trust — not out of spite: without keys a la
 on your machine, and you will conclude that everything is broken.
 
 **What you need.** A Mac and an active Claude Code subscription. Missing either one and nothing
-further works; better to find that out now than on the third step. The route steps where search
-switches on need the paid Brave and Firecrawl keys — said here, before installing, not halfway
-through. Brave and Firecrawl are the ones who bill you, so check their pricing with them: I name no
-figures of my own. Checked on macOS 27.0 and Claude Code 2.1.263; below those versions I have not
-tested it.
+further works; better to find that out now than on the third step. Checked on macOS 27.0 and Claude
+Code 2.1.263; below those versions I have not tested it.
+
+**What you will have to pay for.** Said here, before installing, not halfway through the route. I
+name no figures — see the provider's page.
+
+| Step | What you pay for |
+|---|---|
+| 1. The workplace | A Claude **Max** plan: the shipped settings carry `model: opus[1m]`, and on Pro, Opus with the 1M window burns usage credits. |
+| 2. Obsidian | Obsidian Sync, if you want syncing across devices. |
+| 3. Voice | ElevenLabs + the Anthropic API; the OpenAI API is optional. |
+| 4. Search | The Brave Search API + Firecrawl. |
+| 5–6. Research and verification | A ChatGPT subscription (Codex CLI); Grok is optional. |
+| Books (optional) | An Anna's Archive membership. |
 
 **The catalogue.** The route leads through the other 20 repositories of the showcase: each is
 installed by its own command, there is no single "install everything" button and there never will be
