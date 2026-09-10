@@ -173,17 +173,6 @@
       "description": "Нативные приложения macOS и кросс-приложенческие сценарии."
     },
     {
-      "name": "jadlis-interviewer",
-      "source": "./plugins/jadlis-interviewer",
-      "category": "productivity",
-      "tags": [
-        "jadlis",
-        "obsidian",
-        "goals"
-      ],
-      "description": "Тир 6.2: интервьюер — доводит vault до смысла жизни, потребностей с метриками и целей квартала."
-    },
-    {
       "name": "jadlis-start",
       "source": "./plugins/jadlis-start",
       "category": "productivity",
@@ -193,17 +182,6 @@
         "obsidian"
       ],
       "description": "Драйвер маршрута передачи 0–6: определяет текущий тир пробами машины, ставит следующий плагин, не выдаёт тир авансом."
-    },
-    {
-      "name": "jadlis-vault",
-      "source": "./plugins/jadlis-vault",
-      "category": "productivity",
-      "tags": [
-        "jadlis",
-        "obsidian",
-        "vault"
-      ],
-      "description": "Тир 6.1: раскладывает скелет vault, CLAUDE.md и сниппет hide-files.css, ведёт первый перезапуск дня."
     },
     {
       "name": "nupp",
