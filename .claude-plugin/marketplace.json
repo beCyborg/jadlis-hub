@@ -155,6 +155,23 @@
       "description": "Залогиненный браузер: Playwright MCP в режиме расширения Chrome."
     },
     {
+      "name": "jadlis-claudecode",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/beCyborg/jadlis-claudecode.git",
+        "ref": "jadlis-claudecode--v1.0.0",
+        "sha": "8cbc866d6f87b56a147acc3c563a82d192fd99c1"
+      },
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "setup",
+        "claude-code",
+        "terminal"
+      ],
+      "description": "Claude Code, терминал (iTerm2 + tmux, cld) и ~/Jadlis один в один с владельцем — первый обязательный шаг маршрута."
+    },
+    {
       "name": "jadlis-computer-use",
       "source": {
         "source": "url",
@@ -180,6 +197,38 @@
         "route"
       ],
       "description": "Маршрут стека Jadlis: помощник снимает состояние машины и выдаёт ровно следующий шаг."
+    },
+    {
+      "name": "jadlis-notifications",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/beCyborg/jadlis-notifications.git",
+        "ref": "jadlis-notifications--v1.41.0",
+        "sha": "e59236177b376553a4fc0d29243dbcaf562eca91"
+      },
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "youtube",
+        "summary"
+      ],
+      "description": "Уведомления Claude Code: форк claude-notifications-go с русскими заголовками, именем сессии в подзаголовке и гейтом фоновых задач. Ставится зависимостью jadlis-claudecode."
+    },
+    {
+      "name": "jadlis-obsidian",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/beCyborg/jadlis-obsidian.git",
+        "ref": "jadlis-obsidian--v1.0.0",
+        "sha": "57ce33a9a04074821ab1b36fc35ef3e91021f2ed"
+      },
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "obsidian",
+        "vault"
+      ],
+      "description": "Obsidian один в один с владельцем: тема, 12 плагинов, хоткеи, CLI, связка obsidian-skills и vault CLAUDE.md — второй обязательный шаг маршрута."
     },
     {
       "name": "jadlis-plugin-creator",
@@ -314,6 +363,23 @@
         "plan-review"
       ],
       "description": "Три модели рвут твой план порознь до того, как ты в него вложился."
+    },
+    {
+      "name": "jadlis-voice",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/beCyborg/jadlis-voice.git",
+        "ref": "jadlis-voice--v1.0.0",
+        "sha": "3a28314d0fa17c106f6425ff93b1a66ac5163085"
+      },
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "voice",
+        "dictation",
+        "spokenly"
+      ],
+      "description": "Голосовой контур один в один с владельцем: диктовка Spokenly с AI-обработкой, автозамены и озвучка буфера — третий обязательный шаг маршрута."
     },
     {
       "name": "nupp",
