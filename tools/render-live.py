@@ -5,13 +5,13 @@ This is the INVERSE of the documented sync procedure (live -> plugin).
 Since the 2026-09-07 split the research stack lives in four root-as-plugin
 repos, and together they are the source of truth:
 
-    ~/jadlis-search           plugin `search`   — skills/search, skills/keys,
+    ~/jadlis-search           plugin `jadlis-search` — skills/search, skills/keys,
                                                   scripts/, shared/, hooks/, .mcp.json
-    ~/jadlis-research         plugin `research` — skills/research, agents/,
+    ~/jadlis-research         plugin `jadlis-research` — skills/research, agents/,
                                                   workflows/full-research-core.js
-    ~/jadlis-science-research plugin `science-research` — skills/science-research,
+    ~/jadlis-science-research plugin `jadlis-science-research` — skills/science-research,
                                                   workflows/search-paper-core.js
-    ~/jadlis-verif            plugin `verif`    — skills/verif, assets/verif-homes
+    ~/jadlis-verif            plugin `jadlis-verif` — skills/verif, assets/verif-homes
 
 The tool materialises the personal contour in ~/.claude, undoing the
 plugin-specific adaptations (placeholders, MCP name prefixes, namespaced
@@ -135,6 +135,13 @@ COMMAND_SUBST_EXEMPT = {
 # Invariants
 DEST_FORBIDDEN = [
     "plugin_search",
+    "plugin_jadlis-search",
+    "plugin_jadlis-science-research",
+    "plugin_jadlis-verif",
+    "jadlis-search:",
+    "jadlis-research:",
+    "jadlis-science-research:",
+    "jadlis-verif:",
     "plugin_jadlis-research",
     "CLAUDE_PLUGIN_ROOT",
     "{PLUGIN_ROOT}",
@@ -194,8 +201,10 @@ def substitute(text: str, rel: str | None = None) -> str:
     #    host prefix is `mcp__plugin_search_`. reddit-alt BEFORE the generic
     #    rule, otherwise the generic rule eats the prefix and leaves
     #    `mcp__reddit__-alt`.
-    text = text.replace("mcp__plugin_search_reddit-alt__", "mcp__reddit-alt__")
-    text = re.sub(r"mcp__plugin_search_([A-Za-z0-9-]+?)__", r"mcp__\1__", text)
+    #    Since 2026-09-10 the plugin is `jadlis-search`, so the prefix is
+    #    `mcp__plugin_jadlis-search_`; the old bare prefix is kept for safety.
+    text = re.sub(r"mcp__plugin_(?:jadlis-)?search_reddit-alt__", "mcp__reddit-alt__", text)
+    text = re.sub(r"mcp__plugin_(?:jadlis-)?search_([A-Za-z0-9-]+?)__", r"mcp__\1__", text)
 
     # 4. Namespaced agent types. Quoted (JS strings) or backticked (SKILL prose):
     #    'research:researcher-opus' -> 'researcher-opus',
@@ -203,7 +212,7 @@ def substitute(text: str, rel: str | None = None) -> str:
     #    Only the quoted form is touched, so prose about the *plugin* `research:`
     #    stays intact.
     text = re.sub(
-        r"(['\"`])(?:jadlis-|science-)?research:([A-Za-z0-9_-]+)\1",
+        r"(['\"`])(?:jadlis-)?(?:science-)?research:([A-Za-z0-9_-]+)\1",
         r"\1\2\1",
         text,
     )
@@ -211,6 +220,12 @@ def substitute(text: str, rel: str | None = None) -> str:
     # 5. Slash commands. `/search` and `/verif` are the same on both sides;
     #    the two research commands and the keys sub-command are renamed.
     if rel not in COMMAND_SUBST_EXEMPT:
+        # Namespaced forms first (plugin `jadlis-<x>` + skill `<x>`), then bare.
+        text = re.sub(r"(?<![\w/.-])/jadlis-science-research:science-research(?![\w-])", "/search-paper", text)
+        text = re.sub(r"(?<![\w/.-])/jadlis-research:research(?![\w-])", "/full-research", text)
+        text = re.sub(r"(?<![\w/.-])/jadlis-search:keys(?![\w-])", "/keys", text)
+        text = re.sub(r"(?<![\w/.-])/jadlis-search:search(?![\w-])", "/search", text)
+        text = re.sub(r"(?<![\w/.-])/jadlis-verif:verif(?![\w-])", "/verif", text)
         text = re.sub(r"(?<![\w/.-])/science-research(?![\w-])", "/search-paper", text)
         text = re.sub(r"(?<![\w/.-])/research(?![\w-])", "/full-research", text)
         text = re.sub(r"(?<![\w/.-])/search:keys(?![\w-])", "/keys", text)
