@@ -214,11 +214,11 @@ def build_manifest(target: str) -> dict:
 
 def readme_pair(target: str) -> tuple[str, str]:
     t = TARGETS[target]
-    install = f"claude plugin marketplace add {GITHUB}/jadlis-start.git\nclaude plugin install {target}@jadlis"
+    install = f"claude plugin marketplace add {GITHUB}/jadlis-hub\nclaude plugin install {target}@jadlis"
     if target == "search":
-        install = f"claude plugin marketplace add {GITHUB}/jadlis-start.git\nclaude plugin install search@jadlis --config BRAVE_API_KEY=… --config FIRECRAWL_API_KEY=…"
+        install = f"claude plugin marketplace add {GITHUB}/jadlis-hub\nclaude plugin install search@jadlis --config BRAVE_API_KEY=… --config FIRECRAWL_API_KEY=…"
     elif target in ("research", "science-research"):
-        install = (f"claude plugin marketplace add {GITHUB}/jadlis-start.git\n"
+        install = (f"claude plugin marketplace add {GITHUB}/jadlis-hub\n"
                    f"claude plugin install search@jadlis --config BRAVE_API_KEY=… --config FIRECRAWL_API_KEY=…\n"
                    f"claude plugin install {target}@jadlis")
     ru = f"""Русский · [English](README.en.md)
@@ -286,7 +286,7 @@ def changelog(target: str) -> str:
     return f"""# Changelog — {target}
 
 Формат: [Keep a Changelog](https://keepachangelog.com/ru/1.1.0/), версии — [SemVer](https://semver.org/lang/ru/).
-История до 1.0.0 — плагин `jadlis-research` 1.0.0–1.3.0 в репо [jadlis-start]({GITHUB}/jadlis-start) (`plugins/jadlis-research/CHANGELOG.md` до split).
+История до 1.0.0 — плагин `jadlis-research` 1.0.0–1.3.0 в репо [jadlis-hub]({GITHUB}/jadlis-hub) (`plugins/jadlis-research/CHANGELOG.md` до split).
 
 ## [Unreleased]
 
@@ -342,7 +342,7 @@ permissions:
   contents: read
 jobs:
   ci:
-    uses: beCyborg/jadlis-start/.github/workflows/plugin-ci.yml@main
+    uses: beCyborg/jadlis-hub/.github/workflows/plugin-ci.yml@main
     with:
       mode: plugin
     secrets: inherit
