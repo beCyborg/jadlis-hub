@@ -9,7 +9,7 @@
 
 Использование:
   python3 tools/readme-parity.py            # весь репо от корня
-  python3 tools/readme-parity.py docs/2-verif plugins/setup
+  python3 tools/readme-parity.py docs/brand plugins/jadlis-hub
   python3 tools/readme-parity.py --no-mermaid
 
 Код выхода 1 при любой ошибке.

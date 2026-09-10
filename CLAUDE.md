@@ -1,10 +1,10 @@
-# jadlis-start — конвенции репо
+# jadlis-hub — конвенции репо
 
-Хаб передачи стека Jadlis: маркетплейс `jadlis`, внутренние плагины в `plugins/<name>`, внешние — записями `url` / `git-subdir` с пином `ref` + `sha`. Доки по тирам 0–6 в `docs/<N>-<slug>/`. Эти правила читает агент, который коммитит.
+Хаб передачи стека Jadlis: маркетплейс `jadlis`, единственный внутренний плагин `plugins/jadlis-hub`, внешние — записями `url` / `git-subdir` с пином `ref` + `sha`. Доки шагов живут в своих репо (`docs/tier/README.md`), в хабе остаются только `docs/brand` и `docs/img`. Эти правила читает агент, который коммитит.
 
 ## Коммиты
 
-- Тема — Conventional Commits на английском: `type(scope): subject`, ≤72 символа. `scope` = имя внутреннего плагина (`jadlis-start`, `setup`, `jadlis-vault`, `jadlis-interviewer`) или `hub`, `docs`, `tools`.
+- Тема — Conventional Commits на английском: `type(scope): subject`, ≤72 символа. `scope` = `hub`, `jadlis-hub` (плагин), `docs` или `tools`.
 - Тело двухслойное, шаблон в `.gitmessage` (`git config commit.template .gitmessage`):
   1. `Что изменилось:` — 1–3 предложения по-русски простым языком, для человека.
   2. `Details (for agents):` — буллеты `Added / Changed / Removed / Migration / Refs` с путями.
@@ -34,10 +34,10 @@
 ## Приватность
 
 - В файлах репо нет ключей, почт, телефонов, путей владельца (`/Users/<имя>`) и упоминаний приватного бэкапа `.claude/`. Перед пушем: `gitleaks git .` и `python3 tools/privacy-grep.py` (CI гоняет оба).
-- Ключи получателя живут в Связке ключей macOS (стандарт в `docs/2-verif/`), не в репо.
+- Ключи получателя живут в Связке ключей macOS (стандарт описан в репо `jadlis-search`), не в репо.
 
 ## Разработка
 
-- Правки только в рабочем клоне `~/jadlis-start`, никогда в `~/.claude/plugins/marketplaces/` (фоновый рефреш стирает правки).
+- Правки только в рабочем клоне `~/jadlis-hub`, никогда в `~/.claude/plugins/marketplaces/` (фоновый рефреш стирает правки).
 - Перед коммитом: `claude plugin validate .claude-plugin/marketplace.json` и `python3 tools/readme-parity.py`.
 - Язык доков — русский (RU-файл первичен), код и идентификаторы — английский.

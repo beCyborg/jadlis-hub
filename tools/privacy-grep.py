@@ -6,7 +6,7 @@
 
 Использование:
   python3 tools/privacy-grep.py                 # все *.md, *.json, *.sh, *.py, *.txt от корня репо
-  python3 tools/privacy-grep.py docs plugins/setup
+  python3 tools/privacy-grep.py docs plugins/jadlis-hub
   python3 tools/privacy-grep.py --words extra-words.txt   # доп. стоп-слова, по одному на строку
 
 Код выхода 1 при любом HIT. Ложные срабатывания гасятся комментарием
