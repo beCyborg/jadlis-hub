@@ -14,5 +14,6 @@ jobs:
     with:
       mode: marketplace
       claude-cli-version: "2.1.263"
-      forbid-mermaid: false   # hub READMEs still carry mermaid until the 2026-09 README rewrite
+      forbid-mermaid: true      # README contract 2026-09: images only
+      allow-missing-en: true    # hub README is RU-only since 2026-09-10; plugin READMEs keep RU+EN pairs
     secrets: inherit
