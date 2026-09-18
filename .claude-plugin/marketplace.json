@@ -199,6 +199,23 @@
       "description": "Маршрут стека Jadlis: помощник снимает состояние машины и выдаёт ровно следующий шаг."
     },
     {
+      "name": "jadlis-memory-search",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/beCyborg/jadlis-memory-search.git",
+        "ref": "jadlis-memory-search--v1.0.0",
+        "sha": "a10aea6c0e7a5fabd033a1465574bb2d96d83917"
+      },
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "obsidian",
+        "search",
+        "qmd"
+      ],
+      "description": "Поиск по смыслу в своих заметках: локальный индекс над выбранными папками хранилища."
+    },
+    {
       "name": "jadlis-notifications",
       "source": {
         "source": "url",

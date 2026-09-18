@@ -75,6 +75,7 @@
 - **[Управление твоим компьютером](https://github.com/beCyborg/jadlis-computer-use).** ИИ кликает и печатает в обычных программах на Mac.
 - **[Скачать книги](https://github.com/beCyborg/jadlis-books).** Любая книга или научная статья находится за минуту.
 - **[Выжимка из видео и текста](https://github.com/beCyborg/jadlis-tldr).** Час видео или толстый файл превращается в пять выводов и список действий.
+- **[Поиск по заметкам](https://github.com/beCyborg/jadlis-memory-search).** Находит свою заметку по смыслу, даже если слова в ней были другие.
 - **[Новости под тебя](https://github.com/beCyborg/jadlis-swot-news).** Каждый день ИИ читает новости и говорит, что из них касается тебя.
 - **[Свои сотрудники](https://github.com/beCyborg/jadlis-skill-builder).** Пишешь инструкцию, как для нового работника, и ИИ делает эту
   работу сам. Готового помощника можно [упаковать](https://github.com/beCyborg/jadlis-plugin-creator) и отдать другому человеку.
@@ -137,6 +138,7 @@
 | `jadlis-books` | `/books` | Книга или статья за минуту. |
 | `jadlis-browser` | `/browser` | Залогиненный браузер: то, что за паролем. |
 | `jadlis-computer-use` | `/computer-use` | Нативные приложения macOS. |
+| `jadlis-memory-search` | `/memory-search` | Поиск по смыслу в своих заметках, индекс на твоём Mac. |
 | `jadlis-skill-builder` | `/skill-builder` | Свой ИИ-сотрудник: скилл как должностная инструкция. |
 | `jadlis-plugin-creator` | `/plugin-creator` | Собрать, проверить и выпустить свой плагин. |
 
