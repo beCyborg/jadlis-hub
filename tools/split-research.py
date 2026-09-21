@@ -102,8 +102,8 @@ TARGETS = {
     },
     "verif": {
         "display": "Jadlis — проверка плана тремя моделями",
-        "description": "Codex, Fable и Grok порознь рвут план или документ, арбитр сводит находки, батч-интервью, правки. Автономен: нужны Codex CLI (подписка ChatGPT) и Grok CLI; веб-проверка первоисточников — через плагин search, если он установлен.",
-        "keywords": ["jadlis", "verification", "adversarial", "codex", "grok", "plan-review"],
+        "description": "Codex и Fable порознь рвут план или документ, арбитр сводит находки, батч-интервью, правки. Автономен: нужен Codex CLI (подписка ChatGPT); веб-проверка первоисточников — через плагин search, если он установлен.",
+        "keywords": ["jadlis", "verification", "adversarial", "codex", "plan-review"],
         "copy": ["skills/verif", "assets/verif-homes"],
         "rename": {},
         "agent_ns": None,
