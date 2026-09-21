@@ -268,8 +268,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-research.git",
-        "ref": "jadlis-research--v2.5.1",
-        "sha": "bfcf19b7a74a4cba6da6b77b24b7eb4058c3e124"
+        "ref": "jadlis-research--v2.5.2",
+        "sha": "530341f66c515e95fd92cb19c15534cac2c21b7c"
       },
       "category": "research",
       "tags": [
@@ -285,8 +285,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-science-research.git",
-        "ref": "jadlis-science-research--v2.2.0",
-        "sha": "6c1ecd5f04a2055edd2d23fcb17f5eae23b535c5"
+        "ref": "jadlis-science-research--v2.2.1",
+        "sha": "861ab03addaf4063de8fb64064d1c323a7ef3558"
       },
       "category": "research",
       "tags": [
@@ -353,8 +353,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-tldr.git",
-        "ref": "jadlis-tldr--v2.0.0",
-        "sha": "c144d767a800f076d47c38a03e872ecad99e2648"
+        "ref": "jadlis-tldr--v2.0.1",
+        "sha": "ceea7ec20e0a54b6646a0716a6a27a0176596136"
       },
       "category": "productivity",
       "tags": [
