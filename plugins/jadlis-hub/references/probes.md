@@ -51,7 +51,7 @@ for s in jadlis jadlis-search; do
 done
 echo "КЛЮЧИ Brave=$kb Firecrawl=$kf (только имена, значения не читаются)"
 echo "ШАГ jadlis-research=$(inst jadlis-research) jadlis-science-research=$(inst jadlis-science-research)"
-echo "ШАГ jadlis-verif=$(inst jadlis-verif) codex=$(have codex) grok=$(have grok)"
+echo "ШАГ jadlis-verif=$(inst jadlis-verif) codex=$(have codex)"
 
 # ── Необязательные шаги ────────────────────────────────────────────────────
 for p in jadlis-swot-news jadlis-tldr jadlis-books jadlis-browser jadlis-computer-use jadlis-skill-builder jadlis-plugin-creator; do
@@ -78,7 +78,7 @@ J="$V/Система/Передача — состояние.md"
 | 3 voice | `inst` + свой `probe.sh` | плагин стоит и включён, ни одного `FAIL` |
 | 4 search | `claude plugin list --json` | плагин стоит **и** включён; ключи подтверждает человек через `/jadlis-search:keys --check` |
 | 5 research | `claude plugin list --json` | стоят и включены оба: `jadlis-research`, `jadlis-science-research` |
-| 6 verif | `claude plugin list --json` + `codex --version` | плагин стоит и включён **и** `codex` отвечает (Grok — по выбору, на закрытие не влияет) |
+| 6 verif | `claude plugin list --json` + `codex --version` | плагин стоит и включён **и** `codex` отвечает |
 | необязательные | `claude plugin list --json` | плагин стоит и включён |
 
 ## Как читать результат
