@@ -12,8 +12,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-advisor-copywriting.git",
-        "ref": "advisor-copywriting--v1.0.3",
-        "sha": "f60f814a5457fa78626e1945cf53026bc2f0a88e"
+        "ref": "advisor-copywriting--v1.0.4",
+        "sha": "aa1ef34abec8d81391604591907bd9343065509c"
       },
       "category": "productivity",
       "tags": [
@@ -28,8 +28,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-advisor-decision.git",
-        "ref": "advisor-decision--v1.0.3",
-        "sha": "317e7d6130957f9a078ea752c928450f5e3b4798"
+        "ref": "advisor-decision--v1.0.4",
+        "sha": "f5095897f870203ac4471a8d592be89f10dafba4"
       },
       "category": "productivity",
       "tags": [
@@ -44,8 +44,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-advisor-influence.git",
-        "ref": "advisor-influence--v1.0.3",
-        "sha": "9f512d487b537acd8cacd1e53dcd75e7af5b86bf"
+        "ref": "advisor-influence--v1.0.4",
+        "sha": "73ee6562e54b5e8b9017c42880436adec2d9afd2"
       },
       "category": "productivity",
       "tags": [
@@ -61,8 +61,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-advisor-product.git",
-        "ref": "advisor-product--v1.0.3",
-        "sha": "5fb217988cf2e6c88ce2b8e1c7b79ee8a37cc4a5"
+        "ref": "advisor-product--v1.0.4",
+        "sha": "29c0e7398edab08713dcf8b8342baf579e7394ca"
       },
       "category": "productivity",
       "tags": [
@@ -78,8 +78,8 @@
         "source": "git-subdir",
         "url": "https://github.com/beCyborg/jadlis-advisor-psychologist.git",
         "path": "plugins/advisor-psychologist",
-        "ref": "advisor-psychologist--v1.2.2",
-        "sha": "1162d924f143cd0b33fa2ab79ff2ec513014b55b"
+        "ref": "advisor-psychologist--v1.2.3",
+        "sha": "49220e313a41c3e164330efcda872a30e8bb8625"
       },
       "category": "productivity",
       "tags": [
@@ -94,8 +94,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-advisor-sales.git",
-        "ref": "advisor-sales--v1.0.4",
-        "sha": "7324f0bfb71ad0b783cfdb2000677d8e8657472b"
+        "ref": "advisor-sales--v1.0.5",
+        "sha": "3e25d5f18ce9c6a73563161035ffa74b73a448a0"
       },
       "category": "productivity",
       "tags": [
@@ -159,8 +159,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-claudecode.git",
-        "ref": "jadlis-claudecode--v1.0.1",
-        "sha": "744b82e52f061835c23a1b789f8f12301922cfc0"
+        "ref": "jadlis-claudecode--v1.0.2",
+        "sha": "b8888ae753b7edb8cfa14557c548734c86f5a0fd"
       },
       "category": "productivity",
       "tags": [
@@ -268,8 +268,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-research.git",
-        "ref": "jadlis-research--v2.5.3",
-        "sha": "f7267cb0a9ceec4f74cd8b2298303860f50c6bfa"
+        "ref": "jadlis-research--v2.6.0",
+        "sha": "bb1520ac8c2a075a97870e5849e97b9d97bc4b16"
       },
       "category": "research",
       "tags": [
@@ -285,8 +285,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-science-research.git",
-        "ref": "jadlis-science-research--v2.2.2",
-        "sha": "d87953d88c434d76d585ac4cd9d696041dfd704a"
+        "ref": "jadlis-science-research--v2.3.1",
+        "sha": "fb9dd47b98f8d88a2c358fb9214b0b806a61939a"
       },
       "category": "research",
       "tags": [
