@@ -12,8 +12,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-advisor-copywriting.git",
-        "ref": "advisor-copywriting--v1.0.4",
-        "sha": "aa1ef34abec8d81391604591907bd9343065509c"
+        "ref": "advisor-copywriting--v1.0.5",
+        "sha": "5dee2df0d6b5db03137f34280675778ac7046fe9"
       },
       "category": "productivity",
       "tags": [
@@ -44,8 +44,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-advisor-influence.git",
-        "ref": "advisor-influence--v1.0.4",
-        "sha": "73ee6562e54b5e8b9017c42880436adec2d9afd2"
+        "ref": "advisor-influence--v1.0.5",
+        "sha": "8d52f248511b0c8796085c847dcbdbdc7874a642"
       },
       "category": "productivity",
       "tags": [
@@ -61,8 +61,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-advisor-product.git",
-        "ref": "advisor-product--v1.0.4",
-        "sha": "29c0e7398edab08713dcf8b8342baf579e7394ca"
+        "ref": "advisor-product--v1.0.5",
+        "sha": "e6079c7ef77663f6243633a56e3cee5bc2918ba7"
       },
       "category": "productivity",
       "tags": [
@@ -94,8 +94,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-advisor-sales.git",
-        "ref": "advisor-sales--v1.0.5",
-        "sha": "3e25d5f18ce9c6a73563161035ffa74b73a448a0"
+        "ref": "advisor-sales--v1.0.6",
+        "sha": "9abc3c20b334a92d482985c3222815edbec7249c"
       },
       "category": "productivity",
       "tags": [
@@ -268,8 +268,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-research.git",
-        "ref": "jadlis-research--v2.6.0",
-        "sha": "bb1520ac8c2a075a97870e5849e97b9d97bc4b16"
+        "ref": "jadlis-research--v2.6.1",
+        "sha": "a8451c687bcc2a482956b17aad061533bf18fc23"
       },
       "category": "research",
       "tags": [
@@ -285,8 +285,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-science-research.git",
-        "ref": "jadlis-science-research--v2.3.1",
-        "sha": "fb9dd47b98f8d88a2c358fb9214b0b806a61939a"
+        "ref": "jadlis-science-research--v2.3.2",
+        "sha": "0a0682d1b16b8529466b3fb8513384d4e3c87049"
       },
       "category": "research",
       "tags": [
@@ -321,8 +321,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-skill-builder.git",
-        "ref": "jadlis-skill-builder--v2.0.0",
-        "sha": "2cc70276b2ce4d11a665ca35550db2133bb3b61f"
+        "ref": "jadlis-skill-builder--v2.1.0",
+        "sha": "0ff2400d85c53c5b864a76c8d41f2dc477b83259"
       },
       "category": "development",
       "tags": [
