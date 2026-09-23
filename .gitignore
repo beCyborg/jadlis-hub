@@ -32,3 +32,6 @@ __pycache__/
 
 # macOS
 .DS_Store
+
+# Personal builds (git worktrees of jadlis-search@local-http, jadlis-browser@local-agent)
+/personal/

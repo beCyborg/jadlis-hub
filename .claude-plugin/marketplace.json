@@ -140,12 +140,7 @@
     },
     {
       "name": "jadlis-browser",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-browser.git",
-        "ref": "jadlis-browser--v3.3.0",
-        "sha": "a586c7db28ed941bc0dc52b5803f5feaa06aa3f6"
-      },
+      "source": "./personal/jadlis-browser",
       "category": "productivity",
       "tags": [
         "jadlis",
@@ -352,12 +347,7 @@
     },
     {
       "name": "jadlis-search",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-search.git",
-        "ref": "jadlis-search--v2.6.0",
-        "sha": "5e740a95114a5ab39dc8a73931fa2f4a7132149c"
-      },
+      "source": "./personal/jadlis-search",
       "category": "research",
       "tags": [
         "jadlis",
