@@ -337,8 +337,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-swot-news.git",
-        "ref": "jadlis-swot-news--v3.0.1",
-        "sha": "898fd4d45b2c59f6133fbeda06e623e65a32d4aa"
+        "ref": "jadlis-swot-news--v3.0.2",
+        "sha": "1057b18b4522a91b1dc6baf3cfc3a0457cc4f3eb"
       },
       "category": "productivity",
       "tags": [
