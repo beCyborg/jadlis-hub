@@ -386,8 +386,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-voice.git",
-        "ref": "jadlis-voice--v1.0.0",
-        "sha": "3a28314d0fa17c106f6425ff93b1a66ac5163085"
+        "ref": "jadlis-voice--v1.1.0",
+        "sha": "4ec294eafb34a26f98a7ad2039ce4748cad6ea74"
       },
       "category": "productivity",
       "tags": [
