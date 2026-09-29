@@ -74,13 +74,7 @@
     },
     {
       "name": "advisor-psychologist",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/beCyborg/jadlis-advisor-psychologist.git",
-        "path": "plugins/advisor-psychologist",
-        "ref": "advisor-psychologist--v1.3.0",
-        "sha": "816cb9ecf3513f37d4a5c6bba3f961aecdc74754"
-      },
+      "source": "./personal/jadlis-advisor-psychologist/plugins/advisor-psychologist",
       "category": "productivity",
       "tags": [
         "jadlis",
@@ -313,12 +307,7 @@
     },
     {
       "name": "jadlis-research",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-research.git",
-        "ref": "jadlis-research--v2.14.0",
-        "sha": "3781802f446ef4514bca4905631c48bbd05ebd73"
-      },
+      "source": "./personal/jadlis-research",
       "category": "research",
       "tags": [
         "jadlis",
@@ -330,12 +319,7 @@
     },
     {
       "name": "jadlis-science-research",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-science-research.git",
-        "ref": "jadlis-science-research--v2.4.0",
-        "sha": "647c7358c431955bdf18403e316702564ea94a31"
-      },
+      "source": "./personal/jadlis-science-research",
       "category": "research",
       "tags": [
         "jadlis",
@@ -478,12 +462,7 @@
     },
     {
       "name": "jadlis-verif",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-verif.git",
-        "ref": "jadlis-verif--v3.5.0",
-        "sha": "8e3b769587da9b08fedab70f3d3da8f66e3b7a1c"
-      },
+      "source": "./personal/jadlis-verif",
       "category": "research",
       "tags": [
         "jadlis",
