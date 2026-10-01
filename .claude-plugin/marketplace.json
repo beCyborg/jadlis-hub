@@ -9,12 +9,7 @@
   "plugins": [
     {
       "name": "advisor-copywriting",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-advisor-copywriting.git",
-        "ref": "advisor-copywriting--v1.0.7",
-        "sha": "236e39618693222a3d7d501914035dd5ffb5c7dd"
-      },
+      "source": "./personal/jadlis-advisor-copywriting",
       "category": "productivity",
       "tags": [
         "jadlis",
@@ -25,12 +20,7 @@
     },
     {
       "name": "advisor-decision",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-advisor-decision.git",
-        "ref": "advisor-decision--v1.0.6",
-        "sha": "f80544d108a6bbd6645e9f7d41d1aa718320f09f"
-      },
+      "source": "./personal/jadlis-advisor-decision",
       "category": "productivity",
       "tags": [
         "jadlis",
@@ -41,12 +31,7 @@
     },
     {
       "name": "advisor-influence",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-advisor-influence.git",
-        "ref": "advisor-influence--v1.0.7",
-        "sha": "bb149c063de5963556f2c26edeb4debc25d14d13"
-      },
+      "source": "./personal/jadlis-advisor-influence",
       "category": "productivity",
       "tags": [
         "jadlis",
@@ -58,12 +43,7 @@
     },
     {
       "name": "advisor-product",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-advisor-product.git",
-        "ref": "advisor-product--v1.0.7",
-        "sha": "bbaeb2c2818b3d80a6d5bc0f9578cb78a15a58c1"
-      },
+      "source": "./personal/jadlis-advisor-product",
       "category": "productivity",
       "tags": [
         "jadlis",
@@ -85,12 +65,7 @@
     },
     {
       "name": "advisor-sales",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-advisor-sales.git",
-        "ref": "advisor-sales--v1.0.8",
-        "sha": "fceb264c9b4d3d0adcea56391daea229cb778f62"
-      },
+      "source": "./personal/jadlis-advisor-sales",
       "category": "productivity",
       "tags": [
         "jadlis",
