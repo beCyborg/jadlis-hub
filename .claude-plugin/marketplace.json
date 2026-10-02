@@ -370,12 +370,7 @@
     },
     {
       "name": "jadlis-skill-builder",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-skill-builder.git",
-        "ref": "jadlis-skill-builder--v2.5.1",
-        "sha": "c31fefdf583e1fb6a53256d32776c7376dab2985"
-      },
+      "source": "./personal/jadlis-skill-builder",
       "category": "development",
       "tags": [
         "jadlis",
