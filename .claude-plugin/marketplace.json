@@ -116,7 +116,7 @@
         "browser",
         "playwright"
       ],
-      "description": "Залогиненный браузер через Playwright MCP: свой профиль Chrome агента в фоне, твой Chrome через расширение-мост и фоновый Chrome без окна для публичных страниц."
+      "description": "Браузер агента: свои профили Chrome (k02, jadlis) по CDP и твой Chrome через мост — Playwright MCP."
     },
     {
       "name": "jadlis-claudecode",
