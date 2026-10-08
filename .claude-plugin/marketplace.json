@@ -8,23 +8,69 @@
   "description": "Jadlis — поиск и ключи, ресёрч по 14 каналам, научный ресёрч, проверка планов, залогиненный браузер, свои ИИ-сотрудники и плагины. Внешние плагины с пином по тегу.",
   "plugins": [
     {
-      "name": "jadlis-search",
+      "name": "jadlis-browser",
       "source": {
         "source": "url",
-        "url": "https://gitlab.com/beCyborg/jadlis-search.git",
-        "ref": "jadlis-search--v2.2.2",
-        "sha": "3f9de8b099a4cdbf32a5ddc2699a767b94fa864b"
+        "url": "https://gitlab.com/beCyborg/jadlis-browser.git",
+        "ref": "jadlis-browser--v2.1.1",
+        "sha": "b81c64efaa0455ae4927fc52db6c948f5c874393"
       },
-      "category": "research",
+      "category": "productivity",
       "tags": [
         "jadlis",
-        "search",
-        "brave",
-        "exa",
-        "firecrawl",
-        "mcp"
+        "browser",
+        "playwright"
       ],
-      "description": "Поиск и ключи для всего ресерч-стека; база для research и science-research."
+      "description": "Залогиненный браузер: Playwright MCP в режиме расширения Chrome."
+    },
+    {
+      "name": "jadlis-claudecode",
+      "source": {
+        "source": "url",
+        "url": "https://gitlab.com/beCyborg/jadlis-claudecode.git",
+        "ref": "jadlis-claudecode--v1.1.0",
+        "sha": "016356c0da2d2d53d5f1b7bed738fb170df807ce"
+      },
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "setup",
+        "claude-code",
+        "terminal"
+      ],
+      "description": "Claude Code, терминал (iTerm2 + tmux, cld) и ~/Jadlis один в один с владельцем: глобальные инструкции с правилами письма, стили ответа Jadlis и Jadlis Voice, хуки. Первый шаг маршрута."
+    },
+    {
+      "name": "jadlis-notifications",
+      "source": {
+        "source": "url",
+        "url": "https://gitlab.com/beCyborg/jadlis-notifications.git",
+        "ref": "jadlis-notifications--v1.41.3",
+        "sha": "207aaf74a35bd5df31ebf92d2b40661543ba1da9"
+      },
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "notifications",
+        "macos"
+      ],
+      "description": "Уведомления Claude Code: форк claude-notifications-go с русскими заголовками, именем сессии в подзаголовке и гейтом фоновых задач. Ставится зависимостью jadlis-claudecode."
+    },
+    {
+      "name": "jadlis-plugin-creator",
+      "source": {
+        "source": "url",
+        "url": "https://gitlab.com/beCyborg/jadlis-plugin-creator.git",
+        "ref": "jadlis-plugin-creator--v2.1.1",
+        "sha": "47214b110e91c473400f8dc4ad39fc2ffb2524a4"
+      },
+      "category": "development",
+      "tags": [
+        "jadlis",
+        "plugins",
+        "marketplace"
+      ],
+      "description": "Собрать, проверить и выпустить плагин по стандарту."
     },
     {
       "name": "jadlis-research",
@@ -61,37 +107,23 @@
       "description": "Что реально доказано наукой и не отозвано ли: PubMed, Europe PMC, Semantic Scholar, OpenAlex, arXiv, Cochrane."
     },
     {
-      "name": "jadlis-verif",
+      "name": "jadlis-search",
       "source": {
         "source": "url",
-        "url": "https://gitlab.com/beCyborg/jadlis-verif.git",
-        "ref": "jadlis-verif--v3.1.5",
-        "sha": "966b302dcb5d536311b012214f56a064ce4e1e11"
+        "url": "https://gitlab.com/beCyborg/jadlis-search.git",
+        "ref": "jadlis-search--v2.2.2",
+        "sha": "3f9de8b099a4cdbf32a5ddc2699a767b94fa864b"
       },
       "category": "research",
       "tags": [
         "jadlis",
-        "verification",
-        "adversarial",
-        "plan-review"
+        "search",
+        "brave",
+        "exa",
+        "firecrawl",
+        "mcp"
       ],
-      "description": "Три модели рвут твой план порознь до того, как ты в него вложился."
-    },
-    {
-      "name": "jadlis-browser",
-      "source": {
-        "source": "url",
-        "url": "https://gitlab.com/beCyborg/jadlis-browser.git",
-        "ref": "jadlis-browser--v2.1.1",
-        "sha": "b81c64efaa0455ae4927fc52db6c948f5c874393"
-      },
-      "category": "productivity",
-      "tags": [
-        "jadlis",
-        "browser",
-        "playwright"
-      ],
-      "description": "Залогиненный браузер: Playwright MCP в режиме расширения Chrome."
+      "description": "Поиск и ключи для всего ресерч-стека; база для research и science-research."
     },
     {
       "name": "jadlis-skill-builder",
@@ -110,20 +142,21 @@
       "description": "Свой ИИ-сотрудник: скилл = должностная инструкция (расширенный форк официального skill-creator)."
     },
     {
-      "name": "jadlis-plugin-creator",
+      "name": "jadlis-verif",
       "source": {
         "source": "url",
-        "url": "https://gitlab.com/beCyborg/jadlis-plugin-creator.git",
-        "ref": "jadlis-plugin-creator--v2.1.1",
-        "sha": "47214b110e91c473400f8dc4ad39fc2ffb2524a4"
+        "url": "https://gitlab.com/beCyborg/jadlis-verif.git",
+        "ref": "jadlis-verif--v3.1.5",
+        "sha": "966b302dcb5d536311b012214f56a064ce4e1e11"
       },
-      "category": "development",
+      "category": "research",
       "tags": [
         "jadlis",
-        "plugins",
-        "marketplace"
+        "verification",
+        "adversarial",
+        "plan-review"
       ],
-      "description": "Собрать, проверить и выпустить плагин по стандарту."
+      "description": "Три модели рвут твой план порознь до того, как ты в него вложился."
     }
   ],
   "renames": {}
