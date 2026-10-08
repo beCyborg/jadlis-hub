@@ -3,273 +3,36 @@
   "name": "jadlis",
   "owner": {
     "name": "Be Cyborg",
-    "url": "https://github.com/beCyborg"
+    "url": "https://gitlab.com/beCyborg"
   },
-  "description": "Jadlis — передача стека: рабочее место, Obsidian, голос, поиск и ключи, ресерч, проверка планов, свои сотрудники, советы директоров. Помощник маршрута, внутренний плагин и внешние плагины с пином по тегу.",
+  "description": "Jadlis — ресёрч-стек: поиск и ключи, полный ресёрч по 14 каналам, научная доказательность. Внешние плагины с пином по тегу.",
   "plugins": [
     {
-      "name": "advisor-copywriting",
+      "name": "jadlis-search",
       "source": {
         "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-advisor-copywriting.git",
-        "ref": "advisor-copywriting--v1.0.5",
-        "sha": "5dee2df0d6b5db03137f34280675778ac7046fe9"
-      },
-      "category": "productivity",
-      "tags": [
-        "jadlis",
-        "council",
-        "copywriting"
-      ],
-      "description": "Тексты, прошедшие восемь книг: вердикт по готовому тексту или конвейер написания."
-    },
-    {
-      "name": "advisor-decision",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-advisor-decision.git",
-        "ref": "advisor-decision--v1.0.4",
-        "sha": "f5095897f870203ac4471a8d592be89f10dafba4"
-      },
-      "category": "productivity",
-      "tags": [
-        "jadlis",
-        "council",
-        "decision-making"
-      ],
-      "description": "Трудное решение: 5 линз, скептики, один вердикт."
-    },
-    {
-      "name": "advisor-influence",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-advisor-influence.git",
-        "ref": "advisor-influence--v1.0.5",
-        "sha": "8d52f248511b0c8796085c847dcbdbdc7874a642"
-      },
-      "category": "productivity",
-      "tags": [
-        "jadlis",
-        "council",
-        "marketing",
-        "personal-brand"
-      ],
-      "description": "Медийность и доверие без «AI-инфлюенсера»."
-    },
-    {
-      "name": "advisor-product",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-advisor-product.git",
-        "ref": "advisor-product--v1.0.5",
-        "sha": "e6079c7ef77663f6243633a56e3cee5bc2918ba7"
-      },
-      "category": "productivity",
-      "tags": [
-        "jadlis",
-        "council",
-        "product"
-      ],
-      "description": "Продуктовые решения через 16 книг."
-    },
-    {
-      "name": "advisor-psychologist",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/beCyborg/jadlis-advisor-psychologist.git",
-        "path": "plugins/advisor-psychologist",
-        "ref": "advisor-psychologist--v1.2.3",
-        "sha": "49220e313a41c3e164330efcda872a30e8bb8625"
-      },
-      "category": "productivity",
-      "tags": [
-        "jadlis",
-        "psychology",
-        "council"
-      ],
-      "description": "Самопомощь рядом с живым терапевтом: совет линз-методологий, триаж, safety-ревью."
-    },
-    {
-      "name": "advisor-sales",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-advisor-sales.git",
-        "ref": "advisor-sales--v1.0.6",
-        "sha": "9abc3c20b334a92d482985c3222815edbec7249c"
-      },
-      "category": "productivity",
-      "tags": [
-        "jadlis",
-        "council",
-        "sales"
-      ],
-      "description": "Разбор звонка, застрявшая сделка, скрипт: 16 слоёв сделки, 4 режима."
-    },
-    {
-      "name": "cognitive-biases",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-cognitive-biases.git",
-        "ref": "cognitive-biases--v1.0.3",
-        "sha": "4392fd1e9c45fe691c8204bdb88c470a02100b0c"
-      },
-      "category": "productivity",
-      "tags": [
-        "jadlis",
-        "advisor",
-        "cognitive-biases"
-      ],
-      "description": "Проверка решения на 111 искажений с протоколами дебайсинга."
-    },
-    {
-      "name": "jadlis-books",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/beCyborg/jadlis-books.git",
-        "path": "plugins/books",
-        "ref": "jadlis-books--v2.0.0",
-        "sha": "525149d32972a704dd14f43459c0d123c8fccb8b"
+        "url": "https://gitlab.com/beCyborg/jadlis-search.git",
+        "ref": "jadlis-search--v2.2.2",
+        "sha": "3f9de8b099a4cdbf32a5ddc2699a767b94fa864b"
       },
       "category": "research",
       "tags": [
         "jadlis",
-        "books",
-        "papers"
-      ],
-      "description": "Книга или статья за минуту: поиск и скачивание через Архив Анны."
-    },
-    {
-      "name": "jadlis-browser",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-browser.git",
-        "ref": "jadlis-browser--v2.0.1",
-        "sha": "479dfa55d787faf1fbc056fe860f14529f09f196"
-      },
-      "category": "productivity",
-      "tags": [
-        "jadlis",
-        "browser",
-        "playwright"
-      ],
-      "description": "Залогиненный браузер: Playwright MCP в режиме расширения Chrome."
-    },
-    {
-      "name": "jadlis-claudecode",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-claudecode.git",
-        "ref": "jadlis-claudecode--v1.0.2",
-        "sha": "b8888ae753b7edb8cfa14557c548734c86f5a0fd"
-      },
-      "category": "productivity",
-      "tags": [
-        "jadlis",
-        "setup",
-        "claude-code",
-        "terminal"
-      ],
-      "description": "Claude Code, терминал (iTerm2 + tmux, cld) и ~/Jadlis один в один с владельцем — первый обязательный шаг маршрута."
-    },
-    {
-      "name": "jadlis-computer-use",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-computer-use.git",
-        "ref": "jadlis-computer-use--v2.0.0",
-        "sha": "dfd2f313b9ce9cacfcb0f1f307fbccd29d826f87"
-      },
-      "category": "productivity",
-      "tags": [
-        "jadlis",
-        "desktop",
-        "macos"
-      ],
-      "description": "Нативные приложения macOS и кросс-приложенческие сценарии."
-    },
-    {
-      "name": "jadlis-hub",
-      "source": "./plugins/jadlis-hub",
-      "category": "productivity",
-      "tags": [
-        "jadlis",
-        "onboarding",
-        "route"
-      ],
-      "description": "Маршрут стека Jadlis: помощник снимает состояние машины и выдаёт ровно следующий шаг."
-    },
-    {
-      "name": "jadlis-memory-search",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-memory-search.git",
-        "ref": "jadlis-memory-search--v1.0.0",
-        "sha": "a10aea6c0e7a5fabd033a1465574bb2d96d83917"
-      },
-      "category": "productivity",
-      "tags": [
-        "jadlis",
-        "obsidian",
         "search",
-        "qmd"
+        "brave",
+        "exa",
+        "firecrawl",
+        "mcp"
       ],
-      "description": "Поиск по смыслу в своих заметках: локальный индекс над выбранными папками хранилища."
-    },
-    {
-      "name": "jadlis-notifications",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-notifications.git",
-        "ref": "jadlis-notifications--v1.41.1",
-        "sha": "bcd205b510f9c9a022161145abfa77e3f5bce47e"
-      },
-      "category": "productivity",
-      "tags": [
-        "jadlis",
-        "youtube",
-        "summary"
-      ],
-      "description": "Уведомления Claude Code: форк claude-notifications-go с русскими заголовками, именем сессии в подзаголовке и гейтом фоновых задач. Ставится зависимостью jadlis-claudecode."
-    },
-    {
-      "name": "jadlis-obsidian",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-obsidian.git",
-        "ref": "jadlis-obsidian--v1.0.0",
-        "sha": "57ce33a9a04074821ab1b36fc35ef3e91021f2ed"
-      },
-      "category": "productivity",
-      "tags": [
-        "jadlis",
-        "obsidian",
-        "vault"
-      ],
-      "description": "Obsidian один в один с владельцем: тема, 12 плагинов, хоткеи, CLI, связка obsidian-skills и vault CLAUDE.md — второй обязательный шаг маршрута."
-    },
-    {
-      "name": "jadlis-plugin-creator",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-plugin-creator.git",
-        "ref": "jadlis-plugin-creator--v2.0.0",
-        "sha": "11fa7b43e4af49b22dd1c8899e1d3c626711d20d"
-      },
-      "category": "development",
-      "tags": [
-        "jadlis",
-        "plugins",
-        "marketplace"
-      ],
-      "description": "Собрать, проверить и выпустить плагин по стандарту."
+      "description": "Поиск и ключи для всего ресерч-стека; база для research и science-research."
     },
     {
       "name": "jadlis-research",
       "source": {
         "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-research.git",
-        "ref": "jadlis-research--v2.7.0",
-        "sha": "fb55337ff433cd076c23746cffd76ac38b9c771c"
+        "url": "https://gitlab.com/beCyborg/jadlis-research.git",
+        "ref": "jadlis-research--v2.7.9",
+        "sha": "122785ff9c97392bea663103e554eb0d96c96b18"
       },
       "category": "research",
       "tags": [
@@ -284,9 +47,9 @@
       "name": "jadlis-science-research",
       "source": {
         "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-science-research.git",
-        "ref": "jadlis-science-research--v2.3.2",
-        "sha": "0a0682d1b16b8529466b3fb8513384d4e3c87049"
+        "url": "https://gitlab.com/beCyborg/jadlis-science-research.git",
+        "ref": "jadlis-science-research--v2.3.7",
+        "sha": "0d385cdbf7d9e6996753f80c11741edf1bd71e2d"
       },
       "category": "research",
       "tags": [
@@ -296,139 +59,6 @@
         "grade"
       ],
       "description": "Что реально доказано наукой и не отозвано ли: PubMed, Europe PMC, Semantic Scholar, OpenAlex, arXiv, Cochrane."
-    },
-    {
-      "name": "jadlis-search",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-search.git",
-        "ref": "jadlis-search--v2.1.0",
-        "sha": "4a8d1fd25f699650ab3465c0e19ffcb8dd09a683"
-      },
-      "category": "research",
-      "tags": [
-        "jadlis",
-        "search",
-        "brave",
-        "exa",
-        "firecrawl",
-        "mcp"
-      ],
-      "description": "Поиск и ключи для всего ресерч-стека; база для research и science-research."
-    },
-    {
-      "name": "jadlis-skill-builder",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-skill-builder.git",
-        "ref": "jadlis-skill-builder--v2.1.0",
-        "sha": "0ff2400d85c53c5b864a76c8d41f2dc477b83259"
-      },
-      "category": "development",
-      "tags": [
-        "jadlis",
-        "skills",
-        "evals"
-      ],
-      "description": "Свой ИИ-сотрудник: скилл = должностная инструкция (расширенный форк официального skill-creator)."
-    },
-    {
-      "name": "jadlis-swot-news",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-swot-news.git",
-        "ref": "jadlis-swot-news--v3.0.2",
-        "sha": "1057b18b4522a91b1dc6baf3cfc3a0457cc4f3eb"
-      },
-      "category": "productivity",
-      "tags": [
-        "jadlis",
-        "news",
-        "swot"
-      ],
-      "description": "Новости как личный SWOT: ежедневный дельта-выпуск по Kagi News."
-    },
-    {
-      "name": "jadlis-tldr",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-tldr.git",
-        "ref": "jadlis-tldr--v2.0.1",
-        "sha": "ceea7ec20e0a54b6646a0716a6a27a0176596136"
-      },
-      "category": "productivity",
-      "tags": [
-        "jadlis",
-        "youtube",
-        "summary"
-      ],
-      "description": "Видео и файлы — выжимка и действия."
-    },
-    {
-      "name": "jadlis-verif",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-verif.git",
-        "ref": "jadlis-verif--v3.1.1",
-        "sha": "b04a064b2a212d8ea3a5302557ed8dbd722dd4a7"
-      },
-      "category": "research",
-      "tags": [
-        "jadlis",
-        "verification",
-        "adversarial",
-        "plan-review"
-      ],
-      "description": "Три модели рвут твой план порознь до того, как ты в него вложился."
-    },
-    {
-      "name": "jadlis-voice",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-voice.git",
-        "ref": "jadlis-voice--v1.1.0",
-        "sha": "4ec294eafb34a26f98a7ad2039ce4748cad6ea74"
-      },
-      "category": "productivity",
-      "tags": [
-        "jadlis",
-        "voice",
-        "dictation",
-        "spokenly"
-      ],
-      "description": "Голосовой контур один в один с владельцем: диктовка Spokenly с AI-обработкой, автозамены и озвучка буфера — третий обязательный шаг маршрута."
-    },
-    {
-      "name": "nupp",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-nupp.git",
-        "ref": "nupp--v1.0.3",
-        "sha": "75bc02305741cdafcfc704ec572abdec0ed9fa84"
-      },
-      "category": "productivity",
-      "tags": [
-        "jadlis",
-        "advisor",
-        "project-management"
-      ],
-      "description": "Диагноз проекта по 6 универсальным принципам (NUPP)."
-    },
-    {
-      "name": "robert-greene",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-robert-greene.git",
-        "ref": "robert-greene--v1.0.3",
-        "sha": "d99cee5ab4a1d34729e0cda7eadbfe8632794efc"
-      },
-      "category": "productivity",
-      "tags": [
-        "jadlis",
-        "advisor",
-        "strategy"
-      ],
-      "description": "Люди, влияние, стратегия по пяти книгам Грина."
     }
   ],
   "renames": {}

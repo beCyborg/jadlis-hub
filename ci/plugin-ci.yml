@@ -1,0 +1,88 @@
+# Shared GitLab CI for every jadlis-* repo. A plugin repo includes it as
+#   include:
+#     - project: beCyborg/jadlis-hub
+#       ref: main
+#       file: /ci/plugin-ci.yml
+# NEVER move this file or rename the hub project: every plugin repo includes it by path.
+#
+# JADLIS_CI_MODE: plugin      — root-as-plugin repo: claude plugin validate --strict, gitleaks,
+#                               privacy grep, README parity (tools come from the hub).
+#                 marketplace — the hub itself: marketplace validate --strict + bump-pin --check,
+#                               gitleaks, privacy grep, parity (tools from this checkout).
+# Port of the GitHub reusable workflow .github/workflows/plugin-ci.yml (2026-10-08 move to GitLab).
+
+variables:
+  JADLIS_CI_MODE: plugin
+  CLAUDE_CLI_VERSION: "2.1.263"
+  JADLIS_FORBID_MERMAID: "true"      # README contract 2026-09: images only
+  JADLIS_ALLOW_MISSING_EN: "true"    # README without README.en.md is a warning, not an error
+  JADLIS_HUB_URL: https://gitlab.com/beCyborg/jadlis-hub.git
+
+workflow:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+stages: [test]
+
+validate:
+  stage: test
+  image: node:22
+  script:
+    - |
+      set -euo pipefail
+      PKG="@anthropic-ai/claude-code@${CLAUDE_CLI_VERSION}"
+      ok=""
+      for attempt in 1 2 3; do
+        timeout -k 10 300 npm install -g --include=optional "$PKG" || echo "npm install attempt ${attempt} failed"
+        if claude --version 2>/dev/null; then ok=1; break; fi
+        root="$(npm root -g)/@anthropic-ai/claude-code"
+        [ -f "$root/install.cjs" ] && timeout -k 10 300 node "$root/install.cjs" || true
+        if claude --version 2>/dev/null; then ok=1; break; fi
+        sleep $((attempt * 10))
+      done
+      [ -n "$ok" ] || { echo "claude CLI did not become usable after 3 attempts" >&2; exit 1; }
+    - |
+      set -euo pipefail
+      if [ "$JADLIS_CI_MODE" = marketplace ]; then
+        claude plugin validate .claude-plugin/marketplace.json --strict
+        python3 tools/bump-pin.py --check
+      else
+        claude plugin validate . --strict
+        if [ -f .claude-plugin/marketplace.json ]; then
+          claude plugin validate .claude-plugin/marketplace.json --strict
+        fi
+        if [ -f SHARED_FROM.txt ] && [ -f tools/check-generated.py ]; then
+          python3 tools/check-generated.py
+        fi
+      fi
+
+gitleaks:
+  stage: test
+  image:
+    name: zricethezav/gitleaks:v8.30.1
+    entrypoint: [""]
+  variables:
+    GIT_DEPTH: "0"   # full history
+  script:
+    - gitleaks git . --no-banner --exit-code 1 --redact
+
+docs:
+  stage: test
+  image: python:3.12
+  script:
+    - |
+      set -euo pipefail
+      if [ "$JADLIS_CI_MODE" = marketplace ]; then
+        TOOLS="$PWD/tools"
+      else
+        git clone -q --depth 1 "$JADLIS_HUB_URL" /tmp/hub
+        TOOLS=/tmp/hub/tools
+      fi
+      if [ "$JADLIS_FORBID_MERMAID" = "true" ] && grep -rl --include='README*.md' '```mermaid' . ; then
+        echo "Mermaid fences are not allowed in README (images only)"; exit 1
+      fi
+      EXTRA=""
+      [ "$JADLIS_ALLOW_MISSING_EN" = "true" ] && EXTRA="--allow-missing-en"
+      python3 "$TOOLS/readme-parity.py" --no-mermaid $EXTRA .
+      python3 "$TOOLS/privacy-grep.py" .

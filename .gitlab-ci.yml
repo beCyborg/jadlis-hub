@@ -1,0 +1,6 @@
+# The hub runs the shared CI on itself in marketplace mode.
+include:
+  - local: /ci/plugin-ci.yml
+
+variables:
+  JADLIS_CI_MODE: marketplace
