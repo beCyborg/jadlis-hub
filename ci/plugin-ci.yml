@@ -7,8 +7,9 @@
 #
 # JADLIS_CI_MODE: plugin      — root-as-plugin repo: claude plugin validate --strict, gitleaks,
 #                               privacy grep, README parity (tools come from the hub).
-#                 marketplace — the hub itself: marketplace validate --strict + bump-pin --check,
-#                               gitleaks, privacy grep, parity (tools from this checkout).
+#                 marketplace — repo with a root marketplace.json (the hub, legacy single-plugin
+#                               catalogues): marketplace validate --strict, bump-pin --check where
+#                               tools/bump-pin.py exists, gitleaks, privacy grep, parity.
 # Port of the GitHub reusable workflow .github/workflows/plugin-ci.yml (2026-10-08 move to GitLab).
 
 variables:
@@ -46,7 +47,7 @@ validate:
       set -euo pipefail
       if [ "$JADLIS_CI_MODE" = marketplace ]; then
         claude plugin validate .claude-plugin/marketplace.json --strict
-        python3 tools/bump-pin.py --check
+        if [ -f tools/bump-pin.py ]; then python3 tools/bump-pin.py --check; fi   # hub only
       else
         claude plugin validate . --strict
         if [ -f .claude-plugin/marketplace.json ]; then
@@ -73,8 +74,8 @@ docs:
   script:
     - |
       set -euo pipefail
-      if [ "$JADLIS_CI_MODE" = marketplace ]; then
-        TOOLS="$PWD/tools"
+      if [ -f tools/readme-parity.py ] && [ -f tools/privacy-grep.py ]; then
+        TOOLS="$PWD/tools"   # the hub itself
       else
         git clone -q --depth 1 "$JADLIS_HUB_URL" /tmp/hub
         TOOLS=/tmp/hub/tools

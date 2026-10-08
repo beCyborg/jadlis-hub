@@ -5,7 +5,7 @@
     "name": "Be Cyborg",
     "url": "https://gitlab.com/beCyborg"
   },
-  "description": "Jadlis — ресёрч-стек: поиск и ключи, полный ресёрч по 14 каналам, научная доказательность. Внешние плагины с пином по тегу.",
+  "description": "Jadlis — поиск и ключи, ресёрч по 14 каналам, научный ресёрч, проверка планов, залогиненный браузер, свои ИИ-сотрудники и плагины. Внешние плагины с пином по тегу.",
   "plugins": [
     {
       "name": "jadlis-search",
@@ -59,6 +59,71 @@
         "grade"
       ],
       "description": "Что реально доказано наукой и не отозвано ли: PubMed, Europe PMC, Semantic Scholar, OpenAlex, arXiv, Cochrane."
+    },
+    {
+      "name": "jadlis-verif",
+      "source": {
+        "source": "url",
+        "url": "https://gitlab.com/beCyborg/jadlis-verif.git",
+        "ref": "jadlis-verif--v3.1.5",
+        "sha": "966b302dcb5d536311b012214f56a064ce4e1e11"
+      },
+      "category": "research",
+      "tags": [
+        "jadlis",
+        "verification",
+        "adversarial",
+        "plan-review"
+      ],
+      "description": "Три модели рвут твой план порознь до того, как ты в него вложился."
+    },
+    {
+      "name": "jadlis-browser",
+      "source": {
+        "source": "url",
+        "url": "https://gitlab.com/beCyborg/jadlis-browser.git",
+        "ref": "jadlis-browser--v2.1.1",
+        "sha": "b81c64efaa0455ae4927fc52db6c948f5c874393"
+      },
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "browser",
+        "playwright"
+      ],
+      "description": "Залогиненный браузер: Playwright MCP в режиме расширения Chrome."
+    },
+    {
+      "name": "jadlis-skill-builder",
+      "source": {
+        "source": "url",
+        "url": "https://gitlab.com/beCyborg/jadlis-skill-builder.git",
+        "ref": "jadlis-skill-builder--v2.2.3",
+        "sha": "0e94067df479a23af9506c670ea9fb89209cbd31"
+      },
+      "category": "development",
+      "tags": [
+        "jadlis",
+        "skills",
+        "evals"
+      ],
+      "description": "Свой ИИ-сотрудник: скилл = должностная инструкция (расширенный форк официального skill-creator)."
+    },
+    {
+      "name": "jadlis-plugin-creator",
+      "source": {
+        "source": "url",
+        "url": "https://gitlab.com/beCyborg/jadlis-plugin-creator.git",
+        "ref": "jadlis-plugin-creator--v2.1.1",
+        "sha": "47214b110e91c473400f8dc4ad39fc2ffb2524a4"
+      },
+      "category": "development",
+      "tags": [
+        "jadlis",
+        "plugins",
+        "marketplace"
+      ],
+      "description": "Собрать, проверить и выпустить плагин по стандарту."
     }
   ],
   "renames": {}
