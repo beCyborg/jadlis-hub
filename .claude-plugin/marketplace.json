@@ -146,8 +146,8 @@
       "source": {
         "source": "url",
         "url": "https://gitlab.com/beCyborg/jadlis-verif.git",
-        "ref": "jadlis-verif--v3.1.5",
-        "sha": "966b302dcb5d536311b012214f56a064ce4e1e11"
+        "ref": "jadlis-verif--v3.2.0",
+        "sha": "8bb1d65c6661bb98baa75873c59c2abb947a792e"
       },
       "category": "research",
       "tags": [
