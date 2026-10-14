@@ -61,8 +61,8 @@
       "source": {
         "source": "url",
         "url": "https://gitlab.com/beCyborg/jadlis-plugin-creator.git",
-        "ref": "jadlis-plugin-creator--v2.1.1",
-        "sha": "47214b110e91c473400f8dc4ad39fc2ffb2524a4"
+        "ref": "jadlis-plugin-creator--v2.2.0",
+        "sha": "11fea7f05164ebfded47950d5b1fbc16444213da"
       },
       "category": "development",
       "tags": [
@@ -130,8 +130,8 @@
       "source": {
         "source": "url",
         "url": "https://gitlab.com/beCyborg/jadlis-skill-builder.git",
-        "ref": "jadlis-skill-builder--v2.2.3",
-        "sha": "0e94067df479a23af9506c670ea9fb89209cbd31"
+        "ref": "jadlis-skill-builder--v2.3.0",
+        "sha": "274052015ac547db133f5113422183ab07646248"
       },
       "category": "development",
       "tags": [
