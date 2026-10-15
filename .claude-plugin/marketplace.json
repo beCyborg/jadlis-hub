@@ -165,20 +165,14 @@
     },
     {
       "name": "jadlis-mail",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-mail.git",
-        "ref": "jadlis-mail--v0.3.1",
-        "sha": "111e8aacb601ad48412c8264495071dad26ff288"
-      },
+      "source": "./personal/jadlis-mail",
       "category": "productivity",
       "tags": [
         "jadlis",
         "mail",
-        "imap",
-        "himalaya"
+        "imap"
       ],
-      "description": "Почта по IMAP через himalaya: что важного, поиск писем и вложений, разбор входящих с откатом, черновики, отправка только после подтверждения."
+      "description": "Почта владельца: разбор входящих, поиск, черновики, отправка только после подтверждения."
     },
     {
       "name": "jadlis-memory-search",
