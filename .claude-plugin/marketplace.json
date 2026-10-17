@@ -241,8 +241,8 @@
       "description": "Obsidian один в один с владельцем: тема, 12 плагинов, хоткеи, CLI, связка obsidian-skills и vault CLAUDE.md — второй обязательный шаг маршрута."
     },
     {
-      "name": "jadlis-plugin-creator",
-      "source": "./personal/jadlis-plugin-creator",
+      "name": "jadlis-plugin-builder",
+      "source": "./personal/jadlis-plugin-builder",
       "category": "development",
       "tags": [
         "jadlis",
