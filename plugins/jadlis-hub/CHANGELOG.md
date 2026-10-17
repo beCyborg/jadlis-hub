@@ -3,6 +3,17 @@
 Плагин продолжает историю `jadlis-start` (1.0.0 → 2.1.1); с 3.0.0 у него новое имя и новая
 команда, поэтому мажорный бамп.
 
+## [3.0.1] — 2026-10-17 — шаг «Свои плагины» ведёт на jadlis-plugin-builder / route step points to jadlis-plugin-builder
+
+### Для человека
+- Плагин для сборки своих плагинов теперь называется `jadlis-plugin-builder`, команда — `/plugin-builder`.
+- Помощник маршрута предлагает новое имя и проверяет установку по нему.
+
+### For agents
+- Changed: `references/route.json` step `plugin-creator` → `plugin-builder` (`plugin`, `command`, `closed_when`); ids are not persisted, so no state migration.
+- Changed: `references/probes.md` optional-step loop checks `jadlis-plugin-builder`.
+- Migration: the marketplace `renames` map carries `jadlis-plugin-creator` → `jadlis-plugin-builder`.
+
 ## [3.0.0] — 2026-09-10 — помощник маршрута вместо драйвера тиров / route helper replaces the tier driver
 
 ### Для человека

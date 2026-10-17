@@ -58,9 +58,9 @@
     {"id": "skill-builder", "order": 12, "status": "optional", "title": "Свои скиллы", "plugin": "jadlis-skill-builder", "command": "/skill-builder",
      "what": "Создание и улучшение своих скиллов", "solves": "первый свой сотрудник", "buy": [],
      "closed_when": "плагин jadlis-skill-builder стоит и включён"},
-    {"id": "plugin-creator", "order": 13, "status": "optional", "title": "Свои плагины", "plugin": "jadlis-plugin-creator", "command": "/plugin-creator",
+    {"id": "plugin-builder", "order": 13, "status": "optional", "title": "Свои плагины", "plugin": "jadlis-plugin-builder", "command": "/plugin-builder",
      "what": "Упаковка скиллов в плагин и репо", "solves": "поделиться наработкой", "buy": [],
-     "closed_when": "плагин jadlis-plugin-creator стоит и включён"}
+     "closed_when": "плагин jadlis-plugin-builder стоит и включён"}
   ],
   "later": [
     {"id": "advisors", "title": "Советы директоров — девять советов из книг",

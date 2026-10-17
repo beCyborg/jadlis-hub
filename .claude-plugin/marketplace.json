@@ -57,12 +57,12 @@
       "description": "Уведомления Claude Code: форк claude-notifications-go с русскими заголовками, именем сессии в подзаголовке и гейтом фоновых задач. Ставится зависимостью jadlis-claudecode."
     },
     {
-      "name": "jadlis-plugin-creator",
+      "name": "jadlis-plugin-builder",
       "source": {
         "source": "url",
-        "url": "https://gitlab.com/beCyborg/jadlis-plugin-creator.git",
-        "ref": "jadlis-plugin-creator--v2.2.0",
-        "sha": "11fea7f05164ebfded47950d5b1fbc16444213da"
+        "url": "https://gitlab.com/beCyborg/jadlis-plugin-builder.git",
+        "ref": "jadlis-plugin-builder--v3.0.0",
+        "sha": "a92ef181b1316a0a439f3b466061567577896cf9"
       },
       "category": "development",
       "tags": [
@@ -130,8 +130,8 @@
       "source": {
         "source": "url",
         "url": "https://gitlab.com/beCyborg/jadlis-skill-builder.git",
-        "ref": "jadlis-skill-builder--v2.3.0",
-        "sha": "274052015ac547db133f5113422183ab07646248"
+        "ref": "jadlis-skill-builder--v2.3.1",
+        "sha": "720b85eff0e50578eee3f0b3bc61f17bc5163ec4"
       },
       "category": "development",
       "tags": [
@@ -159,5 +159,7 @@
       "description": "Три модели рвут твой план порознь до того, как ты в него вложился."
     }
   ],
-  "renames": {}
+  "renames": {
+    "jadlis-plugin-creator": "jadlis-plugin-builder"
+  }
 }

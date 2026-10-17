@@ -54,7 +54,7 @@ echo "ШАГ jadlis-research=$(inst jadlis-research) jadlis-science-research=$(i
 echo "ШАГ jadlis-verif=$(inst jadlis-verif) codex=$(have codex)"
 
 # ── Необязательные шаги ────────────────────────────────────────────────────
-for p in jadlis-swot-news jadlis-tldr jadlis-books jadlis-browser jadlis-computer-use jadlis-skill-builder jadlis-plugin-creator; do
+for p in jadlis-swot-news jadlis-tldr jadlis-books jadlis-browser jadlis-computer-use jadlis-skill-builder jadlis-plugin-builder; do
   printf 'НЕОБЯЗ %s=%s\n' "$p" "$(inst $p)"
 done
 

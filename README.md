@@ -17,7 +17,7 @@
 | [`jadlis-verif`](https://gitlab.com/beCyborg/jadlis-verif) | `/verif` | Две модели разных компаний ищут дыры в твоём плане порознь, арбитр сводит находки в один список. |
 | [`jadlis-browser`](https://gitlab.com/beCyborg/jadlis-browser) | `/browser` | ИИ работает в твоём Chrome на сайтах, где ты уже залогинен, без передачи паролей. |
 | [`jadlis-skill-builder`](https://gitlab.com/beCyborg/jadlis-skill-builder) | `/skill-builder` | Свой ИИ-сотрудник: пишешь инструкцию, как для нового работника, и ИИ делает эту работу сам. |
-| [`jadlis-plugin-creator`](https://gitlab.com/beCyborg/jadlis-plugin-creator) | `/plugin-creator` | Собрать, проверить и выпустить свой плагин, чтобы отдать его другому человеку. |
+| [`jadlis-plugin-builder`](https://gitlab.com/beCyborg/jadlis-plugin-builder) | `/plugin-builder` | Собрать, проверить и выпустить свой плагин, чтобы отдать его другому человеку. |
 
 > [!IMPORTANT]
 > Нужен Mac и подписка [Claude](https://claude.ai) на тарифе Max.
@@ -57,7 +57,7 @@ claude plugin install jadlis-science-research@jadlis
 claude plugin install jadlis-verif@jadlis
 claude plugin install jadlis-browser@jadlis
 claude plugin install jadlis-skill-builder@jadlis
-claude plugin install jadlis-plugin-creator@jadlis
+claude plugin install jadlis-plugin-builder@jadlis
 ```
 
 Подробности по каждому плагину, текст для вставки агенту и первый запуск — в README плагина по ссылке из таблицы.
