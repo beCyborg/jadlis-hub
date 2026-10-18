@@ -193,6 +193,18 @@
     },
     {
       "name": "jadlis-nif",
+      "source": "./personal/jadlis-nif",
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "neurointegration",
+        "sprint",
+        "stress"
+      ],
+      "description": "Гид по методу нейроинтеграции: где я в спринте, ответ со ссылкой на урок, одна практика по зоне, проекты спринта."
+    },
+    {
+      "name": "jadlis-notifications",
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-nif.git",
