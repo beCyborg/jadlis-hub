@@ -4,8 +4,8 @@
   <img src="docs/img/05-full-research-01.webp" width="100%" alt="Две лупы над одной карточкой: через одну она целая, через другую треснула">
 </p>
 
-Каталог плагинов `jadlis` для Claude Code. Сейчас в нём девять плагинов: рабочее место в терминале, ресёрч, проверка
-планов, браузер и инструменты, чтобы собирать своих ИИ-сотрудников. Остальные плагины переедут сюда позже.
+Каталог плагинов `jadlis` для Claude Code. Сейчас в нём десять плагинов: рабочее место в терминале, ресёрч, проверка
+планов, браузер, гид по методу нейроинтеграции и инструменты, чтобы собирать своих ИИ-сотрудников. Остальные плагины переедут сюда позже.
 
 | Плагин | Команда | Что даёт |
 |---|---|---|
@@ -18,6 +18,7 @@
 | [`jadlis-browser`](https://gitlab.com/beCyborg/jadlis-browser) | `/browser` | ИИ работает в твоём Chrome на сайтах, где ты уже залогинен, без передачи паролей. |
 | [`jadlis-skill-builder`](https://gitlab.com/beCyborg/jadlis-skill-builder) | `/skill-builder` | Свой ИИ-сотрудник: пишешь инструкцию, как для нового работника, и ИИ делает эту работу сам. |
 | [`jadlis-plugin-builder`](https://gitlab.com/beCyborg/jadlis-plugin-builder) | `/plugin-builder` | Собрать, проверить и выпустить свой плагин, чтобы отдать его другому человеку. |
+| [`jadlis-nif`](https://gitlab.com/beCyborg/jadlis-nif) | `/nif` | Метод нейроинтеграции под рукой: что делать сегодня, что делать, когда накрыло, и почему. Неофициальный пересказ своими словами. |
 
 > [!IMPORTANT]
 > Нужен Mac и подписка [Claude](https://claude.ai) на тарифе Max.
@@ -58,6 +59,7 @@ claude plugin install jadlis-verif@jadlis
 claude plugin install jadlis-browser@jadlis
 claude plugin install jadlis-skill-builder@jadlis
 claude plugin install jadlis-plugin-builder@jadlis
+claude plugin install jadlis-nif@jadlis
 ```
 
 Подробности по каждому плагину, текст для вставки агенту и первый запуск — в README плагина по ссылке из таблицы.

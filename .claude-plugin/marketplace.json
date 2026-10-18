@@ -5,7 +5,7 @@
     "name": "Be Cyborg",
     "url": "https://gitlab.com/beCyborg"
   },
-  "description": "Jadlis — поиск и ключи, ресёрч по 14 каналам, научный ресёрч, проверка планов, залогиненный браузер, свои ИИ-сотрудники и плагины. Внешние плагины с пином по тегу.",
+  "description": "Jadlis — поиск и ключи, ресёрч по 14 каналам, научный ресёрч, проверка планов, залогиненный браузер, свои ИИ-сотрудники и плагины, гид по методу нейроинтеграции. Внешние плагины с пином по тегу.",
   "plugins": [
     {
       "name": "jadlis-browser",
@@ -39,6 +39,23 @@
         "terminal"
       ],
       "description": "Claude Code, терминал (iTerm2 + tmux, cld) и ~/Jadlis один в один с владельцем: глобальные инструкции с правилами письма, стили ответа Jadlis и Jadlis Voice, хуки. Первый шаг маршрута."
+    },
+    {
+      "name": "jadlis-nif",
+      "source": {
+        "source": "url",
+        "url": "https://gitlab.com/beCyborg/jadlis-nif.git",
+        "ref": "jadlis-nif--v1.0.0",
+        "sha": "05f85c35b1480190275272ab70b1c335aa41d211"
+      },
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "neurointegration",
+        "wellbeing",
+        "planning"
+      ],
+      "description": "Гид по методу нейроинтеграции Катерины Ленгольд: где ты в спринте, вопрос по методу, одна практика в остром состоянии, разбор планирования, проекты спринта. Неофициальный пересказ своими словами."
     },
     {
       "name": "jadlis-notifications",
