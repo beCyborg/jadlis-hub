@@ -473,6 +473,17 @@
         "strategy"
       ],
       "description": "Люди, влияние, стратегия по пяти книгам Грина."
+    },
+    {
+      "name": "jadlis-voice-play",
+      "source": "./personal/jadlis-voice-play",
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "voice",
+        "tts"
+      ],
+      "description": "Jadlis Voice в терминале: блок «🔊 Голосом» под кнопкой «Озвучить», голос ElevenLabs."
     }
   ],
   "renames": {
