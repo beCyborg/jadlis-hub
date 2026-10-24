@@ -4,13 +4,14 @@
   <img src="docs/img/05-full-research-01.webp" width="100%" alt="Две лупы над одной карточкой: через одну она целая, через другую треснула">
 </p>
 
-Каталог плагинов `jadlis` для Claude Code. Сейчас в нём десять плагинов: рабочее место в терминале, ресёрч, проверка
+Каталог плагинов `jadlis` для Claude Code. Сейчас в нём одиннадцать плагинов: рабочее место в терминале, голосовой ввод, ресёрч, проверка
 планов, браузер, гид по методу нейроинтеграции и инструменты, чтобы собирать своих ИИ-сотрудников. Остальные плагины переедут сюда позже.
 
 | Плагин | Команда | Что даёт |
 |---|---|---|
 | [`jadlis-claudecode`](https://gitlab.com/beCyborg/jadlis-claudecode) | `/claudecode` | Claude Code, терминал и папка `~/Jadlis` как у автора: глобальные инструкции, стили ответа Jadlis и Jadlis Voice, хуки, команда `cld`. |
 | [`jadlis-notifications`](https://gitlab.com/beCyborg/jadlis-notifications) | — | Уведомления macOS, когда Claude Code закончил или ждёт ответа. Ставится сам вместе с `jadlis-claudecode`. |
+| [`jadlis-voice`](https://gitlab.com/beCyborg/jadlis-voice) | `/jadlis-voice` | Диктуешь вслух — в поле встаёт чистый текст без «э-э-э». Скопированный текст читается вслух по одной клавише. |
 | [`jadlis-search`](https://gitlab.com/beCyborg/jadlis-search) | `/search` | ИИ ищет в интернете и читает страницы. Здесь же хранятся ключи. Это база для обоих ресёрчей. |
 | [`jadlis-research`](https://gitlab.com/beCyborg/jadlis-research) | `/research` | Один вопрос — отчёт из 14 каналов. Ключевые утверждения перепроверены, непроверенные помечены. |
 | [`jadlis-science-research`](https://gitlab.com/beCyborg/jadlis-science-research) | `/science-research` | Что реально доказано наукой: научные базы, проверка на отзыв статьи, вывод по силе доказательства. |
@@ -23,6 +24,7 @@
 > [!IMPORTANT]
 > Нужен Mac и подписка [Claude](https://claude.ai) на тарифе Max.
 > Для поиска и ресёрча нужны два ключа: [Brave Search](https://brave.com/search/api/) и [Firecrawl](https://firecrawl.dev).
+> Для `jadlis-voice` нужны ключи [ElevenLabs](https://elevenlabs.io) и [Anthropic API](https://console.anthropic.com): это отдельный счёт, подписка Claude сюда не подходит.
 > Для `jadlis-verif` нужна своя подписка [ChatGPT](https://chatgpt.com): он работает через Codex CLI.
 > Для `jadlis-browser` нужен Chrome и расширение-мост из Chrome Web Store, подробности в README плагина.
 
@@ -55,6 +57,7 @@ claude plugin install jadlis-science-research@jadlis
 Остальные плагины ставятся по одному и не зависят друг от друга:
 
 ```
+claude plugin install jadlis-voice@jadlis
 claude plugin install jadlis-verif@jadlis
 claude plugin install jadlis-browser@jadlis
 claude plugin install jadlis-skill-builder@jadlis
