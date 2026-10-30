@@ -159,6 +159,23 @@
       "description": "Свой ИИ-сотрудник: скилл = должностная инструкция (расширенный форк официального skill-creator)."
     },
     {
+      "name": "jadlis-swot-news",
+      "source": {
+        "source": "url",
+        "url": "https://gitlab.com/beCyborg/jadlis-swot-news.git",
+        "ref": "jadlis-swot-news--v3.0.3",
+        "sha": "bc78d886ddb158e58f32653c93e9d7734afc0b18"
+      },
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "news",
+        "swot",
+        "kagi"
+      ],
+      "description": "Ежедневный персональный SWOT мировых новостей с Kagi News: параллельные субагенты читают батч через призму твоего профиля и пишут дельта-выпуск в Markdown."
+    },
+    {
       "name": "jadlis-verif",
       "source": {
         "source": "url",
