@@ -4,7 +4,7 @@
   <img src="docs/img/05-full-research-01.webp" width="100%" alt="Две лупы над одной карточкой: через одну она целая, через другую треснула">
 </p>
 
-Каталог плагинов `jadlis` для Claude Code. Сейчас в нём девятнадцать плагинов: рабочее место в терминале, голосовой ввод, ресёрч, проверка
+Каталог плагинов `jadlis` для Claude Code. Сейчас в нём двадцать плагинов: рабочее место в терминале, голосовой ввод, ресёрч, проверка
 планов, браузер, почта, задачи, секреты и регистрация на сервисах, новости, книги, гид по методу нейроинтеграции и инструменты, чтобы собирать своих ИИ-сотрудников.
 
 | Плагин | Команда | Что даёт |
@@ -25,6 +25,7 @@
 | [`jadlis-swot-news`](https://gitlab.com/beCyborg/jadlis-swot-news) | `/swot-news` | Новости дня как SWOT для тебя: что из происходящего в мире помогает, а что мешает твоим планам. |
 | [`jadlis-tldr`](https://gitlab.com/beCyborg/jadlis-tldr) | `/tldr` | Выжимка из видео YouTube или текстового файла: суть, главные идеи, что делать. |
 | [`jadlis-books`](https://gitlab.com/beCyborg/jadlis-books) | `/books` | Найти и скачать книгу или статью по DOI через Архив Анны. Нужно своё членство. |
+| [`jadlis-plan-bypass`](https://gitlab.com/beCyborg/jadlis-plan-bypass) | — | Одобрил план с телефона — сессия на компьютере сама уходит в bypass, очищает контекст и начинает работу. Нужен tmux. |
 | [`jadlis-skill-builder`](https://gitlab.com/beCyborg/jadlis-skill-builder) | `/skill-builder` | Свой ИИ-сотрудник: пишешь инструкцию, как для нового работника, и ИИ делает эту работу сам. |
 | [`jadlis-plugin-builder`](https://gitlab.com/beCyborg/jadlis-plugin-builder) | `/plugin-builder` | Собрать, проверить и выпустить свой плагин, чтобы отдать его другому человеку. |
 | [`jadlis-nif`](https://gitlab.com/beCyborg/jadlis-nif) | `/nif` | Метод нейроинтеграции под рукой: что делать сегодня, что делать, когда накрыло, и почему. Неофициальный пересказ своими словами. |
@@ -81,6 +82,7 @@ claude plugin install jadlis-signup@jadlis
 claude plugin install jadlis-swot-news@jadlis
 claude plugin install jadlis-tldr@jadlis
 claude plugin install jadlis-books@jadlis
+claude plugin install jadlis-plan-bypass@jadlis
 ```
 
 Подробности по каждому плагину, текст для вставки агенту и первый запуск — в README плагина по ссылке из таблицы.

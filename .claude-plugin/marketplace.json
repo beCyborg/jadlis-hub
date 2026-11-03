@@ -125,6 +125,23 @@
       "description": "Уведомления Claude Code: форк claude-notifications-go с русскими заголовками, именем сессии в подзаголовке и гейтом фоновых задач. Ставится зависимостью jadlis-claudecode."
     },
     {
+      "name": "jadlis-plan-bypass",
+      "source": {
+        "source": "url",
+        "url": "https://gitlab.com/beCyborg/jadlis-plan-bypass.git",
+        "ref": "jadlis-plan-bypass--v1.0.0",
+        "sha": "959a7aef7fb8bc95d5c123cb2dc77153e76ac0c0"
+      },
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "remote-control",
+        "plan-mode",
+        "tmux"
+      ],
+      "description": "Одобрил план с телефона через Remote Control — сессия в tmux сама уходит в bypass permissions, очищает контекст и начинает реализацию в чистом окне."
+    },
+    {
       "name": "jadlis-plugin-builder",
       "source": {
         "source": "url",
