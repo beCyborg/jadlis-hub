@@ -4,8 +4,8 @@
   <img src="docs/img/05-full-research-01.webp" width="100%" alt="Две лупы над одной карточкой: через одну она целая, через другую треснула">
 </p>
 
-Каталог плагинов `jadlis` для Claude Code. Сейчас в нём одиннадцать плагинов: рабочее место в терминале, голосовой ввод, ресёрч, проверка
-планов, браузер, гид по методу нейроинтеграции и инструменты, чтобы собирать своих ИИ-сотрудников. Остальные плагины переедут сюда позже.
+Каталог плагинов `jadlis` для Claude Code. Сейчас в нём девятнадцать плагинов: рабочее место в терминале, голосовой ввод, ресёрч, проверка
+планов, браузер, почта, задачи, секреты и регистрация на сервисах, новости, книги, гид по методу нейроинтеграции и инструменты, чтобы собирать своих ИИ-сотрудников.
 
 | Плагин | Команда | Что даёт |
 |---|---|---|
@@ -16,7 +16,15 @@
 | [`jadlis-research`](https://gitlab.com/beCyborg/jadlis-research) | `/research` | Один вопрос — отчёт из 14 каналов. Ключевые утверждения перепроверены, непроверенные помечены. |
 | [`jadlis-science-research`](https://gitlab.com/beCyborg/jadlis-science-research) | `/science-research` | Что реально доказано наукой: научные базы, проверка на отзыв статьи, вывод по силе доказательства. |
 | [`jadlis-verif`](https://gitlab.com/beCyborg/jadlis-verif) | `/verif` | Две модели разных компаний ищут дыры в твоём плане порознь, арбитр сводит находки в один список. |
-| [`jadlis-browser`](https://gitlab.com/beCyborg/jadlis-browser) | `/browser` | ИИ работает в твоём Chrome на сайтах, где ты уже залогинен, без передачи паролей. |
+| [`jadlis-browser`](https://gitlab.com/beCyborg/jadlis-browser) | `/browser` | ИИ работает в браузере на сайтах, где ты уже залогинен: в своём профиле Chrome в фоне или в твоём Chrome через мост. Пароли не передаются. |
+| [`jadlis-computer-use`](https://gitlab.com/beCyborg/jadlis-computer-use) | `/computer-use` | ИИ работает в приложениях Mac: меньше скриншотов, надёжные клики и ввод. |
+| [`jadlis-mail`](https://gitlab.com/beCyborg/jadlis-mail) | `/mail` | ИИ читает твою почту: что важного, поиск писем и вложений, разбор входящих с откатом. Письмо уходит только после твоего «да». |
+| [`jadlis-ticktick`](https://gitlab.com/beCyborg/jadlis-ticktick) | `/ticktick` | Задачи, привычки и фокус в TickTick короткими фразами: «что на сегодня», «добавь …», «заверши …». |
+| [`jadlis-secrets`](https://gitlab.com/beCyborg/jadlis-secrets) | `/secrets` | Логины и ключи агента в одном хранилище 1Password, без Touch ID. Пароль не попадает в переписку с ИИ. |
+| [`jadlis-signup`](https://gitlab.com/beCyborg/jadlis-signup) | `/signup` | ИИ регистрируется на сервисе за тебя: отдельный адрес-алиас, пароль в 1Password, письмо подтверждения. Оплата и телефон — за тобой. |
+| [`jadlis-swot-news`](https://gitlab.com/beCyborg/jadlis-swot-news) | `/swot-news` | Новости дня как SWOT для тебя: что из происходящего в мире помогает, а что мешает твоим планам. |
+| [`jadlis-tldr`](https://gitlab.com/beCyborg/jadlis-tldr) | `/tldr` | Выжимка из видео YouTube или текстового файла: суть, главные идеи, что делать. |
+| [`jadlis-books`](https://gitlab.com/beCyborg/jadlis-books) | `/books` | Найти и скачать книгу или статью по DOI через Архив Анны. Нужно своё членство. |
 | [`jadlis-skill-builder`](https://gitlab.com/beCyborg/jadlis-skill-builder) | `/skill-builder` | Свой ИИ-сотрудник: пишешь инструкцию, как для нового работника, и ИИ делает эту работу сам. |
 | [`jadlis-plugin-builder`](https://gitlab.com/beCyborg/jadlis-plugin-builder) | `/plugin-builder` | Собрать, проверить и выпустить свой плагин, чтобы отдать его другому человеку. |
 | [`jadlis-nif`](https://gitlab.com/beCyborg/jadlis-nif) | `/nif` | Метод нейроинтеграции под рукой: что делать сегодня, что делать, когда накрыло, и почему. Неофициальный пересказ своими словами. |
@@ -27,6 +35,8 @@
 > Для `jadlis-voice` нужны ключи [ElevenLabs](https://elevenlabs.io) и [Anthropic API](https://console.anthropic.com): это отдельный счёт, подписка Claude сюда не подходит.
 > Для `jadlis-verif` нужна своя подписка [ChatGPT](https://chatgpt.com): он работает через Codex CLI.
 > Для `jadlis-browser` нужен Chrome и расширение-мост из Chrome Web Store, подробности в README плагина.
+> Для `jadlis-mail` нужен himalaya, для `jadlis-secrets` — 1Password с сервисным аккаунтом, для `jadlis-signup` — ещё и Proton Pass.
+> `jadlis-signup` сам ставит `jadlis-secrets`, `jadlis-mail` и `jadlis-browser`. Скрипты и шаблон агента из них копируются по шагу «Установка» в README каждого плагина.
 
 ## Установка
 
@@ -54,7 +64,7 @@ claude plugin install jadlis-science-research@jadlis
 `jadlis-search` ставь первым. Потом введи ключи в чате Claude Code командой `/plugin configure jadlis-search@jadlis`.
 Поля с ключами при вводе скрыты, значения уходят в Связку ключей macOS.
 
-Остальные плагины ставятся по одному и не зависят друг от друга:
+Остальные плагины ставятся по одному. Друг от друга зависит только `jadlis-signup`:
 
 ```
 claude plugin install jadlis-voice@jadlis
@@ -63,6 +73,14 @@ claude plugin install jadlis-browser@jadlis
 claude plugin install jadlis-skill-builder@jadlis
 claude plugin install jadlis-plugin-builder@jadlis
 claude plugin install jadlis-nif@jadlis
+claude plugin install jadlis-computer-use@jadlis
+claude plugin install jadlis-mail@jadlis
+claude plugin install jadlis-ticktick@jadlis
+claude plugin install jadlis-secrets@jadlis
+claude plugin install jadlis-signup@jadlis
+claude plugin install jadlis-swot-news@jadlis
+claude plugin install jadlis-tldr@jadlis
+claude plugin install jadlis-books@jadlis
 ```
 
 Подробности по каждому плагину, текст для вставки агенту и первый запуск — в README плагина по ссылке из таблицы.
