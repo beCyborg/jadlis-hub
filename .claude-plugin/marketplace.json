@@ -94,8 +94,8 @@
       "source": {
         "source": "url",
         "url": "https://gitlab.com/beCyborg/jadlis-research.git",
-        "ref": "jadlis-research--v2.9.0",
-        "sha": "1594abfd0794fca21434a03a9e2a70f55df5b947"
+        "ref": "jadlis-research--v2.9.1",
+        "sha": "e9597aecb99e3ac483e811b296ff219bd2bfc652"
       },
       "category": "research",
       "tags": [
@@ -111,8 +111,8 @@
       "source": {
         "source": "url",
         "url": "https://gitlab.com/beCyborg/jadlis-science-research.git",
-        "ref": "jadlis-science-research--v2.3.7",
-        "sha": "0d385cdbf7d9e6996753f80c11741edf1bd71e2d"
+        "ref": "jadlis-science-research--v2.3.8",
+        "sha": "52ef2be98e0353278cb6631a5a8ffe40d3bd7f75"
       },
       "category": "research",
       "tags": [
@@ -128,8 +128,8 @@
       "source": {
         "source": "url",
         "url": "https://gitlab.com/beCyborg/jadlis-search.git",
-        "ref": "jadlis-search--v2.2.3",
-        "sha": "f1f626a016857e1ee5836463d03a58fd264a52b3"
+        "ref": "jadlis-search--v2.2.4",
+        "sha": "398122d3bdca844e16471a5b79dfeb0937b7720f"
       },
       "category": "research",
       "tags": [
@@ -180,8 +180,8 @@
       "source": {
         "source": "url",
         "url": "https://gitlab.com/beCyborg/jadlis-verif.git",
-        "ref": "jadlis-verif--v3.2.0",
-        "sha": "8bb1d65c6661bb98baa75873c59c2abb947a792e"
+        "ref": "jadlis-verif--v3.3.0",
+        "sha": "cf7c5b22205c72971e9d5e37ab5d7e077d4f1c13"
       },
       "category": "research",
       "tags": [
