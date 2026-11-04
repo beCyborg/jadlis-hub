@@ -11,7 +11,7 @@ argument-hint: "<пусто — продолжить | status | later | id ша�
 
 ```
 VAULT       = ~/Jadlis
-МАРКЕТПЛЕЙС = claude plugin marketplace add https://github.com/beCyborg/jadlis-hub
+МАРКЕТПЛЕЙС = claude plugin marketplace add https://gitlab.com/beCyborg/jadlis-hub.git
 МАРШРУТ     = ${CLAUDE_PLUGIN_ROOT}/references/route.json
 ПРОБЫ       = ${CLAUDE_PLUGIN_ROOT}/references/probes.md
 ```
@@ -120,7 +120,7 @@ maxAllowed  = первый обязательный шаг (order 1…6), кот
 Установка упала («marketplace not found») → маркетплейс не добавлен, одна команда:
 
 ```bash
-claude plugin marketplace add https://github.com/beCyborg/jadlis-hub
+claude plugin marketplace add https://gitlab.com/beCyborg/jadlis-hub.git
 ```
 
 Полный HTTPS-URL обязателен во всех текстах: он не зависит от версии CLI.
@@ -148,7 +148,7 @@ claude plugin marketplace add https://github.com/beCyborg/jadlis-hub
 выполни одной командой, дёшево и идемпотентно:
 
 ```bash
-claude plugin marketplace add https://github.com/beCyborg/jadlis-hub && claude plugin install jadlis-hub@jadlis
+claude plugin marketplace add https://gitlab.com/beCyborg/jadlis-hub.git && claude plugin install jadlis-hub@jadlis
 ```
 
 ## Шаг 6 — журнал

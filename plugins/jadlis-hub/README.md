@@ -40,7 +40,7 @@
 
 ```
 Ты — установщик. Выполни ровно эти шаги и ничего сверх них:
-1. Bash: claude plugin marketplace add https://github.com/beCyborg/jadlis-hub
+1. Bash: claude plugin marketplace add https://gitlab.com/beCyborg/jadlis-hub.git
 2. Bash: claude plugin install jadlis-hub@jadlis
 3. Скажи мне: «Отправь /reload-plugins, потом напиши: /jadlis-hub»
 ```
@@ -48,7 +48,7 @@
 Те же две команды руками в терминале:
 
 ```bash
-claude plugin marketplace add https://github.com/beCyborg/jadlis-hub
+claude plugin marketplace add https://gitlab.com/beCyborg/jadlis-hub.git
 claude plugin install jadlis-hub@jadlis
 ```
 

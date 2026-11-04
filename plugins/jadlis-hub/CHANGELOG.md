@@ -3,6 +3,17 @@
 Плагин продолжает историю `jadlis-start` (1.0.0 → 2.1.1); с 3.0.0 у него новое имя и новая
 команда, поэтому мажорный бамп.
 
+## [3.0.2] — 2026-11-04 — адрес маркетплейса на GitLab, уведомления отдельно / marketplace URL on GitLab, notifications standalone
+
+### Для человека
+- Команда добавления маркетплейса теперь ведёт на GitLab. Старый адрес на GitHub больше не открывается: тот аккаунт заблокирован.
+- Шаг «Рабочее место» больше не обещает, что уведомления приедут сами. Их предлагает `/claudecode` отдельной командой.
+
+### For agents
+- Fixed: `skills/jadlis-hub/SKILL.md`, `references/route.json`, `README.md`, `README.en.md` — `https://github.com/beCyborg/jadlis-hub` → `https://gitlab.com/beCyborg/jadlis-hub.git` (full URL: the `owner/repo` shorthand is GitHub-only).
+- Changed: `references/route.json` step `claudecode` drops `installs_dependency`, `what` names `cld`/`tld` and the optional CLAUDE.md, styles and notifications (jadlis-claudecode 2.0.0).
+- Changed: `SKILL.md` §4.4 and `references/probes.md` say `jadlis-notifications` is a separate install.
+
 ## [3.0.1] — 2026-10-17 — шаг «Свои плагины» ведёт на jadlis-plugin-builder / route step points to jadlis-plugin-builder
 
 ### Для человека
