@@ -44,9 +44,9 @@
       "name": "jadlis-claudecode",
       "source": {
         "source": "url",
-        "url": "https://gitlab.com/beCyborg/jadlis-claudecode.git",
-        "ref": "jadlis-claudecode--v1.3.0",
-        "sha": "c4347b8cf800373f0167c145e2d86cb6db492e3e"
+        "url": "https://github.com/becyb-org/jadlis-claudecode.git",
+        "ref": "jadlis-claudecode--v2.0.0",
+        "sha": "c396e4df94e3e339b5c0deec815be5b2d125267f"
       },
       "category": "productivity",
       "tags": [
@@ -55,7 +55,7 @@
         "claude-code",
         "terminal"
       ],
-      "description": "Claude Code, терминал (iTerm2 + tmux, cld) и ~/Jadlis один в один с владельцем: глобальные инструкции с правилами письма, стили ответа Jadlis и Jadlis Voice, хуки. Первый шаг маршрута."
+      "description": "Claude Code и терминал (iTerm2 + tmux, cld, tld) один в один с владельцем: настройки, хуки, строка состояния, автоподтверждение computer use, bypass после плана с телефона. CLAUDE.md и стили — по желанию из своих репо. Первый шаг маршрута."
     },
     {
       "name": "jadlis-computer-use",
@@ -122,24 +122,7 @@
         "notifications",
         "macos"
       ],
-      "description": "Уведомления Claude Code: форк claude-notifications-go с русскими заголовками, именем сессии в подзаголовке и гейтом фоновых задач. Ставится зависимостью jadlis-claudecode."
-    },
-    {
-      "name": "jadlis-plan-bypass",
-      "source": {
-        "source": "url",
-        "url": "https://gitlab.com/beCyborg/jadlis-plan-bypass.git",
-        "ref": "jadlis-plan-bypass--v1.0.0",
-        "sha": "959a7aef7fb8bc95d5c123cb2dc77153e76ac0c0"
-      },
-      "category": "productivity",
-      "tags": [
-        "jadlis",
-        "remote-control",
-        "plan-mode",
-        "tmux"
-      ],
-      "description": "Одобрил план с телефона через Remote Control — сессия в tmux сама уходит в bypass permissions, очищает контекст и начинает реализацию в чистом окне."
+      "description": "Уведомления Claude Code: форк claude-notifications-go с русскими заголовками, именем сессии в подзаголовке и гейтом фоновых задач. Ставится отдельно, /claudecode предлагает его по желанию."
     },
     {
       "name": "jadlis-plugin-builder",

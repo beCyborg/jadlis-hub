@@ -139,7 +139,8 @@ claude plugin marketplace add https://github.com/beCyborg/jadlis-hub
 (например `/jadlis-search:keys --check`).
 
 Поле `installs_dependency` — плагин, который приедет сам вместе с этим; скажи о нём одной
-строкой, отдельно не ставь.
+строкой, отдельно не ставь. У шага `claudecode` такого поля нет: уведомления
+`jadlis-notifications` ставятся отдельной командой, их предлагает сам `/claudecode`.
 
 ## Шаг 5 — доставить сам себя в CLI
 

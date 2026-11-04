@@ -38,6 +38,7 @@ echo "СРЕДА claude=$(claude --version 2>/dev/null | awk '{print $1}') jq=$(
 echo "ХАБ jadlis-hub=$(inst jadlis-hub) маркетплейс=$(claude plugin marketplace list 2>/dev/null | command grep -qi '\bjadlis\b' && echo да || echo нет)"
 
 # ── Шаги 1–3: свой probe.sh внутри плагина ─────────────────────────────────
+# jadlis-notifications — не зависимость jadlis-claudecode, а отдельная установка (её предлагает /claudecode)
 for p in jadlis-claudecode jadlis-obsidian jadlis-voice jadlis-notifications; do
   echo "ШАГ $p=$(inst $p)"; [ "$(inst $p)" = да ] && sub "$p"
 done
