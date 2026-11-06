@@ -125,7 +125,7 @@
       "name": "jadlis-books",
       "source": {
         "source": "url",
-        "url": "https://gitlab.com/beCyborg/jadlis-books.git",
+        "url": "https://github.com/beCyborg/jadlis-books.git",
         "ref": "jadlis-books--v3.0.0",
         "sha": "7d6169fc6b37419d061747bb86a07d613a550097"
       },
@@ -142,7 +142,7 @@
       "name": "jadlis-browser",
       "source": {
         "source": "url",
-        "url": "https://gitlab.com/beCyborg/jadlis-browser.git",
+        "url": "https://github.com/beCyborg/jadlis-browser.git",
         "ref": "jadlis-browser--v3.0.2",
         "sha": "f16be7f4d5348cb2c15540eb5fdc4fac55f3677b"
       },
@@ -175,7 +175,7 @@
       "name": "jadlis-computer-use",
       "source": {
         "source": "url",
-        "url": "https://gitlab.com/beCyborg/jadlis-computer-use.git",
+        "url": "https://github.com/beCyborg/jadlis-computer-use.git",
         "ref": "jadlis-computer-use--v2.0.1",
         "sha": "290b8f5e4bcd082f72c462b1f1119188abd9a732"
       },
@@ -203,7 +203,7 @@
       "name": "jadlis-mail",
       "source": {
         "source": "url",
-        "url": "https://gitlab.com/beCyborg/jadlis-mail.git",
+        "url": "https://github.com/beCyborg/jadlis-mail.git",
         "ref": "jadlis-mail--v0.2.0",
         "sha": "3c24240a139c6341f2c0829edab3617127810a11"
       },
@@ -237,7 +237,7 @@
       "name": "jadlis-nif",
       "source": {
         "source": "url",
-        "url": "https://gitlab.com/beCyborg/jadlis-nif.git",
+        "url": "https://github.com/beCyborg/jadlis-nif.git",
         "ref": "jadlis-nif--v1.0.0",
         "sha": "05f85c35b1480190275272ab70b1c335aa41d211"
       },
@@ -254,7 +254,7 @@
       "name": "jadlis-notifications",
       "source": {
         "source": "url",
-        "url": "https://gitlab.com/beCyborg/jadlis-notifications.git",
+        "url": "https://github.com/beCyborg/jadlis-notifications.git",
         "ref": "jadlis-notifications--v1.41.3",
         "sha": "207aaf74a35bd5df31ebf92d2b40661543ba1da9"
       },
@@ -319,7 +319,7 @@
       "name": "jadlis-science-research",
       "source": {
         "source": "url",
-        "url": "https://gitlab.com/beCyborg/jadlis-science-research.git",
+        "url": "https://github.com/beCyborg/jadlis-science-research.git",
         "ref": "jadlis-science-research--v2.3.9",
         "sha": "7eb1f5d93c4d175d6fb2d9cfd23ccfe9cf69da25"
       },
@@ -355,7 +355,7 @@
       "name": "jadlis-secrets",
       "source": {
         "source": "url",
-        "url": "https://gitlab.com/beCyborg/jadlis-secrets.git",
+        "url": "https://github.com/beCyborg/jadlis-secrets.git",
         "ref": "jadlis-secrets--v1.0.0",
         "sha": "ed50292b91e57ef18356e07ed3ac65e9900832b6"
       },
@@ -372,7 +372,7 @@
       "name": "jadlis-signup",
       "source": {
         "source": "url",
-        "url": "https://gitlab.com/beCyborg/jadlis-signup.git",
+        "url": "https://github.com/beCyborg/jadlis-signup.git",
         "ref": "jadlis-signup--v1.0.0",
         "sha": "677c289e81d8218a75236386e78696446cb8ce33"
       },
@@ -405,7 +405,7 @@
       "name": "jadlis-swot-news",
       "source": {
         "source": "url",
-        "url": "https://gitlab.com/beCyborg/jadlis-swot-news.git",
+        "url": "https://github.com/beCyborg/jadlis-swot-news.git",
         "ref": "jadlis-swot-news--v3.0.3",
         "sha": "bc78d886ddb158e58f32653c93e9d7734afc0b18"
       },
@@ -422,7 +422,7 @@
       "name": "jadlis-ticktick",
       "source": {
         "source": "url",
-        "url": "https://gitlab.com/beCyborg/jadlis-ticktick.git",
+        "url": "https://github.com/beCyborg/jadlis-ticktick.git",
         "ref": "jadlis-ticktick--v1.0.1",
         "sha": "902072231be749f81a871cfbef9a0c5f26358f1f"
       },
@@ -456,7 +456,7 @@
       "name": "jadlis-verif",
       "source": {
         "source": "url",
-        "url": "https://gitlab.com/beCyborg/jadlis-verif.git",
+        "url": "https://github.com/beCyborg/jadlis-verif.git",
         "ref": "jadlis-verif--v3.3.0",
         "sha": "cf7c5b22205c72971e9d5e37ab5d7e077d4f1c13"
       },
@@ -473,7 +473,7 @@
       "name": "jadlis-voice",
       "source": {
         "source": "url",
-        "url": "https://gitlab.com/beCyborg/jadlis-voice.git",
+        "url": "https://github.com/beCyborg/jadlis-voice.git",
         "ref": "jadlis-voice--v1.2.0",
         "sha": "f5ba2152096ec5ff452d843ce2bf557674339d72"
       },
