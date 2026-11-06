@@ -158,9 +158,9 @@
       "name": "jadlis-claudecode",
       "source": {
         "source": "url",
-        "url": "https://github.com/becyb-org/jadlis-claudecode.git",
-        "ref": "jadlis-claudecode--v2.0.0",
-        "sha": "c396e4df94e3e339b5c0deec815be5b2d125267f"
+        "url": "https://github.com/beCyborg/jadlis-claudecode.git",
+        "ref": "jadlis-claudecode--v2.0.1",
+        "sha": "9f06013eeb908ce89144e27e4386308a149979b0"
       },
       "category": "productivity",
       "tags": [
@@ -286,9 +286,9 @@
       "name": "jadlis-plugin-builder",
       "source": {
         "source": "url",
-        "url": "https://gitlab.com/beCyborg/jadlis-plugin-builder.git",
-        "ref": "jadlis-plugin-builder--v3.1.0",
-        "sha": "844e04448dbab1376c55cb3560c664875fbe6b54"
+        "url": "https://github.com/beCyborg/jadlis-plugin-builder.git",
+        "ref": "jadlis-plugin-builder--v3.1.1",
+        "sha": "b6449fb0ced2b6084645a1f3e309d32275c6882d"
       },
       "category": "development",
       "tags": [
@@ -302,9 +302,9 @@
       "name": "jadlis-research",
       "source": {
         "source": "url",
-        "url": "https://gitlab.com/beCyborg/jadlis-research.git",
-        "ref": "jadlis-research--v2.10.3",
-        "sha": "c35bc1880b2567f500f578d70f2b3d8f3588473d"
+        "url": "https://github.com/beCyborg/jadlis-research.git",
+        "ref": "jadlis-research--v2.10.4",
+        "sha": "e9da0ec7f809a4d4fcb2665d68be67389c5f5352"
       },
       "category": "research",
       "tags": [
@@ -336,7 +336,7 @@
       "name": "jadlis-search",
       "source": {
         "source": "url",
-        "url": "https://gitlab.com/beCyborg/jadlis-search.git",
+        "url": "https://github.com/beCyborg/jadlis-search.git",
         "ref": "jadlis-search--v2.4.0",
         "sha": "846773c77bbc1ea975f0ddb341b4cf36e3fa51c1"
       },
@@ -389,9 +389,9 @@
       "name": "jadlis-skill-builder",
       "source": {
         "source": "url",
-        "url": "https://gitlab.com/beCyborg/jadlis-skill-builder.git",
-        "ref": "jadlis-skill-builder--v2.4.0",
-        "sha": "3ede456e9e7ec228ddf894ccc22314ca07599578"
+        "url": "https://github.com/beCyborg/jadlis-skill-builder.git",
+        "ref": "jadlis-skill-builder--v2.4.1",
+        "sha": "d312c8efa75b26fdab16bd219de46dbde1418db0"
       },
       "category": "development",
       "tags": [
