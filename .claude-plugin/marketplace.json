@@ -8,6 +8,120 @@
   "description": "Jadlis — поиск и ключи, ресёрч по 14 каналам, научный ресёрч, проверка планов, залогиненный браузер, почта, задачи, секреты и регистрация на сервисах, новости, книги, свои ИИ-сотрудники и плагины, гид по методу нейроинтеграции. Внешние плагины с пином по тегу.",
   "plugins": [
     {
+      "name": "advisor-copywriting",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/beCyborg/jadlis-advisor-copywriting.git",
+        "ref": "advisor-copywriting--v1.0.5",
+        "sha": "5dee2df0d6b5db03137f34280675778ac7046fe9"
+      },
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "council",
+        "copywriting"
+      ],
+      "description": "Тексты, прошедшие восемь книг: вердикт по готовому тексту или конвейер написания."
+    },
+    {
+      "name": "advisor-decision",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/beCyborg/jadlis-advisor-decision.git",
+        "ref": "advisor-decision--v1.0.4",
+        "sha": "f5095897f870203ac4471a8d592be89f10dafba4"
+      },
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "council",
+        "decision-making"
+      ],
+      "description": "Трудное решение: 5 линз, скептики, один вердикт."
+    },
+    {
+      "name": "advisor-influence",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/beCyborg/jadlis-advisor-influence.git",
+        "ref": "advisor-influence--v1.0.5",
+        "sha": "8d52f248511b0c8796085c847dcbdbdc7874a642"
+      },
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "council",
+        "marketing",
+        "personal-brand"
+      ],
+      "description": "Медийность и доверие без «AI-инфлюенсера»."
+    },
+    {
+      "name": "advisor-product",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/beCyborg/jadlis-advisor-product.git",
+        "ref": "advisor-product--v1.0.5",
+        "sha": "e6079c7ef77663f6243633a56e3cee5bc2918ba7"
+      },
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "council",
+        "product"
+      ],
+      "description": "Продуктовые решения через 16 книг."
+    },
+    {
+      "name": "advisor-psychologist",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/beCyborg/jadlis-advisor-psychologist.git",
+        "path": "plugins/advisor-psychologist",
+        "ref": "advisor-psychologist--v1.2.3",
+        "sha": "49220e313a41c3e164330efcda872a30e8bb8625"
+      },
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "psychology",
+        "council"
+      ],
+      "description": "Самопомощь рядом с живым терапевтом: совет линз-методологий, триаж, safety-ревью."
+    },
+    {
+      "name": "advisor-sales",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/beCyborg/jadlis-advisor-sales.git",
+        "ref": "advisor-sales--v1.0.6",
+        "sha": "9abc3c20b334a92d482985c3222815edbec7249c"
+      },
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "council",
+        "sales"
+      ],
+      "description": "Разбор звонка, застрявшая сделка, скрипт: 16 слоёв сделки, 4 режима."
+    },
+    {
+      "name": "cognitive-biases",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/beCyborg/jadlis-cognitive-biases.git",
+        "ref": "cognitive-biases--v1.0.3",
+        "sha": "4392fd1e9c45fe691c8204bdb88c470a02100b0c"
+      },
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "advisor",
+        "cognitive-biases"
+      ],
+      "description": "Проверка решения на 111 искажений с протоколами дебайсинга."
+    },
+    {
       "name": "jadlis-books",
       "source": {
         "source": "url",
@@ -75,6 +189,17 @@
       "description": "Дисциплина для встроенного computer-use: меньше скриншотов, надёжные клики и ввод, рецепты приложений macOS."
     },
     {
+      "name": "jadlis-hub",
+      "source": "./plugins/jadlis-hub",
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "onboarding",
+        "route"
+      ],
+      "description": "Маршрут стека Jadlis: помощник снимает состояние машины и выдаёт ровно следующий шаг."
+    },
+    {
       "name": "jadlis-mail",
       "source": {
         "source": "url",
@@ -90,6 +215,23 @@
         "himalaya"
       ],
       "description": "Почта по IMAP через himalaya: что важного, поиск писем и вложений, разбор входящих с откатом, черновики, отправка только после подтверждения."
+    },
+    {
+      "name": "jadlis-memory-search",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/beCyborg/jadlis-memory-search.git",
+        "ref": "jadlis-memory-search--v1.0.0",
+        "sha": "a10aea6c0e7a5fabd033a1465574bb2d96d83917"
+      },
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "obsidian",
+        "search",
+        "qmd"
+      ],
+      "description": "Поиск по смыслу в своих заметках: локальный индекс над выбранными папками хранилища."
     },
     {
       "name": "jadlis-nif",
@@ -123,6 +265,22 @@
         "macos"
       ],
       "description": "Уведомления Claude Code: форк claude-notifications-go с русскими заголовками, именем сессии в подзаголовке и гейтом фоновых задач. Ставится отдельно, /claudecode предлагает его по желанию."
+    },
+    {
+      "name": "jadlis-obsidian",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/beCyborg/jadlis-obsidian.git",
+        "ref": "jadlis-obsidian--v1.0.0",
+        "sha": "57ce33a9a04074821ab1b36fc35ef3e91021f2ed"
+      },
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "obsidian",
+        "vault"
+      ],
+      "description": "Obsidian один в один с владельцем: тема, 12 плагинов, хоткеи, CLI, связка obsidian-skills и vault CLAUDE.md — второй обязательный шаг маршрута."
     },
     {
       "name": "jadlis-plugin-builder",
@@ -327,6 +485,38 @@
         "spokenly"
       ],
       "description": "Голосовой контур один в один с владельцем: диктовка Spokenly с чисткой текста Claude Haiku 5.5, автозамены и озвучка буфера голосом ElevenLabs — читает блок «🔊 Голосом» из ответов стиля Jadlis Voice."
+    },
+    {
+      "name": "nupp",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/beCyborg/jadlis-nupp.git",
+        "ref": "nupp--v1.0.3",
+        "sha": "75bc02305741cdafcfc704ec572abdec0ed9fa84"
+      },
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "advisor",
+        "project-management"
+      ],
+      "description": "Диагноз проекта по 6 универсальным принципам (NUPP)."
+    },
+    {
+      "name": "robert-greene",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/beCyborg/jadlis-robert-greene.git",
+        "ref": "robert-greene--v1.0.3",
+        "sha": "d99cee5ab4a1d34729e0cda7eadbfe8632794efc"
+      },
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "advisor",
+        "strategy"
+      ],
+      "description": "Люди, влияние, стратегия по пяти книгам Грина."
     }
   ],
   "renames": {
