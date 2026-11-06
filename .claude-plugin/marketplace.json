@@ -439,7 +439,7 @@
       "name": "jadlis-tldr",
       "source": {
         "source": "url",
-        "url": "https://gitlab.com/beCyborg/jadlis-tldr.git",
+        "url": "https://github.com/beCyborg/jadlis-tldr.git",
         "ref": "jadlis-tldr--v2.0.2",
         "sha": "2543aa830188a4e8df6f77cf71cd95b5d3eeac36"
       },
