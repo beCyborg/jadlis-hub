@@ -1,5 +1,5 @@
 {
-  "marketplace": {"name": "jadlis", "url": "https://gitlab.com/beCyborg/jadlis-hub.git"},
+  "marketplace": {"name": "jadlis", "url": "https://github.com/beCyborg/jadlis-hub.git"},
   "steps": [
     {"id": "claudecode", "order": 1, "status": "required", "title": "Рабочее место", "plugin": "jadlis-claudecode", "command": "/claudecode",
      "what": "Claude Code, терминал (iTerm2 + tmux, команды cld и tld) и папка ~/Jadlis — настройки владельца один в один; по желанию CLAUDE.md, стили ответа и уведомления",

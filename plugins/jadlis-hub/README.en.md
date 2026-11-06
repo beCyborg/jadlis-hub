@@ -40,7 +40,7 @@ Paste into the Claude Code chat:
 
 ```
 You are an installer. Run exactly these steps and nothing else:
-1. Bash: claude plugin marketplace add https://gitlab.com/beCyborg/jadlis-hub.git
+1. Bash: claude plugin marketplace add https://github.com/beCyborg/jadlis-hub.git
 2. Bash: claude plugin install jadlis-hub@jadlis
 3. Tell me: "Send /reload-plugins, then type: /jadlis-hub"
 ```
@@ -48,7 +48,7 @@ You are an installer. Run exactly these steps and nothing else:
 The same two commands by hand in a terminal:
 
 ```bash
-claude plugin marketplace add https://gitlab.com/beCyborg/jadlis-hub.git
+claude plugin marketplace add https://github.com/beCyborg/jadlis-hub.git
 claude plugin install jadlis-hub@jadlis
 ```
 

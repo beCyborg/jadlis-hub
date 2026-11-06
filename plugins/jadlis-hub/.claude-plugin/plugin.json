@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "jadlis-hub",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "displayName": "Jadlis — помощник маршрута",
   "description": "Помощник маршрута Jadlis: снимает состояние машины, ведёт от обязательной настройки к необязательным инструментам, объясняет простым языком.",
   "author": {

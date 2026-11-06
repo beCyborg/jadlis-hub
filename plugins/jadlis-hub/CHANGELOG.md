@@ -3,6 +3,16 @@
 Плагин продолжает историю `jadlis-start` (1.0.0 → 2.1.1); с 3.0.0 у него новое имя и новая
 команда, поэтому мажорный бамп.
 
+## [3.0.3] — 2026-11-06 — маркетплейс снова на GitHub / marketplace back on GitHub
+
+### Для человека
+- Команда добавления маркетплейса снова ведёт на GitHub: `claude plugin marketplace add https://github.com/beCyborg/jadlis-hub.git`. Аккаунт GitHub разблокирован, GitLab больше не используется.
+
+### For agents
+- Changed: `skills/jadlis-hub/SKILL.md`, `references/route.json`, README pair — marketplace URL `https://github.com/beCyborg/jadlis-hub.git`.
+- Changed: hub repo — catalogue entries url-sourced from `github.com/beCyborg/*`; GitLab CI (`.gitlab-ci.yml`, `ci/plugin-ci.yml`) removed, GitHub reusable workflow `.github/workflows/plugin-ci.yml` is the only CI.
+- Changed: `.claude-plugin/plugin.json` version 3.0.2 → 3.0.3.
+
 ## [3.0.2] — 2026-11-04 — адрес маркетплейса на GitLab, уведомления отдельно / marketplace URL on GitLab, notifications standalone
 
 ### Для человека

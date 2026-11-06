@@ -9,25 +9,25 @@
 
 | Плагин | Команда | Что даёт |
 |---|---|---|
-| [`jadlis-claudecode`](https://github.com/becyb-org/jadlis-claudecode) | `/claudecode` | Claude Code, терминал и папка `~/Jadlis` как у автора: настройки, хуки, команды `cld` и `tld`, переход в bypass после плана с телефона. По желанию ставит [глобальный CLAUDE.md](https://github.com/becyb-org/jadlis-claude-md) и [стили ответа](https://github.com/becyb-org/jadlis-output-styles). |
-| [`jadlis-notifications`](https://gitlab.com/beCyborg/jadlis-notifications) | — | Уведомления macOS, когда Claude Code закончил или ждёт ответа. Ставится отдельно: `/claudecode` предлагает его. |
-| [`jadlis-voice`](https://gitlab.com/beCyborg/jadlis-voice) | `/jadlis-voice` | Диктуешь вслух — в поле встаёт чистый текст без «э-э-э». Скопированный текст читается вслух по одной клавише. |
-| [`jadlis-search`](https://gitlab.com/beCyborg/jadlis-search) | `/search` | ИИ ищет в интернете и читает страницы. Здесь же хранятся ключи. Это база для обоих ресёрчей. |
-| [`jadlis-research`](https://gitlab.com/beCyborg/jadlis-research) | `/research` | Один вопрос — отчёт из 14 каналов. Ключевые утверждения перепроверены, непроверенные помечены. |
-| [`jadlis-science-research`](https://gitlab.com/beCyborg/jadlis-science-research) | `/science-research` | Что реально доказано наукой: научные базы, проверка на отзыв статьи, вывод по силе доказательства. |
-| [`jadlis-verif`](https://gitlab.com/beCyborg/jadlis-verif) | `/verif` | Две модели разных компаний ищут дыры в твоём плане порознь, арбитр сводит находки в один список. |
-| [`jadlis-browser`](https://gitlab.com/beCyborg/jadlis-browser) | `/browser` | ИИ работает в браузере на сайтах, где ты уже залогинен: в своём профиле Chrome в фоне или в твоём Chrome через мост. Пароли не передаются. |
-| [`jadlis-computer-use`](https://gitlab.com/beCyborg/jadlis-computer-use) | `/computer-use` | ИИ работает в приложениях Mac: меньше скриншотов, надёжные клики и ввод. |
-| [`jadlis-mail`](https://gitlab.com/beCyborg/jadlis-mail) | `/mail` | ИИ читает твою почту: что важного, поиск писем и вложений, разбор входящих с откатом. Письмо уходит только после твоего «да». |
-| [`jadlis-ticktick`](https://gitlab.com/beCyborg/jadlis-ticktick) | `/ticktick` | Задачи, привычки и фокус в TickTick короткими фразами: «что на сегодня», «добавь …», «заверши …». |
-| [`jadlis-secrets`](https://gitlab.com/beCyborg/jadlis-secrets) | `/secrets` | Логины и ключи агента в одном хранилище 1Password, без Touch ID. Пароль не попадает в переписку с ИИ. |
-| [`jadlis-signup`](https://gitlab.com/beCyborg/jadlis-signup) | `/signup` | ИИ регистрируется на сервисе за тебя: отдельный адрес-алиас, пароль в 1Password, письмо подтверждения. Оплата и телефон — за тобой. |
-| [`jadlis-swot-news`](https://gitlab.com/beCyborg/jadlis-swot-news) | `/swot-news` | Новости дня как SWOT для тебя: что из происходящего в мире помогает, а что мешает твоим планам. |
-| [`jadlis-tldr`](https://gitlab.com/beCyborg/jadlis-tldr) | `/tldr` | Выжимка из видео YouTube или текстового файла: суть, главные идеи, что делать. |
-| [`jadlis-books`](https://gitlab.com/beCyborg/jadlis-books) | `/books` | Найти и скачать книгу или статью по DOI через Архив Анны. Нужно своё членство. |
-| [`jadlis-skill-builder`](https://gitlab.com/beCyborg/jadlis-skill-builder) | `/skill-builder` | Свой ИИ-сотрудник: пишешь инструкцию, как для нового работника, и ИИ делает эту работу сам. |
-| [`jadlis-plugin-builder`](https://gitlab.com/beCyborg/jadlis-plugin-builder) | `/plugin-builder` | Собрать, проверить и выпустить свой плагин, чтобы отдать его другому человеку. |
-| [`jadlis-nif`](https://gitlab.com/beCyborg/jadlis-nif) | `/nif` | Метод нейроинтеграции под рукой: что делать сегодня, что делать, когда накрыло, и почему. Неофициальный пересказ своими словами. |
+| [`jadlis-claudecode`](https://github.com/beCyborg/jadlis-claudecode) | `/claudecode` | Claude Code, терминал и папка `~/Jadlis` как у автора: настройки, хуки, команды `cld` и `tld`, переход в bypass после плана с телефона. По желанию ставит [глобальный CLAUDE.md](https://github.com/beCyborg/jadlis-claude-md) и [стили ответа](https://github.com/beCyborg/jadlis-output-styles). |
+| [`jadlis-notifications`](https://github.com/beCyborg/jadlis-notifications) | — | Уведомления macOS, когда Claude Code закончил или ждёт ответа. Ставится отдельно: `/claudecode` предлагает его. |
+| [`jadlis-voice`](https://github.com/beCyborg/jadlis-voice) | `/jadlis-voice` | Диктуешь вслух — в поле встаёт чистый текст без «э-э-э». Скопированный текст читается вслух по одной клавише. |
+| [`jadlis-search`](https://github.com/beCyborg/jadlis-search) | `/search` | ИИ ищет в интернете и читает страницы. Здесь же хранятся ключи. Это база для обоих ресёрчей. |
+| [`jadlis-research`](https://github.com/beCyborg/jadlis-research) | `/research` | Один вопрос — отчёт из 14 каналов. Ключевые утверждения перепроверены, непроверенные помечены. |
+| [`jadlis-science-research`](https://github.com/beCyborg/jadlis-science-research) | `/science-research` | Что реально доказано наукой: научные базы, проверка на отзыв статьи, вывод по силе доказательства. |
+| [`jadlis-verif`](https://github.com/beCyborg/jadlis-verif) | `/verif` | Две модели разных компаний ищут дыры в твоём плане порознь, арбитр сводит находки в один список. |
+| [`jadlis-browser`](https://github.com/beCyborg/jadlis-browser) | `/browser` | ИИ работает в браузере на сайтах, где ты уже залогинен: в своём профиле Chrome в фоне или в твоём Chrome через мост. Пароли не передаются. |
+| [`jadlis-computer-use`](https://github.com/beCyborg/jadlis-computer-use) | `/computer-use` | ИИ работает в приложениях Mac: меньше скриншотов, надёжные клики и ввод. |
+| [`jadlis-mail`](https://github.com/beCyborg/jadlis-mail) | `/mail` | ИИ читает твою почту: что важного, поиск писем и вложений, разбор входящих с откатом. Письмо уходит только после твоего «да». |
+| [`jadlis-ticktick`](https://github.com/beCyborg/jadlis-ticktick) | `/ticktick` | Задачи, привычки и фокус в TickTick короткими фразами: «что на сегодня», «добавь …», «заверши …». |
+| [`jadlis-secrets`](https://github.com/beCyborg/jadlis-secrets) | `/secrets` | Логины и ключи агента в одном хранилище 1Password, без Touch ID. Пароль не попадает в переписку с ИИ. |
+| [`jadlis-signup`](https://github.com/beCyborg/jadlis-signup) | `/signup` | ИИ регистрируется на сервисе за тебя: отдельный адрес-алиас, пароль в 1Password, письмо подтверждения. Оплата и телефон — за тобой. |
+| [`jadlis-swot-news`](https://github.com/beCyborg/jadlis-swot-news) | `/swot-news` | Новости дня как SWOT для тебя: что из происходящего в мире помогает, а что мешает твоим планам. |
+| [`jadlis-tldr`](https://github.com/beCyborg/jadlis-tldr) | `/tldr` | Выжимка из видео YouTube или текстового файла: суть, главные идеи, что делать. |
+| [`jadlis-books`](https://github.com/beCyborg/jadlis-books) | `/books` | Найти и скачать книгу или статью по DOI через Архив Анны. Нужно своё членство. |
+| [`jadlis-skill-builder`](https://github.com/beCyborg/jadlis-skill-builder) | `/skill-builder` | Свой ИИ-сотрудник: пишешь инструкцию, как для нового работника, и ИИ делает эту работу сам. |
+| [`jadlis-plugin-builder`](https://github.com/beCyborg/jadlis-plugin-builder) | `/plugin-builder` | Собрать, проверить и выпустить свой плагин, чтобы отдать его другому человеку. |
+| [`jadlis-nif`](https://github.com/beCyborg/jadlis-nif) | `/nif` | Метод нейроинтеграции под рукой: что делать сегодня, что делать, когда накрыло, и почему. Неофициальный пересказ своими словами. |
 
 > [!IMPORTANT]
 > Нужен Mac и подписка [Claude](https://claude.ai) на тарифе Max.
@@ -43,7 +43,7 @@
 Рабочее место — первым, остальные плагины исходят из того, что оно собрано:
 
 ```
-claude plugin marketplace add https://gitlab.com/beCyborg/jadlis-hub.git
+claude plugin marketplace add https://github.com/beCyborg/jadlis-hub.git
 claude plugin install jadlis-claudecode@jadlis
 ```
 
@@ -52,7 +52,7 @@ claude plugin install jadlis-claudecode@jadlis
 Ресёрч — скопируй в терминал по очереди:
 
 ```
-claude plugin marketplace add https://gitlab.com/beCyborg/jadlis-hub.git
+claude plugin marketplace add https://github.com/beCyborg/jadlis-hub.git
 claude plugin install jadlis-search@jadlis
 claude plugin install jadlis-research@jadlis
 claude plugin install jadlis-science-research@jadlis
@@ -111,7 +111,7 @@ claude plugin update <плагин>@jadlis
 пользоваться лично можно. Коммерческое использование, переиздание и включение в свои
 продукты — по договорённости со мной.
 
-**Если не встало** — напиши в issue этого репозитория. Для этого нужен аккаунт GitLab.
+**Если не встало** — напиши в issue этого репозитория. Для этого нужен аккаунт GitHub.
 
 **Как предложить правку** — [CONTRIBUTING.md](CONTRIBUTING.md).
 
