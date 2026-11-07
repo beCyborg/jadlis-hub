@@ -143,8 +143,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-browser.git",
-        "ref": "jadlis-browser--v3.0.2",
-        "sha": "8fda8670602f314db33956053bfd0be7f2d05944"
+        "ref": "jadlis-browser--v3.1.0",
+        "sha": "e93b2b15f03530bcf20dea84526c5828617889de"
       },
       "category": "productivity",
       "tags": [
@@ -204,8 +204,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-mail.git",
-        "ref": "jadlis-mail--v0.2.0",
-        "sha": "48c7d24345231b88179e3be4f290f8c816d2659d"
+        "ref": "jadlis-mail--v0.3.0",
+        "sha": "ae6d9cefd6237a1bf10aa5c8cb5230efe3426543"
       },
       "category": "productivity",
       "tags": [
