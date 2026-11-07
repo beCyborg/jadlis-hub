@@ -204,8 +204,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-mail.git",
-        "ref": "jadlis-mail--v0.3.0",
-        "sha": "ae6d9cefd6237a1bf10aa5c8cb5230efe3426543"
+        "ref": "jadlis-mail--v0.3.1",
+        "sha": "111e8aacb601ad48412c8264495071dad26ff288"
       },
       "category": "productivity",
       "tags": [
