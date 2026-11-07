@@ -96,7 +96,7 @@
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-books.git",
         "ref": "jadlis-books--v3.0.0",
-        "sha": "7d6169fc6b37419d061747bb86a07d613a550097"
+        "sha": "c71a8785d18609ca4d369e05b75bf450b04b5886"
       },
       "category": "productivity",
       "tags": [
@@ -124,7 +124,7 @@
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-claudecode.git",
         "ref": "jadlis-claudecode--v2.0.1",
-        "sha": "9f06013eeb908ce89144e27e4386308a149979b0"
+        "sha": "116167220dd3cc2e06f66b16213e3b24308cce0b"
       },
       "category": "productivity",
       "tags": [
@@ -141,7 +141,7 @@
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-computer-use.git",
         "ref": "jadlis-computer-use--v2.0.1",
-        "sha": "290b8f5e4bcd082f72c462b1f1119188abd9a732"
+        "sha": "89ac3df91cf415539acd1e8a0181a53378341bd1"
       },
       "category": "productivity",
       "tags": [
@@ -209,7 +209,7 @@
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-notifications.git",
         "ref": "jadlis-notifications--v1.41.4",
-        "sha": "931c8341f1a5eff7c6dd6f50bb1f371ea06a9026"
+        "sha": "601b07d2921d0582192e5a2f3740e03ed017bc88"
       },
       "category": "productivity",
       "tags": [
@@ -242,7 +242,7 @@
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-obsidian.git",
         "ref": "jadlis-obsidian--v1.0.1",
-        "sha": "b3443c869dc2517529a57bb089044db815def80c"
+        "sha": "dd06c8fd740a9f0bfa3d97e2c8319aa59ba3bd55"
       },
       "category": "productivity",
       "tags": [
@@ -368,7 +368,7 @@
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-swot-news.git",
         "ref": "jadlis-swot-news--v3.0.3",
-        "sha": "bc78d886ddb158e58f32653c93e9d7734afc0b18"
+        "sha": "8f0242440b6f5392011878ab9a8db1cabe5972e1"
       },
       "category": "productivity",
       "tags": [
@@ -402,7 +402,7 @@
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-tldr.git",
         "ref": "jadlis-tldr--v2.0.2",
-        "sha": "2543aa830188a4e8df6f77cf71cd95b5d3eeac36"
+        "sha": "94e257535cdbdcc72ee32f6e031787aaa5e01482"
       },
       "category": "productivity",
       "tags": [
@@ -431,7 +431,7 @@
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-voice.git",
         "ref": "jadlis-voice--v1.2.0",
-        "sha": "f5ba2152096ec5ff452d843ce2bf557674339d72"
+        "sha": "77dcb0854fa70f80132c06c7359851f7942dbddf"
       },
       "category": "productivity",
       "tags": [
