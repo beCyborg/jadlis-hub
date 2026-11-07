@@ -369,6 +369,22 @@
       "description": "Логины и ключи агента в одном хранилище 1Password через сервисный аккаунт, без Touch ID; пароль не попадает в контекст модели."
     },
     {
+      "name": "jadlis-sergey",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/beCyborg/jadlis-sergey.git",
+        "ref": "jadlis-sergey--v1.0.0",
+        "sha": "6c0099c5461d01831a2089b5c28711d4c15b352a"
+      },
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "private",
+        "manager"
+      ],
+      "description": "Приватный плагин одного получателя (репозиторий закрыт, для остальных не ставится): чат «Менеджер» с телефона, сессии задач и политика автономии."
+    },
+    {
       "name": "jadlis-signup",
       "source": {
         "source": "url",
