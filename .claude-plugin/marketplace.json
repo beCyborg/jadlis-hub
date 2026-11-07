@@ -143,8 +143,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-browser.git",
-        "ref": "jadlis-browser--v3.1.0",
-        "sha": "e93b2b15f03530bcf20dea84526c5828617889de"
+        "ref": "jadlis-browser--v3.1.1",
+        "sha": "a4de108349cdc7f53d818920334e8e20f690ff45"
       },
       "category": "productivity",
       "tags": [
