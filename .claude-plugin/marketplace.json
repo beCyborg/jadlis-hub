@@ -391,8 +391,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-sergey.git",
-        "ref": "jadlis-sergey--v1.1.1",
-        "sha": "8c5774733ee5d243e204aee6f87252b4d872c4c7"
+        "ref": "jadlis-sergey--v1.1.2",
+        "sha": "dcd7ebf90de960e70d6d6ccb915ea482640e0ee8"
       },
       "category": "productivity",
       "tags": [
