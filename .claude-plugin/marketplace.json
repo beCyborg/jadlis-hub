@@ -424,8 +424,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-skill-builder.git",
-        "ref": "jadlis-skill-builder--v2.4.2",
-        "sha": "50cde5d837b3e5c4181f6b3638e83ba6e14d7f6a"
+        "ref": "jadlis-skill-builder--v2.5.0",
+        "sha": "6985347a8cd5e62576c053eb33970f07a55a45c7"
       },
       "category": "development",
       "tags": [
