@@ -12,8 +12,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-advisor-copywriting.git",
-        "ref": "advisor-copywriting--v1.0.6",
-        "sha": "da1951d0f7cf438d92af96b4563f44fdf2fc5c64"
+        "ref": "advisor-copywriting--v1.0.7",
+        "sha": "236e39618693222a3d7d501914035dd5ffb5c7dd"
       },
       "category": "productivity",
       "tags": [
@@ -28,8 +28,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-advisor-decision.git",
-        "ref": "advisor-decision--v1.0.5",
-        "sha": "b0b210e1c58832a7a78f8004208521f2533660bc"
+        "ref": "advisor-decision--v1.0.6",
+        "sha": "f80544d108a6bbd6645e9f7d41d1aa718320f09f"
       },
       "category": "productivity",
       "tags": [
@@ -44,8 +44,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-advisor-influence.git",
-        "ref": "advisor-influence--v1.0.6",
-        "sha": "e273a2e258250e3940d69b5065664221cd14d6c8"
+        "ref": "advisor-influence--v1.0.7",
+        "sha": "bb149c063de5963556f2c26edeb4debc25d14d13"
       },
       "category": "productivity",
       "tags": [
@@ -61,8 +61,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-advisor-product.git",
-        "ref": "advisor-product--v1.0.6",
-        "sha": "673d4fa5c2517e906473f063e7b86bcba2025a8c"
+        "ref": "advisor-product--v1.0.7",
+        "sha": "bbaeb2c2818b3d80a6d5bc0f9578cb78a15a58c1"
       },
       "category": "productivity",
       "tags": [
@@ -78,8 +78,8 @@
         "source": "git-subdir",
         "url": "https://github.com/beCyborg/jadlis-advisor-psychologist.git",
         "path": "plugins/advisor-psychologist",
-        "ref": "advisor-psychologist--v1.2.5",
-        "sha": "9a7078f1abffde9091f78d0e5e6ea8cddc14cc4f"
+        "ref": "advisor-psychologist--v1.3.0",
+        "sha": "816cb9ecf3513f37d4a5c6bba3f961aecdc74754"
       },
       "category": "productivity",
       "tags": [
@@ -94,8 +94,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-advisor-sales.git",
-        "ref": "advisor-sales--v1.0.7",
-        "sha": "fcc64bffc4942bea1263aa4fc3ffc08989e09936"
+        "ref": "advisor-sales--v1.0.8",
+        "sha": "fceb264c9b4d3d0adcea56391daea229cb778f62"
       },
       "category": "productivity",
       "tags": [
@@ -321,8 +321,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-research.git",
-        "ref": "jadlis-research--v2.12.1",
-        "sha": "e65b8ae3ab4926dda1406c5bbd0c689945d8b0b6"
+        "ref": "jadlis-research--v2.13.0",
+        "sha": "728d4f6f73f2ccd34aa9d16a7d087abb5ae18211"
       },
       "category": "research",
       "tags": [
@@ -338,8 +338,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-science-research.git",
-        "ref": "jadlis-science-research--v2.3.10",
-        "sha": "e78dd9902e7692c6dcbcad3df4d172806c51cce5"
+        "ref": "jadlis-science-research--v2.4.0",
+        "sha": "647c7358c431955bdf18403e316702564ea94a31"
       },
       "category": "research",
       "tags": [
@@ -355,8 +355,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-search.git",
-        "ref": "jadlis-search--v2.5.1",
-        "sha": "4aaacd38ff6bd2ae6ecdbf078a93ea0f4f00c743"
+        "ref": "jadlis-search--v2.6.0",
+        "sha": "5e740a95114a5ab39dc8a73931fa2f4a7132149c"
       },
       "category": "research",
       "tags": [
@@ -391,8 +391,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-sergey.git",
-        "ref": "jadlis-sergey--v1.1.10",
-        "sha": "f7cc4cf50b2bd39deec0b89ba94abb083c16b950"
+        "ref": "jadlis-sergey--v1.1.11",
+        "sha": "2e1972cb70be668f77dcd265f669b759399b1312"
       },
       "category": "productivity",
       "tags": [
@@ -424,8 +424,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-skill-builder.git",
-        "ref": "jadlis-skill-builder--v2.5.0",
-        "sha": "6985347a8cd5e62576c053eb33970f07a55a45c7"
+        "ref": "jadlis-skill-builder--v2.5.1",
+        "sha": "c31fefdf583e1fb6a53256d32776c7376dab2985"
       },
       "category": "development",
       "tags": [
@@ -491,8 +491,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-verif.git",
-        "ref": "jadlis-verif--v3.3.0",
-        "sha": "e28880509848c60d52c442c509cacf2d62b645c3"
+        "ref": "jadlis-verif--v3.4.0",
+        "sha": "a7a62bf1762e17c03273459a55a19e1018cd2fa7"
       },
       "category": "research",
       "tags": [
