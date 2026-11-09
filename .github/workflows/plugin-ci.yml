@@ -16,9 +16,16 @@ on:
         type: string
         default: plugin
       claude-cli-version:
-        description: "@anthropic-ai/claude-code version to install (plugin mode)"
+        # Re-pin at every references audit of the plugins. A pin older than a manifest
+        # field a plugin uses fails a valid plugin: 2.1.263 rejected userConfig `options`
+        # (v2.1.271+) with "Invalid input" on every push for three days (2026-11).
+        description: "@anthropic-ai/claude-code version to install"
         type: string
-        default: "2.1.263"
+        default: "2.1.321"
+      validate-all-external:
+        description: marketplace mode — validate every external entry, not only the changed ones
+        type: boolean
+        default: false
       allow-missing-en:
         description: README without README.en.md is a warning, not an error
         type: boolean
@@ -90,9 +97,40 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          # The validator diffs against the previous push to find the changed entries.
+          # A shallow clone has no previous commit, so it treated EVERY entry as changed
+          # and one broken plugin failed every unrelated pin.
+          fetch-depth: 0
+      # A private catalog entry needs a read-only deploy key of its repository, stored as
+      # a secret of this repo. Without the secret (a fork PR, another catalog repo) the
+      # step is a no-op and a private entry fails to clone, as before.
+      - name: Read access to private catalog entries
+        env:
+          JADLIS_SERGEY_DEPLOY_KEY: ${{ secrets.JADLIS_SERGEY_DEPLOY_KEY }}
+        run: |
+          set -euo pipefail
+          if [ -z "${JADLIS_SERGEY_DEPLOY_KEY:-}" ]; then
+            echo "::notice::JADLIS_SERGEY_DEPLOY_KEY is not set — private entries cannot be cloned in this run"
+            exit 0
+          fi
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          printf '%s\n' "$JADLIS_SERGEY_DEPLOY_KEY" > ~/.ssh/jadlis_sergey
+          chmod 600 ~/.ssh/jadlis_sergey
+          # GitHub's published ed25519 host key (https://api.github.com/meta, ssh_keys)
+          echo "github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl" >> ~/.ssh/known_hosts
+          cat >> ~/.ssh/config <<'EOF'
+          Host github-jadlis-sergey
+            HostName github.com
+            User git
+            IdentityFile ~/.ssh/jadlis_sergey
+            IdentitiesOnly yes
+          EOF
+          git config --global url."git@github-jadlis-sergey:beCyborg/jadlis-sergey".insteadOf "https://github.com/beCyborg/jadlis-sergey"
       - uses: anthropics/claude-plugins-community/.github/actions/validate-plugins@426e469f322952061102b286b378c0c9733a0934
         with:
           claude-cli-version: ${{ inputs.claude-cli-version }}
+          validate-all-external: ${{ inputs.validate-all-external }}
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: "3.12"

@@ -4,6 +4,7 @@ on:
   pull_request: {}
   push:
     branches: [main]
+  workflow_dispatch: {}   # manual run = full catalog check: every external entry is cloned and validated
 
 permissions:
   contents: read
@@ -13,7 +14,8 @@ jobs:
     uses: ./.github/workflows/plugin-ci.yml
     with:
       mode: marketplace
-      claude-cli-version: "2.1.263"
+      claude-cli-version: "2.1.321"
+      validate-all-external: ${{ github.event_name == 'workflow_dispatch' }}
       forbid-mermaid: true      # README contract 2026-09: images only
       allow-missing-en: true    # hub README is RU-only since 2026-09-10; plugin READMEs keep RU+EN pairs
     secrets: inherit
