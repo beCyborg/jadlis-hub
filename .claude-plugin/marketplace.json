@@ -321,8 +321,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-research.git",
-        "ref": "jadlis-research--v2.12.0",
-        "sha": "56c979fe7c57828c1e9e2a6d72fb889ed413fcb1"
+        "ref": "jadlis-research--v2.12.1",
+        "sha": "e65b8ae3ab4926dda1406c5bbd0c689945d8b0b6"
       },
       "category": "research",
       "tags": [
