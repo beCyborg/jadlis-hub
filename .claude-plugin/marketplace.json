@@ -439,8 +439,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-ticktick.git",
-        "ref": "jadlis-ticktick--v1.0.1",
-        "sha": "2cd29091e254a00441a081dffc1f62959771376d"
+        "ref": "jadlis-ticktick--v1.1.0",
+        "sha": "128b1c07945f6af12cd9107b3f1bb798a87cd171"
       },
       "category": "productivity",
       "tags": [
