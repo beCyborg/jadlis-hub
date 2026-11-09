@@ -305,8 +305,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-plugin-builder.git",
-        "ref": "jadlis-plugin-builder--v3.2.0",
-        "sha": "3034e23ef041575a069739bbb78f01e02ff33a57"
+        "ref": "jadlis-plugin-builder--v3.2.1",
+        "sha": "85fbe6b5b0beb956afb3becdbb082790d5740b94"
       },
       "category": "development",
       "tags": [
