@@ -25,6 +25,7 @@
 | [`jadlis-swot-news`](https://github.com/beCyborg/jadlis-swot-news) | `/swot-news` | Новости дня как SWOT для тебя: что из происходящего в мире помогает, а что мешает твоим планам. |
 | [`jadlis-tldr`](https://github.com/beCyborg/jadlis-tldr) | `/tldr` | Выжимка из видео YouTube или текстового файла: суть, главные идеи, что делать. |
 | [`jadlis-books`](https://github.com/beCyborg/jadlis-books) | `/books` | Найти и скачать книгу или статью по DOI через Архив Анны. Нужно своё членство. |
+| [`jadlis-onchain`](https://github.com/beCyborg/jadlis-onchain) | `/onchain` | Вставь адрес кошелька Tron или Ethereum — ИИ скажет, чей он, куда ушли деньги и что опасно. Только чтение, ключи бесплатные. |
 | [`jadlis-skill-builder`](https://github.com/beCyborg/jadlis-skill-builder) | `/skill-builder` | Свой ИИ-сотрудник: пишешь инструкцию, как для нового работника, и ИИ делает эту работу сам. |
 | [`jadlis-plugin-builder`](https://github.com/beCyborg/jadlis-plugin-builder) | `/plugin-builder` | Собрать, проверить и выпустить свой плагин, чтобы отдать его другому человеку. |
 | [`jadlis-nif`](https://github.com/beCyborg/jadlis-nif) | `/nif` | Метод нейроинтеграции под рукой: что делать сегодня, что делать, когда накрыло, и почему. Неофициальный пересказ своими словами. |
@@ -36,6 +37,7 @@
 > Для `jadlis-verif` нужна своя подписка [ChatGPT](https://chatgpt.com): он работает через Codex CLI.
 > Для `jadlis-browser` нужен Chrome и расширение-мост из Chrome Web Store, подробности в README плагина.
 > Для `jadlis-mail` нужен himalaya, для `jadlis-secrets` — 1Password с сервисным аккаунтом, для `jadlis-signup` — ещё и Proton Pass.
+> Для `jadlis-onchain` нужен uv и три бесплатных ключа: Etherscan, Tronscan и TronGrid. Ссылки на регистрацию — в README плагина.
 > `jadlis-signup` сам ставит `jadlis-secrets`, `jadlis-mail` и `jadlis-browser`. Скрипты и шаблон агента из них копируются по шагу «Установка» в README каждого плагина.
 
 ## Установка
@@ -81,6 +83,7 @@ claude plugin install jadlis-signup@jadlis
 claude plugin install jadlis-swot-news@jadlis
 claude plugin install jadlis-tldr@jadlis
 claude plugin install jadlis-books@jadlis
+claude plugin install jadlis-onchain@jadlis
 ```
 
 Подробности по каждому плагину, текст для вставки агенту и первый запуск — в README плагина по ссылке из таблицы.
