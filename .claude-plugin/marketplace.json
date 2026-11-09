@@ -355,8 +355,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-search.git",
-        "ref": "jadlis-search--v2.5.0",
-        "sha": "05773c11b73fe398f143cd721031553154711bdc"
+        "ref": "jadlis-search--v2.5.1",
+        "sha": "4aaacd38ff6bd2ae6ecdbf078a93ea0f4f00c743"
       },
       "category": "research",
       "tags": [
