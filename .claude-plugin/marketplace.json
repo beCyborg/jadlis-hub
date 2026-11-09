@@ -253,6 +253,19 @@
       "description": "Obsidian один в один с владельцем: тема, 12 плагинов, хоткеи, CLI, связка obsidian-skills и vault CLAUDE.md — второй обязательный шаг маршрута."
     },
     {
+      "name": "jadlis-onchain",
+      "source": "./personal/jadlis-onchain",
+      "category": "security",
+      "tags": [
+        "jadlis",
+        "crypto",
+        "tron",
+        "ethereum",
+        "osint"
+      ],
+      "description": "Разбор крипто-адресов Tron и EVM только на чтение: чей адрес, куда ушли деньги, что на нём лежит, связи, отравление адресов и разрешения на списание. crypttrace плюс бесплатные API Etherscan, TronGrid, Tronscan, Blockscout."
+    },
+    {
       "name": "jadlis-plugin-builder",
       "source": "./personal/jadlis-plugin-builder",
       "category": "development",
