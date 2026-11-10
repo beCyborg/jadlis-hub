@@ -203,8 +203,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-notifications.git",
-        "ref": "jadlis-notifications--v1.43.1",
-        "sha": "e3ac122bfd1ac7b22aaa865b9c9d5c58d7398a1f"
+        "ref": "jadlis-notifications--v1.43.2",
+        "sha": "c749da626b6c9e61420441a5f2204e35d4599544"
       },
       "category": "productivity",
       "tags": [
