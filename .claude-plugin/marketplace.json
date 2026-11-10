@@ -120,12 +120,7 @@
     },
     {
       "name": "jadlis-claudecode",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-claudecode.git",
-        "ref": "jadlis-claudecode--v2.0.1",
-        "sha": "116167220dd3cc2e06f66b16213e3b24308cce0b"
-      },
+      "source": "./personal/jadlis-claudecode",
       "category": "productivity",
       "tags": [
         "jadlis",
@@ -133,7 +128,7 @@
         "claude-code",
         "terminal"
       ],
-      "description": "Claude Code и терминал (iTerm2 + tmux, cld, tld) один в один с владельцем: настройки, хуки, строка состояния, автоподтверждение computer use, bypass после плана с телефона. CLAUDE.md и стили — по желанию из своих репо. Первый шаг маршрута."
+      "description": "Бета 2.1.0-beta.1: Claude Code и терминал (Ghostty + tmux, cld, tld) один в один с владельцем: настройки, хуки, строка состояния, автоподтверждение computer use, bypass после плана с телефона. CLAUDE.md и стили — по желанию из своих репо. Первый шаг маршрута."
     },
     {
       "name": "jadlis-computer-use",
