@@ -208,25 +208,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-notifications.git",
-        "ref": "jadlis-notifications--v1.41.4",
-        "sha": "601b07d2921d0582192e5a2f3740e03ed017bc88"
-      },
-      "category": "productivity",
-      "tags": [
-        "jadlis",
-        "neurointegration",
-        "wellbeing",
-        "planning"
-      ],
-      "description": "Гид по методу нейроинтеграции Катерины Ленгольд: где ты в спринте, вопрос по методу, одна практика в остром состоянии, разбор планирования, проекты спринта. Неофициальный пересказ своими словами."
-    },
-    {
-      "name": "jadlis-notifications",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/beCyborg/jadlis-notifications.git",
-        "ref": "jadlis-notifications--v1.41.4",
-        "sha": "601b07d2921d0582192e5a2f3740e03ed017bc88"
+        "ref": "jadlis-notifications--v1.43.1",
+        "sha": "e3ac122bfd1ac7b22aaa865b9c9d5c58d7398a1f"
       },
       "category": "productivity",
       "tags": [
