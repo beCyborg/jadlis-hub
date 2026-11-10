@@ -244,6 +244,17 @@
       "description": "Разбор крипто-адресов Tron и EVM только на чтение: чей адрес, куда ушли деньги, что на нём лежит, связи, отравление адресов и разрешения на списание. crypttrace плюс бесплатные API Etherscan, TronGrid, Tronscan, Blockscout."
     },
     {
+      "name": "jadlis-plan-band",
+      "source": "./personal/jadlis-plan-band",
+      "category": "productivity",
+      "tags": [
+        "jadlis",
+        "tld",
+        "plan"
+      ],
+      "description": "Полоска плана над промптом: «план: <имя> · <отмечено>/<всего>» и кнопка «открыть» в Obsidian."
+    },
+    {
       "name": "jadlis-plugin-builder",
       "source": "./personal/jadlis-plugin-builder",
       "category": "development",
