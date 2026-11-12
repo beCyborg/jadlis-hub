@@ -143,8 +143,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-browser.git",
-        "ref": "jadlis-browser--v3.3.0",
-        "sha": "a586c7db28ed941bc0dc52b5803f5feaa06aa3f6"
+        "ref": "jadlis-browser--v4.0.0",
+        "sha": "6c39b0cf7f0c3a85f9084de71f88f67a66cf6f11"
       },
       "category": "productivity",
       "tags": [
@@ -152,7 +152,7 @@
         "browser",
         "playwright"
       ],
-      "description": "Залогиненный браузер через Playwright MCP: свой профиль Chrome агента в фоне, твой Chrome через расширение-мост и фоновый Chrome без окна для публичных страниц."
+      "description": "Залогиненный браузер через Patchright MCP: свой профиль Chrome агента в фоне, твой Chrome через расширение-мост и фоновый Chrome без окна для публичных страниц."
     },
     {
       "name": "jadlis-claudecode",
