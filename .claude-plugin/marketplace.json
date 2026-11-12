@@ -525,8 +525,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-nupp.git",
-        "ref": "nupp--v1.0.3",
-        "sha": "d3684f18d9c98206204c8f6bef701983ad122792"
+        "ref": "nupp--v1.1.0",
+        "sha": "5da299baf070e1c4e8e1f050e8a8c1b6cf0f1f22"
       },
       "category": "productivity",
       "tags": [
@@ -534,7 +534,7 @@
         "advisor",
         "project-management"
       ],
-      "description": "Диагноз проекта по 6 универсальным принципам (NUPP)."
+      "description": "Шесть принципов NUPP: правила сессии агента, сверка плана или отчёта и диагноз проекта."
     },
     {
       "name": "robert-greene",
