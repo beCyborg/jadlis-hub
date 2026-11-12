@@ -407,8 +407,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-signup.git",
-        "ref": "jadlis-signup--v1.0.1",
-        "sha": "94bfcfa2f53290dd33de478df608e864b4ce6c4d"
+        "ref": "jadlis-signup--v1.0.2",
+        "sha": "4e6e02d08730cba1477ff152f1f7c341a0e2778e"
       },
       "category": "productivity",
       "tags": [
