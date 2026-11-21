@@ -143,8 +143,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-browser.git",
-        "ref": "jadlis-browser--v4.0.0",
-        "sha": "6c39b0cf7f0c3a85f9084de71f88f67a66cf6f11"
+        "ref": "jadlis-browser--v4.1.0",
+        "sha": "ef7fcaf4b4cb64448a3cc77762b12a9232ad6de5"
       },
       "category": "productivity",
       "tags": [
@@ -374,8 +374,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-secrets.git",
-        "ref": "jadlis-secrets--v1.0.0",
-        "sha": "468d14839bdb1b62484aafacddbbe4f44ce4e590"
+        "ref": "jadlis-secrets--v1.1.0",
+        "sha": "f642e5bc630d47679a65e6f794822e762cc86303"
       },
       "category": "productivity",
       "tags": [
@@ -407,8 +407,8 @@
       "source": {
         "source": "url",
         "url": "https://github.com/beCyborg/jadlis-signup.git",
-        "ref": "jadlis-signup--v1.0.2",
-        "sha": "4e6e02d08730cba1477ff152f1f7c341a0e2778e"
+        "ref": "jadlis-signup--v1.1.0",
+        "sha": "8f7fc81da605086337a346751c5a104d11ecd845"
       },
       "category": "productivity",
       "tags": [
